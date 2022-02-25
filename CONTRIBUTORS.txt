@@ -9,4 +9,8 @@
 # they accept any liabilities with respect to them.
 
 - Rafael Corchuelo (corchu@us.es)
+- Jorge Sillero (jorsilman@alum.us.es)
+- José Manuel Martín Luque (josmarluq@alum.us.es)
+- Francisco Reyes (frareymad@alum.us.es)
+- Francisco Andrés Caro Albarrán (fracaralb@alum.us.es)
 - Alberto Gallego Huerta(albgalhue@alum.us.es)
