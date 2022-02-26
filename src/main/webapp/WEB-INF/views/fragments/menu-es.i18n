@@ -18,6 +18,7 @@ master.menu.sign-out = Salir
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
+master.menu.anonymous.favourite-link-jorge = 20537563N: Sillero Manchon; Jorge
 master.menu.anonymous.favourite-link-fran = 44246876-M: Caro Albarrán, Francisco Andrés
 
 # master.menu.administrator ###################################################

@@ -19,7 +19,8 @@
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link-fran" action="https://www.realbetisbalompie.es/"/>
+			<acme:menu-suboption code="master.menu.anonymous.favourite-link-jorge" action="http://www.azuaga.es/"/>
+      <acme:menu-suboption code="master.menu.anonymous.favourite-link-fran" action="https://www.realbetisbalompie.es/"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
