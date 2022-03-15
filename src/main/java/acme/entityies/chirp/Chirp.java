@@ -1,4 +1,4 @@
-package chirp;
+package acme.entityies.chirp;
 
 import java.sql.Date;
 
