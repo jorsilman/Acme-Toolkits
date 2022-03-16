@@ -37,7 +37,7 @@ public class Patronage extends AbstractEntity{
 	// Attributes					---------------------------------------------
 	
 	@NotNull
-	protected StatusEnum		status;
+	protected PatronageStatus		status;
 	
 	@NotNull
 	@Column(unique = true)
