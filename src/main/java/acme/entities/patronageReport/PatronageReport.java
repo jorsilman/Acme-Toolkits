@@ -2,15 +2,20 @@ package acme.entities.patronageReport;
 
 import java.util.Date;
 
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.entities.patronage.Patronage;
 import acme.framework.entities.AbstractEntity;
+
 
 public class PatronageReport extends AbstractEntity {
 	
@@ -22,6 +27,7 @@ public class PatronageReport extends AbstractEntity {
 		@NotBlank
 		protected Integer 			serialNumber;
 		
+		@NotNull
 		@Temporal(TemporalType.DATE)
 		@Past
 		protected Date 				creationMoment;
@@ -33,7 +39,21 @@ public class PatronageReport extends AbstractEntity {
 		@URL
 		protected String			link;
 		
+		
+		
+		//Derived attributes
 		@NotBlank
-		protected String			sequenceNumber;
+		public String sequenceNumber(){
+			return this.patronage.getCode() + ":" + this.serialNumber;
+			
+		}
+		//Relationships
+		@Valid
+		@NotNull
+		@ManyToOne(optional = false)
+		protected Patronage patronage;
+		
+		
+		
 
 }
