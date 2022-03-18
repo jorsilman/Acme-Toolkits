@@ -1,8 +1,11 @@
 package acme.forms;
 
 import java.io.Serializable;
+import java.util.Map;
 
-import acme.framework.datatypes.Money;
+import org.apache.commons.lang3.tuple.Pair;
+
+import acme.entities.patronage.PatronageStatus;
 
 public class AdministratorDashboard implements Serializable{
 		// Serialisation identifier -----------------------------------------------
@@ -11,37 +14,32 @@ public class AdministratorDashboard implements Serializable{
 
 		// Attributes -------------------------------------------------------------
 
-		Integer				components;
-		Money				averageComponents;
-		Money				deviationComponents;
-		Money				minimumRetailPriceComponents;
-		Money				maximumRetailPriceComponents;
+		int												totalNumberOfComponents;
+		Map<Pair<String, String>, Double>				averageRetailPriceOfComponentsByTechnologyAndCurrency;
+		Map<Pair<String, String>, Double>				deviationRetailPriceOfComponentsByTechnologyAndCurrency;
+		Map<Pair<String, String>, Double>				minimumRetailPriceOfComponentsByTechnologyAndCurrency;
+		Map<Pair<String, String>, Double>				maximumRetailPriceOfComponentsByTechnologyAndCurrency;
+		// Map<Pair<Technology, Currency>, Amount>
 		
-		Integer				tools;
-		Money				averageTools;
-		Money				deviationTools;
-		Money				minimumRetailPriceTools;
-		Money				maximumRetailPriceTools;
 		
-		Integer				proposedPatronages;
-		Integer				acceptedPatronages;
-		Integer				deniedPatronages;
+		int												totalNumberOfTools;
+		Map<String, Double>								averageRetailPriceOfToolsByCurrency;
+		Map<String, Double>								deviationRetailPriceOfToolsByCurrency;
+		Map<String, Double>								minimumRetailPriceOfToolsByCurrency;
+		Map<String, Double>								maximumRetailPriceOfToolsByCurrency;
+		// Map<Currency, Amount>
 		
-		Money				averageProposedPatronages;
-		Money				deviationProposedPatronages;
-		Money				minimumBudgetProposedPatronages;
-		Money				maximumBudgetProposedPatronages;
 		
-		Money				averageAcceptedPatronages;
-		Money				deviationAcceptedPatronages;
-		Money				minimumBudgetAcceptedPatronages;
-		Money				maximumBudgetAcceptedPatronages;
+		int												totalNumberOfProposedPatronages;
+		int												totalNumberOfAcceptedPatronages;
+		int												totalNumberOfDeniedPatronages;
+		Map<PatronageStatus, Double>					averageBudgetOfPatronagesByStatus;
+		Map<PatronageStatus, Double>					deviationBudgetOfPatronagesByStatus;
+		Map<PatronageStatus, Double>					minimumBudgetOfPatronagesByStatus;
+		Map<PatronageStatus, Double>					maximumBudgetOfPatronagesByStatus;
+		// Map<Status, Amount>
 		
-		Money				averageDeniedPatronages;
-		Money				deviationDeniedPatronages;
-		Money				minimumBudgetDeniedPatronages;
-		Money				maximumBudgetDeniedPatronages;
-
+		
 		// Derived attributes -----------------------------------------------------
 
 		// Relationships ----------------------------------------------------------
