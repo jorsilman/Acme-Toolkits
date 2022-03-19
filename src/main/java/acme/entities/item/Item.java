@@ -34,7 +34,7 @@ public class Item extends AbstractEntity {
 	protected ItemType			itemType;
 
 	@NotBlank
-	@Length(max=100)
+	@Length(min=1,max=100)
 	protected String			name;
 
 	@Column(unique=true)
@@ -43,11 +43,11 @@ public class Item extends AbstractEntity {
 	protected String			code;
 	
 	@NotBlank
-	@Length(max=100)
+	@Length(min=1,max=100)
 	protected String			technology;
 	
 	@NotBlank
-	@Length(max=255)
+	@Length(min=1,max=255)
 	protected String			description;
 	
 	@Min(0)
@@ -64,7 +64,7 @@ public class Item extends AbstractEntity {
 	
 	@NotNull
 	@Valid
-	@ManyToOne(optional=true)
+	@ManyToOne(optional=false)
 	protected Inventor			inventor;
 	
 }

@@ -3,8 +3,8 @@ package acme.entities.item;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Positive;
 
 import acme.entities.toolkit.Toolkit;
 import acme.framework.entities.AbstractEntity;
@@ -24,7 +24,7 @@ public class Quantity extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 	
 	@NotNull
-	@Positive
+	@Min(1)
 	protected Integer			number;
 	
 	// Derived attributes -----------------------------------------------------
@@ -32,11 +32,11 @@ public class Quantity extends AbstractEntity {
 	// Relationships ----------------------------------------------------------
 	@NotNull
 	@Valid
-	@ManyToOne(optional=true)
+	@ManyToOne(optional=false)
 	protected Item			item;
 	
 	@NotNull
 	@Valid
-	@ManyToOne(optional=true)
+	@ManyToOne(optional=false)
 	protected Toolkit			toolkit;
 }
