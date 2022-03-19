@@ -22,11 +22,11 @@ public class Inventor extends UserRole {
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	@Length(max=100)
+	@Length(min=1, max=100)
 	protected String			company;
 
 	@NotBlank
-	@Length(max=255)
+	@Length(min=1, max=255)
 	protected String			statement;
 	
 	@URL
