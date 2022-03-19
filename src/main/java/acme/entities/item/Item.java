@@ -4,7 +4,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -50,12 +49,10 @@ public class Item extends AbstractEntity {
 	@Length(min=1,max=255)
 	protected String			description;
 	
-	@Min(0)
 	@NotNull
 	protected Money				retailPrice;
 	
 	@URL
-	@NotNull
 	protected String			link;
 	
 	// Derived attributes -----------------------------------------------------
