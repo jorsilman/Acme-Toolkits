@@ -1,0 +1,6 @@
+key,key:patron,key:inventor,status,code,legal-stuff,budget,creation-date,start-period-of-time,end-period-of-time,link
+patronage-01,patron-01,inventor-01,PROPOSED,AAA-000-A,legalStuff_1,"EUR 100.00","2020/06/18 15:51","2020/12/18 15:51","2022/06/22 15:51",https://www.youtube.com/
+patronage-02,patron-02,inventor-02,DENIED,AAA-000-B,legalStuff_2 ,"EUR 110.00","2020/05/22 10:01","2021/05/2 10:01","2022/05/18 10:01",null
+patronage-03,patron-03,inventor-03,PROPOSED,AAA-000-C,legaLStuff_3,"EUR 120.00","2020/04/05 22:22","2020/10/05 22:22","2022/04/05 22:22",https://www.youtube.com/
+patronage-04,patron-04,inventor-04,ACCEPTED,AAA-000-D,legalStuff_4,"EUR 130.00","2020/03/30 23:32","2021/03/30 23:32","2022/03/28 23:32",null
+patronage-05,patron-05,inventor-05,PROPOSED,AAA-000-E,legalStuff_5,"EUR 140.00","2020/02/28 14:41","2022/06/28 14:41","2022/02/10 14:41",null
