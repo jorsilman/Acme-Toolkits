@@ -2,6 +2,7 @@ package acme.entities.patronageReport;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
@@ -31,10 +32,10 @@ public class PatronageReport extends AbstractEntity {
 		
 		//Attributes
 		
-		@NotBlank
-		@Transient
+		@Column(unique = true)
 		@Pattern(regexp = "^[0-9]{4}$")
-		protected Integer 			serialNumber;
+		@NotBlank
+		protected String 			serialNumber;
 		
 		@NotNull
 		@Temporal(TemporalType.DATE)
