@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -38,7 +37,7 @@ public class PatronageReport extends AbstractEntity {
 		protected String 			serialNumber;
 		
 		@NotNull
-		@Temporal(TemporalType.DATE)
+		@Temporal(TemporalType.TIMESTAMP)
 		@Past
 		protected Date 				creationMoment;
 		
@@ -49,18 +48,13 @@ public class PatronageReport extends AbstractEntity {
 		@URL
 		protected String			link;
 		
-		
-		
-		 
-		
-		
 		//Derived attributes 
 		
 		@NotBlank
-		protected String			sequenceNumber;
+		//protected String			sequenceNumber;
 		
-		public void setSequenceNumber() {
-			this.sequenceNumber = this.patronage.getCode() + ":" + this.serialNumber;
+		public String sequenceNumber() {
+			return this.patronage.getCode() + ":" + this.serialNumber;
 		}
 		
 		//Relationships
