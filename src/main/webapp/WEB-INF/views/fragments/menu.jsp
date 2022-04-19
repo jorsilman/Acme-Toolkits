@@ -25,16 +25,19 @@
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-francisco" action="http://bandalasnievesolivares.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-jose" action="https://keepa.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-alberto" action="https://sevillafc.es/"/>
+			<acme:menu-separator/>
+					<acme:menu-suboption code="master.menu.any.chirp.list-recent" action="/any/chirp/list-recent"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
-			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
+			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list-recent"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.populate-initial" action="/administrator/populate-initial"/>
 			<acme:menu-suboption code="master.menu.administrator.populate-sample" action="/administrator/populate-sample"/>			
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
 		</acme:menu-option>
+		
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
 			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>
