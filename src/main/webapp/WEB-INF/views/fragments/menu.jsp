@@ -44,6 +44,12 @@
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
 	</acme:menu-left>
+	
+	<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
+			<acme:menu-suboption code="master.menu.patron.patronage.list" action="/patron/patronage/list-own"/>
+			<acme:menu-suboption code="master.menu.patron.patronage-report.list" action="/patron/patronage-report/list-own"/>
+			<acme:menu-suboption code="master.menu.patron.patron-dashboard.show" action="/patron/patron-dashboard/show-dashboard"/>
+		</acme:menu-option>
 
 	<acme:menu-right>
 		<acme:menu-option code="master.menu.sign-up" action="/anonymous/user-account/create" access="isAnonymous()"/>
