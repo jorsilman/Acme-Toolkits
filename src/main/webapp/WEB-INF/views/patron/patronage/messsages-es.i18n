@@ -29,3 +29,6 @@ patron.patronage.form.label.startPeriodOfTime = Fecha de comienzo
 patron.patronage.form.label.endPeriodOfTime = Fecha de fin
 patron.patronage.form.label.link = Enlace
 patron.patronage.form.label.inventor = Inventor
+patron.patronage.form.label.inventor-company = Compañía
+patron.patronage.form.label.inventor-statement = Declaración
+patron.patronage.form.label.inventor-link = Enlace

@@ -29,7 +29,11 @@
 	<acme:input-moment code="patron.patronage.form.label.startPeriodOfTime" path="startPeriodOfTime"/>
 	<acme:input-moment code="patron.patronage.form.label.endPeriodOfTime" path="endPeriodOfTime"/>
 	<acme:input-url code="patron.patronage.form.label.link" path="link"/>
-	<acme:input-textbox code="patron.patronage.form.label.inventor" path="inventor"/>
+	<br>
+	<h2>Inventor:</h2>
+	<acme:input-textbox code="patron.patronage.form.label.inventor-company" path="inventorCompany"/>
+	<acme:input-textbox code="patron.patronage.form.label.inventor-statement" path="inventorStatement"/>
+	<acme:input-textbox code="patron.patronage.form.label.inventor-link" path="inventorLink"/>
 	
 	<jstl:if test="${readonly}">
 		<acme:submit test="${command == 'create'}" code="authenticated.consumer.consumer.form.button.create" action="/authenticated/consumer/create"/>
