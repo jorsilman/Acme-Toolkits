@@ -44,6 +44,17 @@ master.menu.provider.favourite-link = Favourite link
 master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
 
+# master.menu.any #######################################################
+
+master.menu.any = Lists
+master.menu.any.item.list = Items list
+
+# master.menu.inventor ########################################################
+
+master.menu.inventor = Inventor
+master.menu.inventor.toolkit.list = List my toolkits
+master.menu.inventor.item.list = List my items
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account
