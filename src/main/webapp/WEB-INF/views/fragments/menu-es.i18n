@@ -15,7 +15,7 @@ master.menu.sign-up = Registrarse
 master.menu.sign-in = Entrar
 master.menu.sign-out = Salir
 
-# master.menu.anonymous #######################################################
+# master.menu.anonymous ######################################################
 
 master.menu.anonymous = Anónimo
 master.menu.anonymous.favourite-link = Enlace favorito
@@ -24,6 +24,17 @@ master.menu.anonymous.favourite-link-fran = 44246876M: Caro Albarrán, Francisco
 master.menu.anonymous.favourite-link-francisco = 47560031X: Reyes Madrid, Francisco
 master.menu.anonymous.favourite-link-jose = 47428756L: Martín Luque, José Manuel
 master.menu.anonymous.favourite-link-alberto = 29499808P: Gallego Huerta, Alberto
+master.menu.any.chirp.list-recent= Mostrar chirridos recientes
+
+# master.menu.any.useraccount #######################################################
+
+
+master.menu.any.useraccount = Usuarios
+master.menu.any.useraccount.consumer = Mostrar Consumidores
+master.menu.any.useraccount.provider = Mostrar Proveedores
+master.menu.any.useraccount.inventor = Mostrar Inventores
+master.menu.any.useraccount.patron = Mostrar Patrones
+
 
 # master.menu.administrator ###################################################
 
@@ -39,6 +50,7 @@ master.menu.administrator.shut-down = Parar el sistema
 master.menu.patron = Patrón
 master.menu.patron.patronage.list = Ver mis patrocinios
 master.menu.patron.patronageReport.list = Ver los reportes de mis patrocinios
+
 
 # master.menu.provider ########################################################
 
