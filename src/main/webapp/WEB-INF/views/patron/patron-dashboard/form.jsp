@@ -15,10 +15,17 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
-<acme:form>
-	<acme:input-textbox code="authenticated.consumer.consumer.form.label.company" path="company"/>
-	<acme:input-textbox code="authenticated.consumer.consumer.form.label.sector" path="sector"/>
+<acme:form readonly="${readonly}">
+	<acme:input-integer code="patron.patron-dashboard.form.label.proposed" path="totalNumberOfProposedPatronages"/>
+	<acme:input-integer code="patron.patron-dashboard.form.label.accepted" path="totalNumberOfAcceptedPatronages"/>
+	<acme:input-integer code="patron.patron-dashboard.form.label.denied" path="totalNumberOfDeniedPatronages"/>
+	<acme:input-textarea code="patron.patron-dashboard.form.label.average" path="average"/>
+	<acme:input-textarea code="patron.patron-dashboard.form.label.deviation" path="deviation"/>
+	<acme:input-textarea code="patron.patron-dashboard.form.label.minimum" path="minimum"/>
+	<acme:input-textarea code="patron.patron-dashboard.form.label.maximum" path="maximum"/>
 	
-	<acme:submit test="${command == 'create'}" code="authenticated.consumer.consumer.form.button.create" action="/authenticated/consumer/create"/>
-	<acme:submit test="${command == 'update'}" code="authenticated.consumer.consumer.form.button.update" action="/authenticated/consumer/update"/>
+	<jstl:if test="${readonly}">
+		<acme:submit test="${command == 'create'}" code="authenticated.consumer.consumer.form.button.create" action="/authenticated/consumer/create"/>
+		<acme:submit test="${command == 'update'}" code="authenticated.consumer.consumer.form.button.update" action="/authenticated/consumer/update"/>
+	</jstl:if>
 </acme:form>

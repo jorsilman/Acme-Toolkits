@@ -8,11 +8,10 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.consumer.consumer.form.title.create = Hazte trabajador
-authenticated.consumer.consumer.form.title.update = Actualiza tus datos de trabajador
-
-authenticated.consumer.consumer.form.label.compañía = Compañía
-authenticated.consumer.consumer.form.label.sector = Sector
-
-authenticated.consumer.consumer.form.button.create = Registrar
-authenticated.consumer.consumer.form.button.update = Actualizar
+patron.patron-dashboard.form.label.proposed = Número de patrocinios propuestos
+patron.patron-dashboard.form.label.accepted = Número de patrocinios aceptados
+patron.patron-dashboard.form.label.denied = Número de patrocinios denegados
+patron.patron-dashboard.form.label.average = Media de los presupuestos de patrocinios agrupados por moneda y estado
+patron.patron-dashboard.form.label.deviation = Desviación de los presupuestos de patrocinios agrupados por moneda y estado
+patron.patron-dashboard.form.label.minimum = Mínimo de los presupuestos de patrocinios agrupados por moneda y estado
+patron.patron-dashboard.form.label.maximum = Máximo de los presupuestos de patrocinios agrupados por moneda y estado

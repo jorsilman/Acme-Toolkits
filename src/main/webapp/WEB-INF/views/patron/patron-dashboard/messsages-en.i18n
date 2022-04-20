@@ -8,11 +8,10 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.consumer.consumer.form.title.create = Become a worker
-authenticated.consumer.consumer.form.title.update = Update your worker data
-
-authenticated.consumer.consumer.form.label.company = Company
-authenticated.consumer.consumer.form.label.sector = Sector
-
-authenticated.consumer.consumer.form.button.create = Register
-authenticated.consumer.consumer.form.button.update = Update
+patron.patron-dashboard.form.label.proposed = Total number of proposed patronages
+patron.patron-dashboard.form.label.accepted = Total number of accepted patronages
+patron.patron-dashboard.form.label.denied = Total number of denied Patronages
+patron.patron-dashboard.form.label.average = Average budget of patronages grouped by currency and status
+patron.patron-dashboard.form.label.deviation = Deviation budget of patronages grouped by currency and status
+patron.patron-dashboard.form.label.minimum = Minimum budget of patronages grouped by currency and status
+patron.patron-dashboard.form.label.maximum = Maximum budget of patronages grouped by currency and status

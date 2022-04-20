@@ -12,7 +12,7 @@
 
 package acme.features.patron.patronDashboard;
 
-import java.util.Collection;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -26,17 +26,17 @@ public interface PatronPatronDashboardRepository extends AbstractRepository {
 	@Query("SELECT COUNT(patronage) FROM Patronage patronage where patronage.status = :status")
 	int getNumberOfPatronagesByStatus(PatronageStatus status);
 	
-	@Query("SELECT AVG(patronage.budget.amount), patronage.budget.currency FROM Patronage patronage WHERE patronage.status = :status GROUP BY patronage.budget.currency")
-	Collection<PatronDashboardMapper> findAverageBudgetOfPatronagesByStatus(PatronageStatus status);
+	@Query("SELECT patronage.budget.currency, patronage.status, AVG(patronage.budget.amount)  FROM Patronage patronage GROUP BY patronage.budget.currency, patronage.status")
+	List<Object[]> findAverageBudgetOfPatronagesByCurrencyAndStatus();
 	
-	@Query("SELECT STDDEV(patronage.budget.amount), patronage.budget.currency FROM Patronage patronage WHERE patronage.status = :status GROUP BY patronage.budget.currency")
-	Collection<PatronDashboardMapper> findDeviationBudgetOfPatronagesByStatus(PatronageStatus status);
+	@Query("SELECT patronage.budget.currency, patronage.status, STDDEV(patronage.budget.amount)  FROM Patronage patronage GROUP BY patronage.budget.currency, patronage.status")
+	List<Object[]> findDeviationBudgetOfPatronagesByCurrencyAndStatus();
 	
-	@Query("SELECT MIN(patronage.budget.amount), patronage.budget.currency FROM Patronage patronage WHERE patronage.status = :status GROUP BY patronage.budget.currency")
-	Collection<PatronDashboardMapper> findMinimumBudgetOfPatronagesByStatus(PatronageStatus status);
+	@Query("SELECT patronage.budget.currency, patronage.status, MIN(patronage.budget.amount)  FROM Patronage patronage GROUP BY patronage.budget.currency, patronage.status")
+	List<Object[]> findMinimumBudgetOfPatronagesByCurrencyAndStatus();
 	
-	@Query("SELECT MAX(patronage.budget.amount), patronage.budget.currency FROM Patronage patronage WHERE patronage.status = :status GROUP BY patronage.budget.currency")
-	Collection<PatronDashboardMapper> findMaximumBudgetOfPatronagesByStatus(PatronageStatus status);
+	@Query("SELECT patronage.budget.currency, patronage.status, MAX(patronage.budget.amount)  FROM Patronage patronage GROUP BY patronage.budget.currency, patronage.status")
+	List<Object[]> findMaximumBudgetOfPatronagesByCurrencyAndStatus();
 	
 
 }

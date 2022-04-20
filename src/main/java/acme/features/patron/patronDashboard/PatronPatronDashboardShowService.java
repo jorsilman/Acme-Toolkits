@@ -12,8 +12,8 @@
 
 package acme.features.patron.patronDashboard;
 
-import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang3.tuple.Pair;
@@ -49,42 +49,40 @@ public class PatronPatronDashboardShowService implements AbstractShowService<Pat
 	public PatronDashboard findOne(final Request<PatronDashboard> request) {
 		assert request != null;
 
-		final PatronDashboard result = null;
+		PatronDashboard result = new PatronDashboard();
 		
-		final int proposedPatronages = this.repository.getNumberOfPatronagesByStatus(PatronageStatus.PROPOSED);
-		final int acceptedPatronages = this.repository.getNumberOfPatronagesByStatus(PatronageStatus.ACCEPTED);
-		final int deniedPatronages = this.repository.getNumberOfPatronagesByStatus(PatronageStatus.DENIED);
+		int proposedPatronages = this.repository.getNumberOfPatronagesByStatus(PatronageStatus.PROPOSED);
+		int acceptedPatronages = this.repository.getNumberOfPatronagesByStatus(PatronageStatus.ACCEPTED);
+		int deniedPatronages = this.repository.getNumberOfPatronagesByStatus(PatronageStatus.DENIED);
 		
 		result.setTotalNumberOfProposedPatronages(proposedPatronages);
 		result.setTotalNumberOfAcceptedPatronages(acceptedPatronages);
 		result.setTotalNumberOfDeniedPatronages(deniedPatronages);
 		
-		final Map<Pair<String, PatronageStatus>, Double> averageBudgetOfPatronagesByCurrencyAndStatus = new HashMap<Pair<String, PatronageStatus>, Double>();
-		final Map<Pair<String, PatronageStatus>, Double> deviationBudgetOfPatronagesByCurrencyAndStatus = new HashMap<Pair<String, PatronageStatus>, Double>();
-		final Map<Pair<String, PatronageStatus>, Double> minimumBudgetOfPatronagesByCurrencyAndStatus = new HashMap<Pair<String, PatronageStatus>, Double>();
-		final Map<Pair<String, PatronageStatus>, Double> maximumBudgetOfPatronagesByCurrencyAndStatus = new HashMap<Pair<String, PatronageStatus>, Double>();
+		Map<Pair<String, PatronageStatus>, Double> averageBudgetOfPatronagesByCurrencyAndStatus = new HashMap<Pair<String, PatronageStatus>, Double>();
+		Map<Pair<String, PatronageStatus>, Double> deviationBudgetOfPatronagesByCurrencyAndStatus = new HashMap<Pair<String, PatronageStatus>, Double>();
+		Map<Pair<String, PatronageStatus>, Double> minimumBudgetOfPatronagesByCurrencyAndStatus = new HashMap<Pair<String, PatronageStatus>, Double>();
+		Map<Pair<String, PatronageStatus>, Double> maximumBudgetOfPatronagesByCurrencyAndStatus = new HashMap<Pair<String, PatronageStatus>, Double>();
 		
-		for (final PatronageStatus status : PatronageStatus.values()) {
-			final Collection<PatronDashboardMapper> averages = this.repository.findAverageBudgetOfPatronagesByStatus(status);
-			final Collection<PatronDashboardMapper> deviations = this.repository.findDeviationBudgetOfPatronagesByStatus(status);
-			final Collection<PatronDashboardMapper> minimums = this.repository.findMinimumBudgetOfPatronagesByStatus(status);
-			final Collection<PatronDashboardMapper> maximums = this.repository.findMaximumBudgetOfPatronagesByStatus(status);
-			
-			for (final PatronDashboardMapper average : averages) {
-				averageBudgetOfPatronagesByCurrencyAndStatus.put(Pair.of(average.getCurrency(), status), average.getValue());
-			}
-			
-			for (final PatronDashboardMapper deviation : deviations) {
-				averageBudgetOfPatronagesByCurrencyAndStatus.put(Pair.of(deviation.getCurrency(), status), deviation.getValue());
-			}
-			
-			for (final PatronDashboardMapper minimum : minimums) {
-				averageBudgetOfPatronagesByCurrencyAndStatus.put(Pair.of(minimum.getCurrency(), status), minimum.getValue());
-			}
-			
-			for (final PatronDashboardMapper maximum : maximums) {
-				averageBudgetOfPatronagesByCurrencyAndStatus.put(Pair.of(maximum.getCurrency(), status), maximum.getValue());
-			}
+		List<Object[]> averages = this.repository.findAverageBudgetOfPatronagesByCurrencyAndStatus();
+		List<Object[]> deviations = this.repository.findDeviationBudgetOfPatronagesByCurrencyAndStatus();
+		List<Object[]> minimums = this.repository.findMinimumBudgetOfPatronagesByCurrencyAndStatus();
+		List<Object[]> maximums = this.repository.findMaximumBudgetOfPatronagesByCurrencyAndStatus();
+
+		for (Object[] average : averages) {
+			averageBudgetOfPatronagesByCurrencyAndStatus.put(Pair.of(average[0].toString(), PatronageStatus.valueOf(average[1].toString())), (Double) average[2]);
+		}
+		
+		for (Object[] deviation : deviations) {
+			deviationBudgetOfPatronagesByCurrencyAndStatus.put(Pair.of(deviation[0].toString(), PatronageStatus.valueOf(deviation[1].toString())), (Double) deviation[2]);
+		}
+		
+		for (Object[] minimum : minimums) {
+			minimumBudgetOfPatronagesByCurrencyAndStatus.put(Pair.of(minimum[0].toString(), PatronageStatus.valueOf(minimum[1].toString())), (Double) minimum[2]);
+		}
+		
+		for (Object[] maximum : maximums) {
+			maximumBudgetOfPatronagesByCurrencyAndStatus.put(Pair.of(maximum[0].toString(), PatronageStatus.valueOf(maximum[1].toString())), (Double) maximum[2]);
 		}
 		
 		result.setAverageBudgetOfPatronagesByCurrencyAndStatus(averageBudgetOfPatronagesByCurrencyAndStatus);
@@ -100,6 +98,11 @@ public class PatronPatronDashboardShowService implements AbstractShowService<Pat
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+		
+		model.setAttribute("average", entity.getAverageBudgetOfPatronagesByCurrencyAndStatus().toString());
+		model.setAttribute("deviation", entity.getDeviationBudgetOfPatronagesByCurrencyAndStatus().toString());
+		model.setAttribute("minimum", entity.getMinimumBudgetOfPatronagesByCurrencyAndStatus().toString());
+		model.setAttribute("maximum", entity.getMaximumBudgetOfPatronagesByCurrencyAndStatus().toString());
 		
 		request.unbind(entity, model, "totalNumberOfProposedPatronages", "totalNumberOfAcceptedPatronages", "totalNumberOfDeniedPatronages",
 			"averageBudgetOfPatronagesByCurrencyAndStatus", "deviationBudgetOfPatronagesByCurrencyAndStatus",
