@@ -49,6 +49,8 @@ master.menu.administrator.shut-down = Parar el sistema
 
 master.menu.patron = Patrón
 master.menu.patron.patronage.list = Ver mis patrocinios
+master.menu.patron.patronageReport.list = Ver los reportes de mis patrocinios
+
 
 # master.menu.provider ########################################################
 
