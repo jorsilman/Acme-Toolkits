@@ -15,7 +15,7 @@ public class InventorItemShowService implements AbstractShowService<Inventor, It
 
 	@Override
 	public boolean authorise(final Request<Item> request) {
-		// TODO Auto-generated method stub
+
 		assert request !=null;
 		
 		return true;
@@ -23,7 +23,7 @@ public class InventorItemShowService implements AbstractShowService<Inventor, It
 
 	@Override
 	public Item findOne(final Request<Item> request) {
-		// TODO Auto-generated method stub
+
 		assert request !=null;
 		final int id = request.getModel().getInteger("id");
 		final Item result = this.repository.findItemById(id);
@@ -32,14 +32,14 @@ public class InventorItemShowService implements AbstractShowService<Inventor, It
 
 	@Override
 	public void unbind(final Request<Item> request, final Item entity, final Model model) {
-		// TODO Auto-generated method stub
+
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
 		
 		
-		request.unbind(entity, model, "name","code","technology","description","retailPrice","link","type");
+		request.unbind(entity, model, "name","code","technology","description","retailPrice","link","itemType");
 		
 	}
 

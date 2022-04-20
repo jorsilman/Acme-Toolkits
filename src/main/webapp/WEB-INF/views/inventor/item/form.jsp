@@ -23,7 +23,7 @@
 	<acme:input-textbox code="inventor.item.form.label.description" path="description"/>
 	<acme:input-money code="inventor.item.form.label.price" path="retailPrice"/>
 	<acme:input-textbox code="inventor.item.form.label.link" path="link"/>
-	<acme:input-select code="inventor.item.form.label.type" path="type">
+	<acme:input-select code="inventor.item.form.label.itemType" path="type">
 		<acme:input-option code="COMPONENT" value="COMPONENT" selected="${status == 'COMPONENT'}"/>
 		<acme:input-option code="TOOL" value="TOOL" selected="${status == 'TOOL'}"/>
 	</acme:input-select>
