@@ -45,6 +45,11 @@ master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
 
+# master.menu.patron ########################################################
+
+master.menu.patron = Patrón
+master.menu.patron.patronage.list = Ver mis patrocinios
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor
