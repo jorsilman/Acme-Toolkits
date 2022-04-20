@@ -1,12 +1,14 @@
 package acme.entities.systemConfiguration;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Authenticated;
 import acme.framework.services.AbstractShowService;
 
+@Service
 public class SystemConfigurationService implements AbstractShowService<Authenticated, SystemConfiguration>{
 	
 	@Autowired
