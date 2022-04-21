@@ -1,0 +1,15 @@
+any.tool.list.label.name = Name
+any.tool.list.label.code = Code
+any.tool.list.label.technology = Technology
+any.tool.list.label.description = Description
+any.tool.list.label.price = Retail Price
+any.tool.list.label.link = Link
+
+
+any.tool.form.label.name = Name
+any.tool.form.label.code = Code
+any.tool.form.label.technology = Technology
+any.tool.form.label.description = Description 
+any.tool.form.label.price = Retail Price
+any.tool.form.label.link = Link
+any.tool.form.label.itemType = Item type
