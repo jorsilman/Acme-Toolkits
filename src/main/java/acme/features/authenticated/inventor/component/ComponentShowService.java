@@ -1,4 +1,4 @@
-package acme.features.inventor.item;
+package acme.features.authenticated.inventor.component;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +11,10 @@ import acme.framework.services.AbstractShowService;
 import acme.roles.Inventor;
 
 @Service
-public class ItemShowService implements AbstractShowService<Inventor, Item>{
+public class ComponentShowService implements AbstractShowService<Inventor, Item>{
 	
 	@Autowired
-	protected ItemRepository itemRepo;
+	protected ComponentRepository itemRepo;
 
 	@Override
 	public boolean authorise(final Request<Item> request) {
