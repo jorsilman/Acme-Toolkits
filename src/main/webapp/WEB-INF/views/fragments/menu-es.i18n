@@ -15,7 +15,8 @@ master.menu.sign-up = Registrarse
 master.menu.sign-in = Entrar
 master.menu.sign-out = Salir
 
-# master.menu.anonymous ######################################################
+# master.menu.anonymous #######################################################
+
 
 master.menu.anonymous = Anónimo
 master.menu.anonymous.favourite-link = Enlace favorito
@@ -25,6 +26,7 @@ master.menu.anonymous.favourite-link-francisco = 47560031X: Reyes Madrid, Franci
 master.menu.anonymous.favourite-link-jose = 47428756L: Martín Luque, José Manuel
 master.menu.anonymous.favourite-link-alberto = 29499808P: Gallego Huerta, Alberto
 master.menu.any.chirp.list-recent= Mostrar chirridos recientes
+master.menu.any.item.list = Lista de Items
 
 # master.menu.any.useraccount #######################################################
 
