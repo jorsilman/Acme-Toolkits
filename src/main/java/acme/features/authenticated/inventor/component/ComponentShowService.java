@@ -13,9 +13,13 @@ import acme.roles.Inventor;
 @Service
 public class ComponentShowService implements AbstractShowService<Inventor, Item>{
 	
+	// Internal state --------------------------------------------------
+	
 	@Autowired
 	protected ComponentRepository itemRepo;
-
+	
+	// AbstractShowService<Inventor, Item> interface --------------------
+	
 	@Override
 	public boolean authorise(final Request<Item> request) {
 		assert request != null;

@@ -12,11 +12,15 @@ import acme.roles.Inventor;
 @Controller
 public class ComponentController extends AbstractController<Inventor, Item>{
 	
+	// Internal State --------------------------------------------------------------------------
+	
 	@Autowired
 	protected ComponentListService listService;
 	
 	@Autowired
 	protected ComponentShowService showService;
+	
+	// Constructors ----------------------------------------------------------------------------
 	
 	@PostConstruct
 	protected void initialise() {

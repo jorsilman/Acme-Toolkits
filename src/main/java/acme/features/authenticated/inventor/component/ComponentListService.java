@@ -14,9 +14,13 @@ import acme.roles.Inventor;
 
 @Service
 public class ComponentListService implements AbstractListService<Inventor, Item>{
-
+	
+	// Internal state ------------------------------------------------
+	
 	@Autowired
 	protected ComponentRepository itemRepo;
+	
+	// AbstractListService<Inventor, Item> interface ---------------------
 	
 	@Override
 	public boolean authorise(final Request<Item> request) {
