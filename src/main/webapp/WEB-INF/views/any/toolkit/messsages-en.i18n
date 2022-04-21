@@ -1,0 +1,14 @@
+any.toolkit.form.label.code = Code:
+any.toolkit.form.label.title = Title:
+any.toolkit.form.label.description = Description:
+any.toolkit.form.label.assembly-notes = Assembly Notes:
+
+
+any.toolkit.list.title = Toolkit list
+
+any.toolkit.list.label.code = Code 
+any.toolkit.list.label.title = Title
+any.toolkit.list.label.description = Description
+
+any.toolkit.form.button.components = Components
+any.toolkit.form.button.tools = Tools

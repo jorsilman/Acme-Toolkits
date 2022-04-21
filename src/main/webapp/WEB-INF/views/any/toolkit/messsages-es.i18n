@@ -1,0 +1,14 @@
+any.toolkit.form.label.code = Código:
+any.toolkit.form.label.title = Título:
+any.toolkit.form.label.description = Descripción:
+any.toolkit.form.label.assembly-notes = Instrucciones de montaje:
+
+
+any.toolkit.list.title = Lista de cajas de herramientas
+
+any.toolkit.list.label.code = Código
+any.toolkit.list.label.title = Título
+any.toolkit.list.label.description = Descripción
+
+any.toolkit.form.button.components = Componentes
+any.toolkit.form.button.tools = Herramientas
