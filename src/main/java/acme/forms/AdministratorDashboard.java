@@ -37,10 +37,10 @@ public class AdministratorDashboard implements Serializable{
 		int                                             totalNumberOfProposedPatronages;
 		int                                             totalNumberOfAcceptedPatronages;
 		int                                             totalNumberOfDeniedPatronages;
-		Map<PatronageStatus, Double>                    averageBudgetOfPatronagesByStatus;
-		Map<PatronageStatus, Double>                    deviationBudgetOfPatronagesByStatus;
-		Map<PatronageStatus, Double>                    minimumBudgetOfPatronagesByStatus;
-		Map<PatronageStatus, Double>                    maximumBudgetOfPatronagesByStatus;
+		Map<String, Double>                    averageBudgetOfPatronagesByStatus;
+		Map<String, Double>                    deviationBudgetOfPatronagesByStatus;
+		Map<String, Double>                    minimumBudgetOfPatronagesByStatus;
+		Map<String, Double>                    maximumBudgetOfPatronagesByStatus;
 		// Map<Status, Amount>
 		
 		

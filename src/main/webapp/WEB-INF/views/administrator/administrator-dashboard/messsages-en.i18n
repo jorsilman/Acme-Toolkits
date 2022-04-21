@@ -8,10 +8,4 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-#administrator.administrator-dashboard.form.label.totalNumberOfComponents = Total number of components
-#administrator.administrator-dashboard.form.label.averageRetailPriceOfComponentsByTechnologyAndCurrency = Precio medio
-#administrator.patron-dashboard.form.label.denied = Total number of denied Patronages
-#administrator.patron-dashboard.form.label.average = Average budget of patronages grouped by currency and status
-#administrator.patron-dashboard.form.label.deviation = Deviation budget of patronages grouped by currency and status
-#administrator.patron-dashboard.form.label.minimum = Minimum budget of patronages grouped by currency and status
-#administrator.patron-dashboard.form.label.maximum = Maximum budget of patronages grouped by currency and status
+administrator.administrator-dashboard.form.label.totalNumberOfComponents = Total number of components

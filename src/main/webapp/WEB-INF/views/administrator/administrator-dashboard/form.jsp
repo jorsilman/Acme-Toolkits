@@ -14,28 +14,68 @@
 
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
+
 
 <acme:form readonly="${readonly}">
-	<acme:input-integer code="administrator.administrator-dashboard.form.label.totalNumberOfComponents" path="totalNumberOfComponents"/>
-	<acme:input-textarea code="administrator.administrator-dashboard.form.label.averageRetailPriceOfComponentsByTechnologyAndCurrency" path="averageRetailPriceOfComponentsByTechnologyAndCurrency"/>
-	<acme:input-textarea code="administrator.administrator-dashboard.form.label.deviationRetailPriceOfComponentsByTechnologyAndCurrency" path="deviationRetailPriceOfComponentsByTechnologyAndCurrency"/>
-	<acme:input-textarea code="administrator.administrator-dashboard.form.label.minimumRetailPriceOfComponentsByTechnologyAndCurrency" path="minimumRetailPriceOfComponentsByTechnologyAndCurrency"/>
-	<acme:input-textarea code="administrator.administrator-dashboard.form.label.maximumRetailPriceOfComponentsByTechnologyAndCurrency" path="maximumRetailPriceOfComponentsByTechnologyAndCurrency"/>
-	
-	
-	<acme:input-integer code="administrator.administrator-dashboard.form.label.totalNumberOfTools" path="totalNumberOfTools"/>
-	<acme:input-textarea code="administrator.administrator-dashboard.form.label.averageRetailPriceOfToolsByCurrency" path="averageRetailPriceOfToolsByCurrency"/>
-	<acme:input-textarea code="administrator.administrator-dashboard.form.label.deviationRetailPriceOfToolsByCurrency" path="deviationRetailPriceOfToolsByCurrency"/>
-	<acme:input-textarea code="administrator.administrator-dashboard.form.label.minimumRetailPriceOfToolsByCurrency" path="minimumRetailPriceOfToolsByCurrency"/>
-	<acme:input-textarea code="administrator.administrator-dashboard.form.label.maximumRetailPriceOfToolsByCurrency" path="maximumRetailPriceOfToolsByCurrency"/>
-	
-	
-	<acme:input-integer code="administrator.administrator-dashboard.form.label.totalNumberOfProposedPatronages" path="totalNumberOfProposedPatronages"/>
-	<acme:input-integer code="administrator.administrator-dashboard.form.label.totalNumberOfAcceptedPatronages" path="totalNumberOfAcceptedPatronages"/>
-	<acme:input-integer code="administrator.administrator-dashboard.form.label.totalNumberOfDeniedPatronages" path="totalNumberOfDeniedPatronages"/>
-	<acme:input-textarea code="administrator.administrator-dashboard.form.label.averageBudgetOfPatronagesByStatus" path="averageBudgetOfPatronagesByStatus"/>
-	<acme:input-textarea code="administrator.administrator-dashboard.form.label.deviationBudgetOfPatronagesByStatus" path="deviationBudgetOfPatronagesByStatus"/>
-	<acme:input-textarea code="administrator.administrator-dashboard.form.label.minimumBudgetOfPatronagesByStatus" path="minimumBudgetOfPatronagesByStatus"/>
-	<acme:input-textarea code="administrator.administrator-dashboard.form.label.maximumBudgetOfPatronagesByStatus" path="maximumBudgetOfPatronagesByStatus"/>
-	
+	<acme:input-integer
+		code="administrator.administrator-dashboard.form.label.totalNumberOfComponents"
+		path="totalNumberOfComponents" />
+	<acme:input-textarea
+		code="administrator.admin-dashboard.form.label.avgRPriceOfComponentsByTechnologyAndCurrency"
+		path="avC" />
+	<acme:input-textarea
+		code="administrator.admin-dashboard.form.label.devRPriceOfComponentsByTechnologyAndCurrency"
+		path="devC" />
+	<acme:input-textarea
+		code="administrator.admin-dashboard.form.label.minRPriceOfComponentsByTechnologyAndCurrency"
+		path="minC" />
+	<acme:input-textarea
+		code="administrator.admin-dashboard.form.label.maxRPriceOfComponentsByTechnologyAndCurrency"
+		path="maxC" />
+
+
+	<acme:input-integer
+		code="administrator.administrator-dashboard.form.label.totalNumberOfTools"
+		path="totalNumberOfTools" />
+	<acme:input-textarea
+		code="administrator.admin-dashboard.form.label.avgItems"
+		path="avI" />
+	<acme:input-textarea
+		code="administrator.admin-dashboard.form.label.devItems"
+		path="devI" />
+	<acme:input-textarea
+		code="administrator.admin-dashboard.form.label.minItems"
+		path="minI" />
+	<acme:input-textarea
+		code="administrator.admin-dashboard.form.label.maxItems"
+		path="maxI" />
+		
+		
+				
+		
+	<acme:input-integer
+		code="administrator.administrator-dashboard.form.label.totalNumberOfProposedPatronages"
+		path="totalNumberOfProposedPatronages" />
+	<acme:input-integer
+		code="administrator.administrator-dashboard.form.label.totalNumberOfAcceptedPatronages"
+		path="totalNumberOfAcceptedPatronages" />
+	<acme:input-integer
+		code="administrator.administrator-dashboard.form.label.totalNumberOfDeniedPatronages"
+		path="totalNumberOfDeniedPatronages" />
+		<acme:input-textarea
+		code="administrator.admin-dashboard.form.label.avgPatronages"
+		path="avP" />
+	<acme:input-textarea
+		code="administrator.admin-dashboard.form.label.devPatronages"
+		path="devP" />
+	<acme:input-textarea
+		code="administrator.admin-dashboard.form.label.minPatronages"
+		path="minP" />
+	<acme:input-textarea
+		code="administrator.admin-dashboard.form.label.maxPatronages"
+		path="maxP" />
+		
+
 </acme:form>
