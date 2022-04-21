@@ -67,6 +67,12 @@
 			<acme:menu-suboption code="master.menu.patron.patronageReport.list" action="/patron/patronage-report/list-own"/>
 		</acme:menu-option>
 	</acme:menu-left>
+	
+	<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
+			<acme:menu-suboption code="master.menu.patron.patronage.list" action="/patron/patronage/list-own"/>
+			<acme:menu-suboption code="master.menu.patron.patronage-report.list" action="/patron/patronage-report/list-own"/>
+			<acme:menu-suboption code="master.menu.patron.patron-dashboard.show" action="/patron/patron-dashboard/show"/>
+		</acme:menu-option>
 
 	<acme:menu-right>
 		<acme:menu-option code="master.menu.sign-up" action="/anonymous/user-account/create" access="isAnonymous()"/>
