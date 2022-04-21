@@ -1,17 +1,23 @@
-package acme.entities.systemConfiguration;
+package acme.features.authenticated.systemConfiguration;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Authenticated;
 import acme.framework.services.AbstractShowService;
 
+@Service
 public class SystemConfigurationService implements AbstractShowService<Authenticated, SystemConfiguration>{
+	
+	// Internal state ----------------------------------------------------
 	
 	@Autowired
 	SystemConfigurationRepository systemConfigurationRepo;
-
+	
+	// AbstractShowService<Authenticated, SystemConfiguration> interface ---------------------------------
+	
 	@Override
 	public boolean authorise(final Request<SystemConfiguration> request) {
 		assert request != null;
