@@ -60,6 +60,11 @@ master.menu.patron.patronageReport.list = Ver los reportes de mis patrocinios
 
 
 
+# master.menu.inventor ########################################################
+
+master.menu.inventor = Inventor
+master.menu.inventor.patronageReport.list = Ver los reportes de mis patrocinios
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor

@@ -54,16 +54,17 @@
 		
 		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
 			<acme:menu-suboption code="master.menu.inventor.patronage.list" action="/inventor/patronage/list-own"/>
+      <acme:menu-suboption code="master.menu.inventor.patronageReport.list" action="/inventor/patronage-report/list-own"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
 		
+
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
 			<acme:menu-suboption code="master.menu.patron.patronage.list" action="/patron/patronage/list-own"/>
 			<acme:menu-suboption code="master.menu.patron.patronageReport.list" action="/patron/patronage-report/list-own"/>
-
 		</acme:menu-option>
 	</acme:menu-left>
 
