@@ -56,6 +56,9 @@
 			<acme:menu-suboption code="master.menu.administrator.user-accounts"
 				action="/administrator/user-account/list-recent" />
 			<acme:menu-separator />
+			<acme:menu-suboption code="master.menu.administrator.administrator-dashboard.show"
+				action="/administrator/administrator-dashboard/show" />
+			<acme:menu-separator />
 			<acme:menu-suboption
 				code="master.menu.administrator.populate-initial"
 				action="/administrator/populate-initial" />

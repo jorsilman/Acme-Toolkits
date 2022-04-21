@@ -8,9 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.patronage.PatronageStatus;
-import acme.features.patron.patronDashboard.PatronPatronDashboardRepository;
 import acme.forms.AdministratorDashboard;
-import acme.forms.PatronDashboard;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Administrator;
@@ -26,25 +24,25 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 
 
 	@Override
-	public boolean authorise(Request<AdministratorDashboard> request) {
+	public boolean authorise(final Request<AdministratorDashboard> request) {
 		assert request != null;
 
 		return true;
 	}
 
 	@Override
-	public AdministratorDashboard findOne(Request<AdministratorDashboard> request) {
+	public AdministratorDashboard findOne(final Request<AdministratorDashboard> request) {
 		assert request != null;
 
-		AdministratorDashboard result = new AdministratorDashboard	();
+		final AdministratorDashboard result = new AdministratorDashboard	();
 
 
 		//OBTENEMOS LOS VALORES
-		int totalNumberOfComponents = this.repository.getNumberOfComponents();
-		int totalNumberOfTools = this.repository.getNumberOfTools();
-		int totalNumberOfProposedPatronages = this.repository.getTotalNumberOfProposedPatronages();
-		int totalNumberOfAcceptedPatronages = this.repository.getTotalNumberOfAcceptedPatronages();
-		int totalNumberOfDeniedPatronages = this.repository.getTotalNumberOfDeniedPatronages();
+		final int totalNumberOfComponents = this.repository.getNumberOfComponents();
+		final int totalNumberOfTools = this.repository.getNumberOfTools();
+		final int totalNumberOfProposedPatronages = this.repository.getTotalNumberOfProposedPatronages();
+		final int totalNumberOfAcceptedPatronages = this.repository.getTotalNumberOfAcceptedPatronages();
+		final int totalNumberOfDeniedPatronages = this.repository.getTotalNumberOfDeniedPatronages();
 
 		//LOS ASIGNAMOS
 		result.setTotalNumberOfComponents(totalNumberOfComponents);
@@ -54,40 +52,40 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setTotalNumberOfDeniedPatronages(totalNumberOfDeniedPatronages);
 
 		//CREAMOS LOS MAP DE COMPONENTS
-		Map<Pair<String, String>, Double> avgRPriceOfComponentsByTechnologyAndCurrency = new HashMap<Pair<String, String>, Double>();
-		Map<Pair<String, String>, Double> devRPriceOfComponentsByTechnologyAndCurrency = new HashMap<Pair<String, String>, Double>();;
-		Map<Pair<String, String>, Double> minRPriceOfComponentsByTechnologyAndCurrency = new HashMap<Pair<String, String>, Double>();;
-		Map<Pair<String, String>, Double> maxRPriceOfComponentsByTechnologyAndCurrency = new HashMap<Pair<String, String>, Double>();;
+		final Map<Pair<String, String>, Double> avgRPriceOfComponentsByTechnologyAndCurrency = new HashMap<Pair<String, String>, Double>();
+		final Map<Pair<String, String>, Double> devRPriceOfComponentsByTechnologyAndCurrency = new HashMap<Pair<String, String>, Double>();;
+		final Map<Pair<String, String>, Double> minRPriceOfComponentsByTechnologyAndCurrency = new HashMap<Pair<String, String>, Double>();;
+		final Map<Pair<String, String>, Double> maxRPriceOfComponentsByTechnologyAndCurrency = new HashMap<Pair<String, String>, Double>();;
 
 		//CREAMOS LOS MAP DE TOOLS
 
-		Map<String, Double> avgRPriceOfToolsByCurrency = new HashMap<String, Double>();
-		Map<String, Double> devRPriceOfToolsByCurrency = new HashMap<String, Double>();
-		Map<String, Double> minRPriceOfToolsByCurrency = new HashMap<String, Double>();
-		Map<String, Double> maxRPriceOfToolsByCurrency = new HashMap<String, Double>();
+		final Map<String, Double> avgRPriceOfToolsByCurrency = new HashMap<String, Double>();
+		final Map<String, Double> devRPriceOfToolsByCurrency = new HashMap<String, Double>();
+		final Map<String, Double> minRPriceOfToolsByCurrency = new HashMap<String, Double>();
+		final Map<String, Double> maxRPriceOfToolsByCurrency = new HashMap<String, Double>();
 
 		//CREAMOS LOS MAP DE PATRONAGES
-		Map<PatronageStatus, Double> avgBudgetOfPatronagesByStatus = new HashMap<PatronageStatus, Double>();
-		Map<PatronageStatus, Double> devBudgetOfPatronagesByStatus = new HashMap<PatronageStatus, Double>();
-		Map<PatronageStatus, Double> minBudgetOfPatronagesByStatus = new HashMap<PatronageStatus, Double>();
-		Map<PatronageStatus, Double> maxBudgetOfPatronagesByStatus = new HashMap<PatronageStatus, Double>();
+		final Map<PatronageStatus, Double> avgBudgetOfPatronagesByStatus = new HashMap<PatronageStatus, Double>();
+		final Map<PatronageStatus, Double> devBudgetOfPatronagesByStatus = new HashMap<PatronageStatus, Double>();
+		final Map<PatronageStatus, Double> minBudgetOfPatronagesByStatus = new HashMap<PatronageStatus, Double>();
+		final Map<PatronageStatus, Double> maxBudgetOfPatronagesByStatus = new HashMap<PatronageStatus, Double>();
 
 		//AHORA ASIGNAMOS VALORES A LOS MAPS CON LOS METODOS DEL REPO
 
 		//COMPONENTS
-		for(Object[] o: this.repository.getAverageRetailPriceOfComponentsByTechnologyAndCurrency()) {
+		for(final Object[] o: this.repository.getAverageRetailPriceOfComponentsByTechnologyAndCurrency()) {
 			avgRPriceOfComponentsByTechnologyAndCurrency.put(Pair.of(o[0].toString(),o[1].toString()), (Double) o[2]);
 		}
 
-		for(Object[] o: this.repository.getDeviationRetailPriceOfComponentsByTechnologyAndCurrency()) {
+		for(final Object[] o: this.repository.getDeviationRetailPriceOfComponentsByTechnologyAndCurrency()) {
 			devRPriceOfComponentsByTechnologyAndCurrency.put(Pair.of(o[0].toString(),o[1].toString()), (Double) o[2]);
 		}
 
-		for(Object[] o: this.repository.getMinimumRetailPriceOfComponentsByTechnologyAndCurrency()) {
+		for(final Object[] o: this.repository.getMinimumRetailPriceOfComponentsByTechnologyAndCurrency()) {
 			minRPriceOfComponentsByTechnologyAndCurrency.put(Pair.of(o[0].toString(),o[1].toString()), (Double) o[2]);
 		}
 
-		for(Object[] o: this.repository.getMaximumRetailPriceOfComponentsByTechnologyAndCurrency()) {
+		for(final Object[] o: this.repository.getMaximumRetailPriceOfComponentsByTechnologyAndCurrency()) {
 			maxRPriceOfComponentsByTechnologyAndCurrency.put(Pair.of(o[0].toString(),o[1].toString()), (Double) o[2]);
 		}
 
@@ -99,19 +97,19 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 
 		//ITEMS
 
-		for(Object[] o: this.repository.getAverageRetailPriceOfToolsByCurrency()) {
+		for(final Object[] o: this.repository.getAverageRetailPriceOfToolsByCurrency()) {
 			avgRPriceOfToolsByCurrency.put(o[0].toString(),(Double) o[1]);
 		}
 
-		for(Object[] o: this.repository.getDeviationRetailPriceOfToolsByCurrency()) {
+		for(final Object[] o: this.repository.getDeviationRetailPriceOfToolsByCurrency()) {
 			devRPriceOfToolsByCurrency.put(o[0].toString(),(Double) o[1]);
 		}
 
-		for(Object[] o: this.repository.getMinimumRetailPriceOfToolsByCurrency()) {
+		for(final Object[] o: this.repository.getMinimumRetailPriceOfToolsByCurrency()) {
 			minRPriceOfToolsByCurrency.put(o[0].toString(),(Double) o[1]);
 		}
 
-		for(Object[] o: this.repository.getMaximumBudgetOfPatronagesByStatus()) {
+		for(final Object[] o: this.repository.getMaximumBudgetOfPatronagesByStatus()) {
 			maxRPriceOfToolsByCurrency.put(o[0].toString(),(Double) o[1]);
 		}
 
@@ -122,19 +120,19 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 
 		//PATRONAGES
 
-		for(Object[] o: this.repository.getAverageBudgetOfPatronagesByStatus()) {
+		for(final Object[] o: this.repository.getAverageBudgetOfPatronagesByStatus()) {
 			avgBudgetOfPatronagesByStatus.put(PatronageStatus.valueOf(o[0].toString()), (Double) o[1]);
 		}
 
-		for(Object[] o: this.repository.getDeviationBudgetOfPatronagesByStatus()) {
+		for(final Object[] o: this.repository.getDeviationBudgetOfPatronagesByStatus()) {
 			minBudgetOfPatronagesByStatus.put(PatronageStatus.valueOf(o[0].toString()), (Double) o[1]);
 		}
 
-		for(Object[] o: this.repository.getMinimumBudgetOfPatronagesByStatus()) {
+		for(final Object[] o: this.repository.getMinimumBudgetOfPatronagesByStatus()) {
 			minBudgetOfPatronagesByStatus.put(PatronageStatus.valueOf(o[0].toString()), (Double) o[1]);
 		}
 
-		for(Object[] o: this.repository.getMaximumBudgetOfPatronagesByStatus()) {
+		for(final Object[] o: this.repository.getMaximumBudgetOfPatronagesByStatus()) {
 			maxBudgetOfPatronagesByStatus.put(PatronageStatus.valueOf(o[0].toString()), (Double) o[1]);
 		}
 
@@ -148,7 +146,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 	}
 
 	@Override
-	public void unbind(Request<AdministratorDashboard> request, AdministratorDashboard entity, Model model) {
+	public void unbind(final Request<AdministratorDashboard> request, final AdministratorDashboard entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
