@@ -1,4 +1,4 @@
-package acme.features.any.items;
+package acme.features.any.component;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,16 +10,25 @@ import acme.framework.roles.Any;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AnyItemShowService implements AbstractShowService<Any, Item>{
+public class AnyComponentShowService implements AbstractShowService<Any, Item>{
 	
 	@Autowired
-	protected AnyItemRepository repository;
+	protected AnyComponentRepository repository;
 
 	@Override
 	public boolean authorise(final Request<Item> request) {
 		assert request != null;
 		
 		return true;
+	}
+	
+	@Override
+	public void unbind(final Request<Item> request, final Item entity, final Model model) {
+		assert request != null;
+		assert entity != null;
+		assert model != null;
+
+		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link", "type");
 	}
 
 	@Override
@@ -31,14 +40,7 @@ public class AnyItemShowService implements AbstractShowService<Any, Item>{
 		return this.repository.findItemById(id);
 	}
 
-	@Override
-	public void unbind(final Request<Item> request, final Item entity, final Model model) {
-		assert request != null;
-		assert entity != null;
-		assert model != null;
 
-		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link", "type");
-	}
 
 	
 
