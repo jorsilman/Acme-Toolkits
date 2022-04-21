@@ -25,29 +25,55 @@
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-francisco" action="http://bandalasnievesolivares.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-jose" action="https://keepa.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-alberto" action="https://sevillafc.es/"/>
+			<acme:menu-separator/>
+					<acme:menu-suboption code="master.menu.any.chirp.list-recent" action="/any/chirp/list-recent"/>
+        <acme:menu-suboption code="master.menu.any.item.list" action="/any/item/list"/>
 		</acme:menu-option>
+		
+	<acme:menu-option code="master.menu.any.useraccount">
+			<acme:menu-suboption code="master.menu.any.useraccount.consumer" action="/any/user-account/list?role=consumer"/>
+			<acme:menu-suboption code="master.menu.any.useraccount.inventor" action="/any/user-account/list?role=inventor"/>
+			<acme:menu-suboption code="master.menu.any.useraccount.patron" action="/any/user-account/list?role=patron"/>
+			<acme:menu-suboption code="master.menu.any.useraccount.provider" action="/any/user-account/list?role=provider"/>
+    </acme:menu-option>	
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
-			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
+			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list-recent"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.populate-initial" action="/administrator/populate-initial"/>
 			<acme:menu-suboption code="master.menu.administrator.populate-sample" action="/administrator/populate-sample"/>			
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.system-configuration.form" action="/administrator/system-configuration/show"/>
 		</acme:menu-option>
 		
-		<acme:menu-option code="master.menu.any">			
-			<acme:menu-suboption code="master.menu.any.item.list" action="/any/item/list"/>
-		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
 			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
+			<acme:menu-suboption code="master.menu.inventor.patronage.list" action="/inventor/patronage/list-own"/>
+      <acme:menu-suboption code="master.menu.inventor.patronageReport.list" action="/inventor/patronage-report/list-own"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
+		
+
+		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
+			<acme:menu-suboption code="master.menu.patron.patronage.list" action="/patron/patronage/list-own"/>
+			<acme:menu-suboption code="master.menu.patron.patronageReport.list" action="/patron/patronage-report/list-own"/>
+		</acme:menu-option>
 	</acme:menu-left>
+	
+	<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
+			<acme:menu-suboption code="master.menu.patron.patronage.list" action="/patron/patronage/list-own"/>
+			<acme:menu-suboption code="master.menu.patron.patronage-report.list" action="/patron/patronage-report/list-own"/>
+			<acme:menu-suboption code="master.menu.patron.patron-dashboard.show" action="/patron/patron-dashboard/show"/>
+		</acme:menu-option>
 
 	<acme:menu-right>
 		<acme:menu-option code="master.menu.sign-up" action="/anonymous/user-account/create" access="isAnonymous()"/>

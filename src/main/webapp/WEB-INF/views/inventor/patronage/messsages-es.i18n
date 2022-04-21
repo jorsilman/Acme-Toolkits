@@ -1,0 +1,34 @@
+# i18n-es.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+patron.patronage.list.label.status = Estado
+patron.patronage.list.label.code = Código
+patron.patronage.list.label.legalStuff = Legalidades
+patron.patronage.list.label.budget = Presupuesto
+patron.patronage.list.label.creationDate = Fecha de creación
+patron.patronage.list.label.startPeriodOfTime = Fecha de comienzo
+patron.patronage.list.label.endPeriodOfTime = Fecha de fin
+patron.patronage.list.label.link = Enlace
+
+patron.patronage.form.label.status = Estado
+patron.patronage.form.label.PROPOSED = Propuesto
+patron.patronage.form.label.ACCEPTED = Aceptado
+patron.patronage.form.label.DENIED = Denegado
+patron.patronage.form.label.code = Código
+patron.patronage.form.label.legalStuff = Legalidades
+patron.patronage.form.label.budget = Presupuesto
+patron.patronage.form.label.creationDate = Fecha de creación
+patron.patronage.form.label.startPeriodOfTime = Fecha de comienzo
+patron.patronage.form.label.endPeriodOfTime = Fecha de fin
+patron.patronage.form.label.link = Enlace
+patron.patronage.form.label.inventor = Inventor
+patron.patronage.form.label.inventor-company = Compañía
+patron.patronage.form.label.inventor-statement = Declaración
+patron.patronage.form.label.inventor-link = Enlace
