@@ -15,12 +15,12 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 
 	@Autowired
 	protected InventorToolkitRepository repository;
-	
+
 	@Override
 	public boolean authorise(final Request<Toolkit> request) {
 		// TODO Auto-generated method stub
 		assert request != null;
-		
+
 		return true;
 	}
 
@@ -39,19 +39,14 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		assert entity != null;
 		assert model != null;
 		
-		final int id = request.getModel().getInteger("id");
-		
 		request.unbind(entity, model, "code", "title", "description", "assemblyNotes","published", "link");
-		
+
+		final int id = request.getModel().getInteger("id");
 		final Double euros = this.repository.findRetailPriceByToolkitId(id, "EUR");
-		
-		final Money retailPE = new Money();
-		
-		retailPE.setAmount(euros);
-		
-		retailPE.setCurrency("EUR");
-		
-		model.setAttribute("retailPrice", retailPE);
+		final Money retailP = new Money();
+		retailP.setAmount(euros);
+		retailP.setCurrency("EUR");
+		model.setAttribute("retailPrice", retailP);
 	}
 
 }
