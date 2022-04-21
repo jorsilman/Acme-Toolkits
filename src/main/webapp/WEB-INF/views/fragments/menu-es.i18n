@@ -37,13 +37,11 @@ master.menu.administrator.shut-down = Parar el sistema
 # master.menu.any #######################################################
 
 master.menu.any = Listas
-master.menu.any.item.list = Lista de Items
 
 # master.menu.inventor ########################################################
 
 master.menu.inventor = Inventor
 master.menu.inventor.toolkit.list = Ver mis herramientas
-master.menu.inventor.item.list = Ver mis artículos
 
 # master.menu.provider ########################################################
 
