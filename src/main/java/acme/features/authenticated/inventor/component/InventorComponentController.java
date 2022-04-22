@@ -10,21 +10,21 @@ import acme.framework.controllers.AbstractController;
 import acme.roles.Inventor;
 
 @Controller
-public class ComponentController extends AbstractController<Inventor, Item>{
+public class InventorComponentController extends AbstractController<Inventor, Item>{
 	
 	// Internal State --------------------------------------------------------------------------
 	
 	@Autowired
-	protected ComponentListService listService;
+	protected InventorComponentListService listService;
 	
 	@Autowired
-	protected ComponentShowService showService;
+	protected InventorComponentShowService showService;
 	
 	// Constructors ----------------------------------------------------------------------------
 	
 	@PostConstruct
 	protected void initialise() {
-		super.addCommand("list", this.listService);
+		super.addCommand("list-component","list", this.listService);
 		super.addCommand("show", this.showService);
 	}
 

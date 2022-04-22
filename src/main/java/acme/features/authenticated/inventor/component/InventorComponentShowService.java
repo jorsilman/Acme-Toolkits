@@ -11,12 +11,12 @@ import acme.framework.services.AbstractShowService;
 import acme.roles.Inventor;
 
 @Service
-public class ComponentShowService implements AbstractShowService<Inventor, Item>{
+public class InventorComponentShowService implements AbstractShowService<Inventor, Item>{
 	
 	// Internal state --------------------------------------------------
 	
 	@Autowired
-	protected ComponentRepository itemRepo;
+	protected InventorComponentRepository itemRepo;
 	
 	// AbstractShowService<Inventor, Item> interface --------------------
 	

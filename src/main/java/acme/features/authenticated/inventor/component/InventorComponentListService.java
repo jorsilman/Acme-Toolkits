@@ -13,12 +13,12 @@ import acme.framework.services.AbstractListService;
 import acme.roles.Inventor;
 
 @Service
-public class ComponentListService implements AbstractListService<Inventor, Item>{
+public class InventorComponentListService implements AbstractListService<Inventor, Item>{
 	
 	// Internal state ------------------------------------------------
 	
 	@Autowired
-	protected ComponentRepository itemRepo;
+	protected InventorComponentRepository itemRepo;
 	
 	// AbstractListService<Inventor, Item> interface ---------------------
 	
