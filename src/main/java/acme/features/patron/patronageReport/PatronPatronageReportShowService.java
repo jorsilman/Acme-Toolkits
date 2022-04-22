@@ -36,7 +36,8 @@ public class PatronPatronageReportShowService implements AbstractShowService<Pat
 	public boolean authorise(final Request<PatronageReport> request) {
 		assert request != null;
 
-		return true;
+		return request.getPrincipal().getActiveRoleId() == this.repository.findOnePatronageReportById(request.getModel().getInteger("id")).getPatronage().getPatron().getId();
+		
 	}
 
 	@Override
