@@ -3,18 +3,19 @@ package acme.features.authenticated.systemConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.systemConfiguration.SystemConfiguration;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Authenticated;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class SystemConfigurationService implements AbstractShowService<Authenticated, SystemConfiguration>{
+public class AuthenticatedSystemConfigurationService implements AbstractShowService<Authenticated, SystemConfiguration>{
 	
 	// Internal state ----------------------------------------------------
 	
 	@Autowired
-	SystemConfigurationRepository systemConfigurationRepo;
+	AuthenticatedSystemConfigurationRepository systemConfigurationRepo;
 	
 	// AbstractShowService<Authenticated, SystemConfiguration> interface ---------------------------------
 	
@@ -41,7 +42,7 @@ public class SystemConfigurationService implements AbstractShowService<Authentic
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "acceptedCurrencies", "systemCurrency");
+		request.unbind(entity, model, "acceptedCurrencies", "systemCurrency", "strongSpamWords", "strongSpamThreshold", "weakSpamWords", "weakSpamThreshold");
 		
 	}
 	
