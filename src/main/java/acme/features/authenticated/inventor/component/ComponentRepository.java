@@ -11,6 +11,8 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface ComponentRepository extends AbstractRepository{
 	
+	//Dada la id del inventor de un determinado item i, se comprueba que dicha id coincida con la del usuario logueado y que a su vez sea de tipo COMPONENT
+	
 	@Query("SELECT i FROM Item i WHERE i.inventor.id = :id AND i.itemType = acme.entities.item.ItemType.COMPONENT")
 	Collection<Item> findComponentsByInventorId(int id);
 	
