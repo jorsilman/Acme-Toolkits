@@ -1,6 +1,6 @@
 key,creation-moment,title,body,critical-flag,link
-announcement-01,"2020/07/30 23:32",title_1,body1,true,https://www.youtube.com/
-announcement-02,"2020/06/28 15:51",title_2,body2,true,null
-announcement-03,"2020/05/19 04:40",title_3,body3,true,https://www.youtube.com/
-announcement-04,"2020/04/15 21:12",title_4,body4,true,null
-announcement-05,"2020/03/2 08:27",title_5,body5,true,null
+announcement-01,2020/07/30 23:32,title_1,body1,true,https://www.youtube.com/
+announcement-02,2020/06/28 15:51,title_2,body2,true,null
+announcement-03,2020/05/19 04:40,title_3,body3,true,https://www.youtube.com/
+announcement-04,2022/04/15 21:12,title_4,body4,true,null
+announcement-05,2020/03/2 08:27,title_5,body5,true,null
