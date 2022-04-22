@@ -86,7 +86,7 @@ public class AnyUserAccountListService implements AbstractListService<Any, UserA
 			
 		}
 		
-		model.setAttribute("roles", buffer.toString());
+		model.setAttribute("role", buffer.toString());
 		
 		//Lo de identity viene en el framework 
 		request.unbind(entity, model,"username", "identity.name", "identity.surname", "identity.email");

@@ -23,29 +23,16 @@
 			<acme:menu-suboption code="master.menu.authenticated.announcement.list" action="/authenticated/announcement/list"/>
 		</acme:menu-option>
 		
-		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
-
-		
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link-jorge" action="http://www.azuaga.es/"/>
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link-fran" action="https://www.realbetisbalompie.es/"/>
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link-francisco" action="http://bandalasnievesolivares.com/"/>
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link-jose" action="https://keepa.com/"/>
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link-alberto" action="https://sevillafc.es/"/>
-			<acme:menu-separator/>
-
-			<acme:menu-suboption code="master.menu.any.item.list" action="/any/item/list-tool"/>
+		<acme:menu-option code="master.menu.any">
+			<acme:menu-suboption code="master.menu.any.item.list.tool" action="/any/item/list-tool"/>
+      		<acme:menu-suboption code="master.menu.any.item.list.component" action="/any/item/list-component"/>
 			<acme:menu-suboption code="master.menu.any.chirp.list-recent" action="/any/chirp/list-recent"/>
-      <acme:menu-suboption code="master.menu.any.item.list" action="/any/item/list-component"/>
-
+			<acme:menu-suboption code="master.menu.any.useraccount.list" action="/any/user-account/list"/>
 		</acme:menu-option>
 		
-	<acme:menu-option code="master.menu.any.useraccount">
-			<acme:menu-suboption code="master.menu.any.useraccount.consumer" action="/any/user-account/list?role=consumer"/>
-			<acme:menu-suboption code="master.menu.any.useraccount.inventor" action="/any/user-account/list?role=inventor"/>
-			<acme:menu-suboption code="master.menu.any.useraccount.patron" action="/any/user-account/list?role=patron"/>
-			<acme:menu-suboption code="master.menu.any.useraccount.provider" action="/any/user-account/list?role=provider"/>
-    </acme:menu-option>	
+		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
+		</acme:menu-option>
+		
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list-recent"/>

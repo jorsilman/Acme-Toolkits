@@ -13,7 +13,7 @@ import acme.framework.services.AbstractShowService;
 public class AnyToolShowService implements AbstractShowService<Any, Item> {
 	
 	@Autowired
-	protected AnyToolRepository repository;
+	protected AnyItemRepository repository;
 
 	@Override
 	public boolean authorise(final Request<Item> request) {
