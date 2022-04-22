@@ -18,7 +18,7 @@ master.menu.sign-out = Salir
 # master.menu.any #######################################################
 
 
-master.menu.any.tool.list = Lista de herramientas
+master.menu.any.item.list = Lista de herramientas
 
 # master.menu.anonymous ######################################################
 
