@@ -16,6 +16,8 @@ public interface InventorComponentRepository extends AbstractRepository{
 	@Query("SELECT i FROM Item i WHERE i.inventor.id = :id AND i.itemType = acme.entities.item.ItemType.COMPONENT")
 	Collection<Item> findComponentsByInventorId(int id);
 	
+	//Obtengo un item que coincida con un id determinado
+	
 	@Query("SELECT i FROM Item i WHERE i.id = :id")
 	Item findItemById(int id);
 	
