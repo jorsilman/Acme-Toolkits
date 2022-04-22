@@ -4,6 +4,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import acme.entities.announcement.Announcement;
 import acme.framework.components.models.Model;
@@ -11,6 +12,7 @@ import acme.framework.controllers.Request;
 import acme.framework.roles.Authenticated;
 import acme.framework.services.AbstractShowService;
 
+@Service
 public class AuthenticatedAnnouncementShowService  implements AbstractShowService<Authenticated, Announcement>{
 	
 	// Internal state ---------------------------------------------------------

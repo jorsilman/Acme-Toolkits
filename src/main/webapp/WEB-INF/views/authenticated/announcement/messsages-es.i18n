@@ -7,3 +7,4 @@ authenticated.announcement.form.label.email = Email:
 authenticated.announcement.form.label.critical = Bandera Crítica:
 authenticated.announcement.form.label.link = Enlace
 authenticated.announcement.form.label.body = Cuerpo
+authenticated.announcement.form.label.creationMoment = Momento de creación:
