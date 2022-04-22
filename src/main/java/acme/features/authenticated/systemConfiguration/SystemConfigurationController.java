@@ -1,4 +1,4 @@
-package acme.entities.systemConfiguration;
+package acme.features.authenticated.systemConfiguration;
 
 import javax.annotation.PostConstruct;
 
@@ -10,8 +10,13 @@ import acme.framework.roles.Authenticated;
 
 @Controller
 public class SystemConfigurationController extends AbstractController<Authenticated, SystemConfiguration>{
+	
+	// Internal state ----------------------------------------------------
+	
 	@Autowired
 	protected SystemConfigurationService systemConfigurationService;
+	
+	// Constructors -------------------------------------------------------
 	
 	@PostConstruct
 	protected void initialise() {
