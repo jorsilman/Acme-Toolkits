@@ -17,8 +17,6 @@ public interface AnyUserAccountRepository extends AbstractRepository{
 	@Query("SELECT ua FROM UserAccount ua WHERE ua.enabled=true")
 	Collection<UserAccount> findAccounts();
 	
-	@Query("SELECT ua.roles FROM UserAccount ua WHERE ua.enabled=true")
-	Collection<UserRole> findRoles();
-	
+
 
 }
