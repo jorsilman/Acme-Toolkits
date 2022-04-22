@@ -23,20 +23,20 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface PatronPatronDashboardRepository extends AbstractRepository {
 
-	@Query("SELECT COUNT(patronage) FROM Patronage patronage where patronage.status = :status")
-	int getNumberOfPatronagesByStatus(PatronageStatus status);
+	@Query("SELECT COUNT(patronage) FROM Patronage patronage WHERE patronage.patron.id = :id AND patronage.status = :status")
+	int getNumberOfPatronagesByStatus(PatronageStatus status, int id);
 	
-	@Query("SELECT patronage.budget.currency, patronage.status, AVG(patronage.budget.amount)  FROM Patronage patronage GROUP BY patronage.budget.currency, patronage.status")
-	List<Object[]> findAverageBudgetOfPatronagesByCurrencyAndStatus();
+	@Query("SELECT patronage.budget.currency, patronage.status, AVG(patronage.budget.amount)  FROM Patronage patronage WHERE patronage.patron.id = :id GROUP BY patronage.budget.currency, patronage.status")
+	List<Object[]> findAverageBudgetOfPatronagesByCurrencyAndStatus(int id);
 	
-	@Query("SELECT patronage.budget.currency, patronage.status, STDDEV(patronage.budget.amount)  FROM Patronage patronage GROUP BY patronage.budget.currency, patronage.status")
-	List<Object[]> findDeviationBudgetOfPatronagesByCurrencyAndStatus();
+	@Query("SELECT patronage.budget.currency, patronage.status, STDDEV(patronage.budget.amount)  FROM Patronage patronage WHERE patronage.patron.id = :id GROUP BY patronage.budget.currency, patronage.status")
+	List<Object[]> findDeviationBudgetOfPatronagesByCurrencyAndStatus(int id);
 	
-	@Query("SELECT patronage.budget.currency, patronage.status, MIN(patronage.budget.amount)  FROM Patronage patronage GROUP BY patronage.budget.currency, patronage.status")
-	List<Object[]> findMinimumBudgetOfPatronagesByCurrencyAndStatus();
+	@Query("SELECT patronage.budget.currency, patronage.status, MIN(patronage.budget.amount)  FROM Patronage patronage WHERE patronage.patron.id = :id GROUP BY patronage.budget.currency, patronage.status")
+	List<Object[]> findMinimumBudgetOfPatronagesByCurrencyAndStatus(int id);
 	
-	@Query("SELECT patronage.budget.currency, patronage.status, MAX(patronage.budget.amount)  FROM Patronage patronage GROUP BY patronage.budget.currency, patronage.status")
-	List<Object[]> findMaximumBudgetOfPatronagesByCurrencyAndStatus();
+	@Query("SELECT patronage.budget.currency, patronage.status, MAX(patronage.budget.amount)  FROM Patronage patronage WHERE patronage.patron.id = :id GROUP BY patronage.budget.currency, patronage.status")
+	List<Object[]> findMaximumBudgetOfPatronagesByCurrencyAndStatus(int id);
 	
 
 }
