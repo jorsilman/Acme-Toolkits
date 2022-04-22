@@ -29,10 +29,7 @@ master.menu.anonymous.favourite-link-alberto = 29499808P: Gallego Huerta, Albert
 
 
 master.menu.any.useraccount = Usuarios
-master.menu.any.useraccount.consumer = Mostrar Consumidores
-master.menu.any.useraccount.provider = Mostrar Proveedores
-master.menu.any.useraccount.inventor = Mostrar Inventores
-master.menu.any.useraccount.patron = Mostrar Patrones
+master.menu.any.useraccount.listUserAccount = Listar cuentas de usuario
 
 
 # master.menu.administrator ###################################################

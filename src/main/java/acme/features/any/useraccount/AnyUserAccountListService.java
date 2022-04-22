@@ -1,7 +1,8 @@
 package acme.features.any.useraccount;
 
 import java.util.Collection;
-
+import java.util.Iterator;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import acme.framework.controllers.Request;
 import acme.framework.entities.UserAccount;
 import acme.framework.roles.Administrator;
 import acme.framework.roles.Any;
+import acme.framework.roles.UserRole;
 import acme.framework.services.AbstractListService;
 
 
@@ -36,6 +38,8 @@ public class AnyUserAccountListService implements AbstractListService<Any, UserA
 	public Collection<UserAccount> findMany(Request<UserAccount> request) {
 		assert request != null;
 
+		
+		List<UserAccount> result;
 		//Obtiene el rol segun la peticion que reciba
 		//final String roleString = request.getModel().getString("role"); 
 
@@ -44,9 +48,17 @@ public class AnyUserAccountListService implements AbstractListService<Any, UserA
 
 		/*Filtra aquellas cuyo rol no sea ni anonimo ni admin
 		 * Luego filtra y se queda con aquellos usuarios tengan el rol de la peticion */
-		return accounts.stream()
+		
+		
+		 result = accounts.stream()
 				.filter(account -> !account.isAnonymous() && !account.hasRole(Administrator.class))
 				.collect(Collectors.toList());
+		for (UserAccount userAccount : result) {
+				userAccount.getRoles().forEach(r-> { ; } );
+			
+		}
+		
+		return result;
 	}
 
 	@Override
@@ -55,11 +67,28 @@ public class AnyUserAccountListService implements AbstractListService<Any, UserA
 		assert entity != null;
 		assert model != null;
 		
+		StringBuilder buffer;
+		Collection<UserRole> roles;
+
+		roles = entity.getRoles();
+		buffer = new StringBuilder();
 		
+		int i = roles.size();
 		
-		model.setAttribute("role", entity.getRoles());
+		for (final UserRole rol : roles) {
+				buffer.append(rol.getAuthorityName());
+				
+				if(i > 1) {
+					buffer.append(", ");
+					i--;
+				}
+			
+		}
+		
+		model.setAttribute("roles", buffer.toString());
+		
 		//Lo de identity viene en el framework 
-		request.unbind(entity, model,"username", "identity.name", "identity.surname", "identity.email","role");
+		request.unbind(entity, model,"username", "identity.name", "identity.surname", "identity.email");
 
 	}
 
