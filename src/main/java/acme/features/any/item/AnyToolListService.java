@@ -30,7 +30,7 @@ public class AnyToolListService implements AbstractListService<Any, Item> {
 		
 
 		Collection<Item> result;
-		result = this.repository.findManyItems();
+		result = this.repository.findManyTools();
 		return result;
 	}
 

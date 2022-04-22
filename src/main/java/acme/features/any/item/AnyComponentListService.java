@@ -30,7 +30,7 @@ public class AnyComponentListService implements AbstractListService<Any, Item>{
 		
 
 		Collection<Item> result;
-		result = this.repository.findManyItems();
+		result = this.repository.findManyComponents();
 		return result;
 	}
 
