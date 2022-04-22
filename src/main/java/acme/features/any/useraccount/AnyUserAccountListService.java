@@ -37,7 +37,7 @@ public class AnyUserAccountListService implements AbstractListService<Any, UserA
 		assert request != null;
 
 		//Obtiene el rol segun la peticion que reciba
-		final String roleString = request.getModel().getString("role"); 
+		//final String roleString = request.getModel().getString("role"); 
 
 		//Obtiene todas los usuarios
 		final Collection<UserAccount> accounts = this.repository.findAccounts();
@@ -46,9 +46,6 @@ public class AnyUserAccountListService implements AbstractListService<Any, UserA
 		 * Luego filtra y se queda con aquellos usuarios tengan el rol de la peticion */
 		return accounts.stream()
 				.filter(account -> !account.isAnonymous() && !account.hasRole(Administrator.class))
-				.filter(account -> account.getRoles().stream()
-						.anyMatch(role -> role.getAuthorityName()
-								.equalsIgnoreCase(roleString)))
 				.collect(Collectors.toList());
 	}
 
@@ -57,8 +54,12 @@ public class AnyUserAccountListService implements AbstractListService<Any, UserA
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+		
+		
+		
+		model.setAttribute("role", entity.getRoles());
 		//Lo de identity viene en el framework 
-		request.unbind(entity, model,"username", "identity.name", "identity.surname", "identity.email");
+		request.unbind(entity, model,"username", "identity.name", "identity.surname", "identity.email","role");
 
 	}
 
