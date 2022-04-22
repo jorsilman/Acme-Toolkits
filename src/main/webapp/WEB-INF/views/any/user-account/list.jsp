@@ -12,8 +12,5 @@
 		path="identity.surname" />
 	<acme:list-column code="any.user-account.list.label.email"
 		path="identity.email" />
-	<acme:list-column code="any.user-account.list.label.roles"
-		path="roles" />
-	
 	
 </acme:list>
