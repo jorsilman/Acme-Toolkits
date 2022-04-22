@@ -76,6 +76,13 @@
 				action="http://www.example.com/" />
 		</acme:menu-option>
 
+		
+		<acme:menu-option code ="master.menu.authenticated" access="hasRole('Authenticated')">
+			<acme:menu-suboption code="master.menu.authenticated.system-configuration.form" action="/authenticated/system-configuration/show"/>
+		</acme:menu-option>
+		
+
+
 
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
 			<acme:menu-suboption code="master.menu.patron.patronage.list"
@@ -87,6 +94,7 @@
 			<acme:menu-suboption code="master.menu.patron.patron-dashboard.show"
 				action="/patron/patron-dashboard/show" />
 		</acme:menu-option>
+
 
 	</acme:menu-left>
 
