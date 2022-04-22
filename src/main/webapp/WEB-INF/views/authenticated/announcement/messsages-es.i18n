@@ -1,0 +1,9 @@
+authenticated.announcement.list.label.title = Título:
+authenticated.announcement.list.label.body = Cuerpo:
+authenticated.announcement.list.label.creationMoment = Momento de creación:
+
+authenticated.announcement.form.label.title = Título
+authenticated.announcement.form.label.email = Email:
+authenticated.announcement.form.label.critical = Bandera Crítica:
+authenticated.announcement.form.label.link = Enlace
+authenticated.announcement.form.label.body = Cuerpo
