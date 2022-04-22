@@ -18,7 +18,7 @@ master.menu.sign-out = Sign out
 # master.menu.any #######################################################
 
 master.menu.any = Lists
-master.menu.any.item.list = Items list
+master.menu.any.item.list = Components list
 
 # master.menu.anonymous #######################################################
 

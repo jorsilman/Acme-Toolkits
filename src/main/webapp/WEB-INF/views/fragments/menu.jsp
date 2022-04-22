@@ -27,7 +27,7 @@
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-alberto" action="https://sevillafc.es/"/>
 			<acme:menu-separator/>
 					<acme:menu-suboption code="master.menu.any.chirp.list-recent" action="/any/chirp/list-recent"/>
-        <acme:menu-suboption code="master.menu.any.item.list" action="/any/item/list"/>
+        <acme:menu-suboption code="master.menu.any.item.list" action="/any/item/list-component"/>
 		</acme:menu-option>
 		
 	<acme:menu-option code="master.menu.any.useraccount">

@@ -12,4 +12,4 @@ any.item.form.label.technology = Technology
 any.item.form.label.description = Description 
 any.item.form.label.price = Retail Price
 any.item.form.label.link = Link
-any.item.form.label.itemType = Item type
+any.item.form.label.type = Item type

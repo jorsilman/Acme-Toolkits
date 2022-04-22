@@ -22,6 +22,6 @@ public class AnyComponentController extends AbstractController<Any, Item>{
 	protected void initialize() {
 		super.addCommand("show", this.showService);
 		
-		super.addCommand("list", this.listService);
+		super.addCommand("list-component","list", this.listService);
 	}
 }
