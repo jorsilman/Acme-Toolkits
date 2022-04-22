@@ -15,7 +15,24 @@ master.menu.sign-up = Registrarse
 master.menu.sign-in = Entrar
 master.menu.sign-out = Salir
 
-# master.menu.anonymous ######################################################
+
+# master.menu.any #######################################################
+
+
+master.menu.any.item.list = Lista de herramientas
+master.menu.any.chirp.list-recent= Mostrar chirridos recientes
+master.menu.any.item.list = Lista de Componentes
+
+
+# master.menu.authenticated #######################################################
+
+master.menu.authenticated = Autenticado
+master.menu.authenticated.announcement.list = Lista de anuncios
+
+
+# master.menu.anonymous #######################################################
+
+
 
 master.menu.anonymous = Anónimo
 master.menu.anonymous.favourite-link = Enlace favorito
@@ -24,16 +41,14 @@ master.menu.anonymous.favourite-link-fran = 44246876M: Caro Albarrán, Francisco
 master.menu.anonymous.favourite-link-francisco = 47560031X: Reyes Madrid, Francisco
 master.menu.anonymous.favourite-link-jose = 47428756L: Martín Luque, José Manuel
 master.menu.anonymous.favourite-link-alberto = 29499808P: Gallego Huerta, Alberto
-master.menu.any.chirp.list-recent= Mostrar chirridos recientes
+
+
 
 # master.menu.any.useraccount #######################################################
 
 
 master.menu.any.useraccount = Usuarios
-master.menu.any.useraccount.consumer = Mostrar Consumidores
-master.menu.any.useraccount.provider = Mostrar Proveedores
-master.menu.any.useraccount.inventor = Mostrar Inventores
-master.menu.any.useraccount.patron = Mostrar Patrones
+master.menu.any.useraccount.listUserAccount = Listar cuentas de usuario
 
 
 # master.menu.administrator ###################################################
@@ -65,6 +80,13 @@ master.menu.patron.patronageReport.list = Ver los reportes de mis patrocinios
 master.menu.inventor = Inventor
 master.menu.inventor.patronageReport.list = Ver los reportes de mis patrocinios
 
+# master.menu.patron ########################################################
+
+master.menu.patron = Patrón
+master.menu.patron.patronage.list = Ver mis patrocinios
+master.menu.patron.patronage-report.list = Ver los reportes de mis patrocinios
+master.menu.patron.patron-dashboard.show = Mostrar el panel de patrón
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor
@@ -74,6 +96,11 @@ master.menu.provider.favourite-link = Enlace favorito
 
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
+
+# master.menu.user-account ####################################################
+
+master.menu.inventor.item.tool = ListTool
+master.menu.inventor = Inventor
 
 # master.menu.user-account ####################################################
 
