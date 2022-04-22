@@ -48,12 +48,14 @@ public class PatronPatronDashboardShowService implements AbstractShowService<Pat
 	@Override
 	public PatronDashboard findOne(final Request<PatronDashboard> request) {
 		assert request != null;
+		
+		int id = request.getPrincipal().getActiveRoleId();
 
 		PatronDashboard result = new PatronDashboard();
 		
-		int proposedPatronages = this.repository.getNumberOfPatronagesByStatus(PatronageStatus.PROPOSED);
-		int acceptedPatronages = this.repository.getNumberOfPatronagesByStatus(PatronageStatus.ACCEPTED);
-		int deniedPatronages = this.repository.getNumberOfPatronagesByStatus(PatronageStatus.DENIED);
+		int proposedPatronages = this.repository.getNumberOfPatronagesByStatus(PatronageStatus.PROPOSED, id);
+		int acceptedPatronages = this.repository.getNumberOfPatronagesByStatus(PatronageStatus.ACCEPTED, id);
+		int deniedPatronages = this.repository.getNumberOfPatronagesByStatus(PatronageStatus.DENIED, id);
 		
 		result.setTotalNumberOfProposedPatronages(proposedPatronages);
 		result.setTotalNumberOfAcceptedPatronages(acceptedPatronages);
@@ -64,10 +66,10 @@ public class PatronPatronDashboardShowService implements AbstractShowService<Pat
 		Map<Pair<String, PatronageStatus>, Double> minimumBudgetOfPatronagesByCurrencyAndStatus = new HashMap<Pair<String, PatronageStatus>, Double>();
 		Map<Pair<String, PatronageStatus>, Double> maximumBudgetOfPatronagesByCurrencyAndStatus = new HashMap<Pair<String, PatronageStatus>, Double>();
 		
-		List<Object[]> averages = this.repository.findAverageBudgetOfPatronagesByCurrencyAndStatus();
-		List<Object[]> deviations = this.repository.findDeviationBudgetOfPatronagesByCurrencyAndStatus();
-		List<Object[]> minimums = this.repository.findMinimumBudgetOfPatronagesByCurrencyAndStatus();
-		List<Object[]> maximums = this.repository.findMaximumBudgetOfPatronagesByCurrencyAndStatus();
+		List<Object[]> averages = this.repository.findAverageBudgetOfPatronagesByCurrencyAndStatus(id);
+		List<Object[]> deviations = this.repository.findDeviationBudgetOfPatronagesByCurrencyAndStatus(id);
+		List<Object[]> minimums = this.repository.findMinimumBudgetOfPatronagesByCurrencyAndStatus(id);
+		List<Object[]> maximums = this.repository.findMaximumBudgetOfPatronagesByCurrencyAndStatus(id);
 
 		for (Object[] average : averages) {
 			averageBudgetOfPatronagesByCurrencyAndStatus.put(Pair.of(average[0].toString(), PatronageStatus.valueOf(average[1].toString())), (Double) average[2]);
