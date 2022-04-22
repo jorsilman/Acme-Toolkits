@@ -19,8 +19,8 @@ master.menu.sign-out = Salir
 # master.menu.any #######################################################
 
 master.menu.any = Todos
-master.menu.any.item.list.tool = Lista de herramientas
-master.menu.any.chirp.list-recent= Lista de chirridos recientes
+master.menu.any.item.list.tool = Lista de Herramientas
+master.menu.any.chirp.list-recent= Lista de Chirridos Recientes
 master.menu.any.item.list.component = Lista de Componentes
 master.menu.any.useraccount.list = Mostrar usuarios
 

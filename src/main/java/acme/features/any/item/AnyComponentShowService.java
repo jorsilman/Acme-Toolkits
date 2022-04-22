@@ -28,7 +28,8 @@ public class AnyComponentShowService implements AbstractShowService<Any, Item>{
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link", "type");
+		model.setAttribute("type", entity.getItemType());
+		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link");
 	}
 
 	@Override
