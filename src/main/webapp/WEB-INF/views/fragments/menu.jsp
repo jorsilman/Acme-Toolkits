@@ -46,6 +46,8 @@
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.system-configuration.form" action="/administrator/system-configuration/show"/>
+			<acme:menu-suboption code="master.menu.administrator.administrator-dashboard.show" action="/administrator/administrator-dashboard/show" />
+		
 		</acme:menu-option>
 
 
