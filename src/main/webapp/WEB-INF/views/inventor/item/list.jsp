@@ -7,9 +7,7 @@
 		<acme:list-column code="inventor.item.list.label.name" path="name" width="10%"/>
 		<acme:list-column code="inventor.item.list.label.retailprice" path="retailPrice" width="20%"/>
 		<acme:list-column code="inventor.item.list.label.type" path="itemType" width="70%"/>
-
 </acme:list>
 
-</acme:list>
-
+ 
 
