@@ -22,7 +22,9 @@
 	<acme:input-textarea code="inventor.toolkit.form.label.assembly-notes" path="assemblyNotes"/>
 	<acme:input-url code="inventor.toolkit.form.label.link" path="link"/>
 	<acme:input-checkbox code="inventor.toolkit.form.label.published" path="published"/>
-	<acme:input-textbox code="inventor.toolkit.form.label.retail-price" path="retailPrice"/>
+	<acme:input-textbox code="inventor.toolkit.form.label.retail-price-euro" path="retailPriceEuro"/>
+	<acme:input-textbox code="inventor.toolkit.form.label.retail-price-dollar" path="retailPriceDollar"/>
+	<acme:input-textbox code="inventor.toolkit.form.label.retail-price-gbd" path="retailPriceGBD"/>
 	
 	<acme:button code="inventor.toolkit.form.button.items" action="/inventor/item/list-by-toolkit?masterId=${id}"/>
 </acme:form>

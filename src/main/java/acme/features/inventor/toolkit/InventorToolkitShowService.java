@@ -38,15 +38,26 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		
+
 		request.unbind(entity, model, "code", "title", "description", "assemblyNotes","published", "link");
 
 		final int id = request.getModel().getInteger("id");
 		final Double euros = this.repository.findRetailPriceByToolkitId(id, "EUR");
-		final Money retailP = new Money();
-		retailP.setAmount(euros);
-		retailP.setCurrency("EUR");
-		model.setAttribute("retailPrice", retailP);
+		final Money retailPriceEuro = new Money();
+		retailPriceEuro.setAmount(euros);
+		retailPriceEuro.setCurrency("EUR");
+		final Money retailPriceDollar = new Money();
+		final Double dollar = this.repository.findRetailPriceByToolkitId(id, "USD");
+		retailPriceDollar.setAmount(dollar);
+		retailPriceDollar.setCurrency("USD");
+		final Money retailPriceGBD = new Money();
+		final Double gbd = this.repository.findRetailPriceByToolkitId(id, "GBD");
+		retailPriceGBD.setAmount(gbd);
+		retailPriceGBD.setCurrency("GBD");
+		model.setAttribute("retailPriceEuro", retailPriceEuro.toString());
+		model.setAttribute("retailPriceDollar", retailPriceDollar.toString());
+		model.setAttribute("retailPriceGBD", retailPriceGBD.toString());
+			
 	}
 
 }
