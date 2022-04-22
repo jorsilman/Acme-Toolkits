@@ -57,6 +57,30 @@ public class AnyUserAccountListService implements AbstractListService<Any, UserA
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+
+		
+		//SACO EL ROL
+		StringBuilder buffer;
+		Collection<UserRole> roles;
+
+		roles = entity.getRoles();
+		buffer = new StringBuilder();
+		
+		int i = roles.size();
+		
+		for (final UserRole rol : roles) {
+				buffer.append(rol.getAuthorityName());
+				
+				if(i > 1) {
+					buffer.append(", ");
+					i--;
+				}
+			
+		}
+		
+		model.setAttribute("roles", buffer.toString());
+		
+
 		//Lo de identity viene en el framework 
 		request.unbind(entity, model,"username", "identity.name", "identity.surname", "identity.email");
 
