@@ -47,7 +47,10 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.system-configuration.form" action="/administrator/system-configuration/show"/>
 		</acme:menu-option>
-		
+
+		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
+			<acme:menu-suboption code="master.menu.inventor.item.component" action="/inventor/item/list"/>
+		</acme:menu-option>
 
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">

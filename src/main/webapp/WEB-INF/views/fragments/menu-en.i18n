@@ -84,7 +84,11 @@ master.menu.consumer.favourite-link = Favourite link
 
 # master.menu.user-account ####################################################
 
+
 master.menu.inventor.item.tool = ToolList
+
+master.menu.inventor.item.component = CompList
+
 master.menu.inventor = Inventor
 
 # master.menu.user-account ####################################################
