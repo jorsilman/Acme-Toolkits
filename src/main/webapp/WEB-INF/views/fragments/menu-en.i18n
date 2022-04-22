@@ -24,8 +24,12 @@ master.menu.authenticated.announcement.list = List announcements
 # master.menu.any #######################################################
 
 master.menu.any = Lists
+
+master.menu.any.item.list = Components list
+
 master.menu.any.item.list = Items list
 master.menu.any.chirp.list-recent= Show recents chirps
+
 
 # master.menu.anonymous #######################################################
 
