@@ -67,6 +67,7 @@ public class AnyUserAccountListService implements AbstractListService<Any, UserA
 		assert entity != null;
 		assert model != null;
 		
+		//SACO EL ROL
 		StringBuilder buffer;
 		Collection<UserRole> roles;
 
