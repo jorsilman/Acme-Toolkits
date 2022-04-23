@@ -29,6 +29,7 @@ master.menu.any.useraccount.list = List User Accounts
 
 master.menu.authenticated = Authenticated
 master.menu.authenticated.announcement.list = List announcements
+master.menu.authenticated.system-configuration.form = System Configuration
 
 
 # master.menu.anonymous #######################################################
@@ -72,15 +73,6 @@ master.menu.provider.favourite-link = Favourite link
 master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
 
-# master.menu.authenticated #####################################################
-
-master.menu.authenticated = Authenticated
-master.menu.authenticated.system-configuration.form = System Configuration
-
-# master.menu.user-account ####################################################
-
-master.menu.inventor.item.tool = ToolList
-master.menu.inventor = Inventor
 
 # master.menu.user-account ####################################################
 
@@ -91,3 +83,5 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+master.menu.user-account.inventor = inventor data
+master.menu.user-account.become-inventor = Become an inventor
