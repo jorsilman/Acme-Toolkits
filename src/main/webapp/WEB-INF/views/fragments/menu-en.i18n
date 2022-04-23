@@ -15,24 +15,53 @@ master.menu.sign-up = Sign up
 master.menu.sign-in = Sign in
 master.menu.sign-out = Sign out
 
+# master.menu.any #######################################################
+
+master.menu.any = All
+master.menu.any.item.list.tool = List tools
+master.menu.any.item.list.component = List Components
+master.menu.any.item.list = Items list
+master.menu.any.chirp.list-recent= Show recents chirps
+master.menu.any.useraccount.list = List User Accounts
+
+
+# master.menu.authenticated #######################################################
+
+master.menu.authenticated = Authenticated
+master.menu.authenticated.announcement.list = List announcements
+master.menu.authenticated.system-configuration.form = System Configuration
+
+
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anonymous
-master.menu.anonymous.favourite-link = Favourite link
-master.menu.anonymous.favourite-link-jorge = 20537563N: Sillero Manchon, Jorge
-master.menu.anonymous.favourite-link-fran = 44246876M: Caro Albarrán, Francisco Andrés
-master.menu.anonymous.favourite-link-francisco = 47560031X: Reyes Madrid, Francisco
-master.menu.anonymous.favourite-link-jose = 47428756L: Martín Luque, José Manuel
-master.menu.anonymous.favourite-link-alberto = 29499808P: Gallego Huerta, Alberto
+
+
 
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
-master.menu.administrator.dashboard = Dashboard
+
+master.menu.administrator.administrator-dashboard.show = Dashboard
+
 master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shut-down = Shut down
+master.menu.administrator.system-configuration.form = System configuration
+
+
+# master.menu.inventor ########################################################
+
+master.menu.inventor = Inventor
+master.menu.inventor.patronageReport.list = List my patronageReports
+
+# master.menu.patron ########################################################
+
+master.menu.patron = Patron
+master.menu.patron.patronage.list = List my patronages
+master.menu.patron.patronage-report.list = List my patronageReports
+master.menu.patron.patron-dashboard.show = Show the patron dashboard
 
 # master.menu.provider ########################################################
 
@@ -44,18 +73,11 @@ master.menu.provider.favourite-link = Favourite link
 master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
 
-# master.menu.any #######################################################
-
-master.menu.any = Lists
-
-# master.menu.inventor ########################################################
-
-master.menu.inventor = Inventor
-master.menu.inventor.toolkit.list = List my toolkits
 
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account
+master.menu.user-account.system-configuration.form = System Configuration
 master.menu.user-account.general-data = General data
 master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider

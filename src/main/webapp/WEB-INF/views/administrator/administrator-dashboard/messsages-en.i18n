@@ -1,0 +1,31 @@
+# i18n-en.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.administrator-dashboard.form.label.totalNumberOfComponents = Total number of components
+administrator.admin-dashboard.form.label.avgRPriceOfComponentsByTechnologyAndCurrency = Average price of components by technology
+administrator.admin-dashboard.form.label.devRPriceOfComponentsByTechnologyAndCurrency = Deviation price of components by technology
+administrator.admin-dashboard.form.label.minRPriceOfComponentsByTechnologyAndCurrency = Minimum price of components by technology
+administrator.admin-dashboard.form.label.maxRPriceOfComponentsByTechnologyAndCurrency = Maximum price of components by technology
+
+administrator.administrator-dashboard.form.label.totalNumberOfTools = Total number of tools
+administrator.admin-dashboard.form.label.avgItems = Average price of tools
+administrator.admin-dashboard.form.label.devItems = Deviation price of tools
+administrator.admin-dashboard.form.label.minItems = Minimum price of tools
+administrator.admin-dashboard.form.label.maxItems = Maximum price of tools
+
+administrator.administrator-dashboard.form.label.totalNumberOfProposedPatronages = Total number of proposed patronages
+administrator.administrator-dashboard.form.label.totalNumberOfAcceptedPatronages = Total number of accepted patronages
+administrator.administrator-dashboard.form.label.totalNumberOfDeniedPatronages = Total number of denied patronages
+administrator.admin-dashboard.form.label.avgPatronages = Average budget of patronages by status
+administrator.admin-dashboard.form.label.devPatronages = Deviation budget of patronages by status
+administrator.admin-dashboard.form.label.minPatronages = Minimum budget of patronages by status
+administrator.admin-dashboard.form.label.maxPatronages = Maximum budget of patronages by status
+
+
