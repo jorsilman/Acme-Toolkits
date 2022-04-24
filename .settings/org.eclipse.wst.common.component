@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-<<<<<<< HEAD
-                                                                                                            
-    
-    
-    
-    
-    
-    
-    
-    
-    
-=======
 
->>>>>>> 95e30266993e207b173df60d32fd6b1afe090bda
+    
+
     
     
     
@@ -30,20 +19,7 @@
     
     
     <wb-module deploy-name="Acme-Toolkits-22.1">
-<<<<<<< HEAD
-                                                                                                                                                                                                                        
-        
-        
-        
-        
-        
-=======
 
->>>>>>> 95e30266993e207b173df60d32fd6b1afe090bda
-        
-        
-        
-        
         
         
         
@@ -61,23 +37,7 @@
         
         
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
-<<<<<<< HEAD
-                                                                                                                                                                                                                
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-=======
 
->>>>>>> 95e30266993e207b173df60d32fd6b1afe090bda
-        
         
         
         
@@ -91,18 +51,7 @@
         
         
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
-<<<<<<< HEAD
-                                                                                                                                                                                                                
-        
-        
-        
-        
-        
-=======
 
->>>>>>> 95e30266993e207b173df60d32fd6b1afe090bda
-        
-        
         
         
         
@@ -121,22 +70,7 @@
         
         
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
-<<<<<<< HEAD
-                                                                                                                                                                                                        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-=======
 
->>>>>>> 95e30266993e207b173df60d32fd6b1afe090bda
-        
-        
         
         
         
@@ -151,43 +85,16 @@
         
         
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/webapp"/>
-<<<<<<< HEAD
-                                                                                                        
-        
-        
-        
-        
-        
-        
-=======
 
->>>>>>> 95e30266993e207b173df60d32fd6b1afe090bda
-        
-        
         
         
         
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/acme-framework"/>
-<<<<<<< HEAD
-                                                                                                                                                                                                                
-        
-        
-=======
-
->>>>>>> 95e30266993e207b173df60d32fd6b1afe090bda
-        
-        
-        
-        
-        
-        
-        
-        
 
         
-        
-        
+
+
         
         
         
@@ -200,23 +107,15 @@
         
 
         <property name="java-output-path" value="/Hello-World-22.0/target/classes"/>
+                                                                                                                                                                                                            
 
-                                        
-        
-        
-        
-<<<<<<< HEAD
         <property name="java-output-path" value="/Hello-World-22.0/target/classes"/>
                         
         
         <property name="context-root" value="Acme-Toolkits"/>
-                                                                                                                                                                                                                    
-=======
-        <property name="context-root" value="Acme-Toolkits"/>
-                                                                                                                                                                                                                                    
->>>>>>> 95e30266993e207b173df60d32fd6b1afe090bda
+
     
-    
+
     
     
     
@@ -244,8 +143,6 @@
     
     
     </wb-module>
-<<<<<<< HEAD
-                                                                                                        
 
 
 
@@ -256,10 +153,6 @@
 
 
 
-
-
-=======
->>>>>>> 95e30266993e207b173df60d32fd6b1afe090bda
 
 
 
