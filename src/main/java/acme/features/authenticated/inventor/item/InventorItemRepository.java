@@ -1,4 +1,4 @@
-package acme.features.authenticated.inventor.component;
+package acme.features.authenticated.inventor.item;
 
 import java.util.Collection;
 
@@ -9,12 +9,15 @@ import acme.entities.item.Item;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface InventorComponentRepository extends AbstractRepository{
+public interface InventorItemRepository extends AbstractRepository{
 	
-	//Dado el id de un determinado inventor de un item lo comparo con el id del usuario logueado y veo que ese item sea de tipo COMPONENT
+	//Dado el id de un determinado inventor de un item lo comparo con el id del usuario logueado y veo que ese item sea de tipo COMPONENT o TOOL
 	
 	@Query("SELECT i FROM Item i WHERE i.inventor.id = :id AND i.itemType = acme.entities.item.ItemType.COMPONENT")
 	Collection<Item> findComponentsByInventorId(int id);
+	
+	@Query("SELECT i FROM Item i WHERE i.inventor.id = :id AND i.itemType = acme.entities.item.ItemType.TOOL")
+	Collection<Item> findToolsByInventorId(int id);
 	
 	//Obtengo un item que coincida con un id determinado
 	

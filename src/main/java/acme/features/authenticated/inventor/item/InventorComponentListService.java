@@ -1,4 +1,4 @@
-package acme.features.authenticated.inventor.component;
+package acme.features.authenticated.inventor.item;
 
 import java.util.Collection;
 
@@ -18,7 +18,7 @@ public class InventorComponentListService implements AbstractListService<Invento
 	// Internal state ------------------------------------------------
 	
 	@Autowired
-	protected InventorComponentRepository itemRepo;
+	protected InventorItemRepository itemRepo;
 	
 	// AbstractListService<Inventor, Item> interface ---------------------
 	
@@ -40,7 +40,7 @@ public class InventorComponentListService implements AbstractListService<Invento
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "name", "retailPrice", "itemType");
+		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link");
 	}
 
 }
