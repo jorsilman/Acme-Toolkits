@@ -5,4 +5,4 @@ item-03,inventor-03,COMPONENT,name_3,AAA-000-C,technology_3,description3,EUR 120
 item-04,inventor-04,TOOL,name_4,AAA-000-D,technology_4,description4,EUR 130.00,null
 item-05,inventor-05,COMPONENT,name_5,AAA-000-E,technology_5,description5,EUR 140.00,null
 item-06,inventor-01,COMPONENT,name_5,AAA-000-I,technology_5,description5,USD 130.00,null
-item-07,inventor-01,COMPONENT,name_5,AAA-000-O,technology_5,description5,GBD 150.00,null
+item-07,inventor-02,COMPONENT,name_5,AAA-000-O,technology_5,description5,GBD 150.00,null

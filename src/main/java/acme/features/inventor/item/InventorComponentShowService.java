@@ -1,4 +1,4 @@
-package acme.features.inventor.item.copy;
+package acme.features.inventor.item;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
