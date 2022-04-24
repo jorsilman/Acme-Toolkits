@@ -1,4 +1,16 @@
-package acme.features.inventor.patronage;
+/*
+ * AuthenticatedAnnouncementListService.java
+ *
+ * Copyright (C) 2012-2022 Rafael Corchuelo.
+ *
+ * In keeping with the traditional purpose of furthering education and research, it is
+ * the policy of the copyright owner to permit non-commercial use and redistribution of
+ * this software. It has been tested carefully, but it is not guaranteed for any particular
+ * purposes. The copyright owner does not offer any warranties or representations, nor do
+ * they accept any liabilities with respect to them.
+ */
+
+package acme.features.patron.patronage;
 
 import java.util.Collection;
 
@@ -9,17 +21,15 @@ import acme.entities.patronage.Patronage;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractListService;
-import acme.roles.Inventor;
+import acme.roles.Patron;
 
 @Service
-public class InventorPatronageListOwnService implements AbstractListService<Inventor, Patronage>{
-
-
+public class PatronPatronageListOwnService implements AbstractListService<Patron, Patronage> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected InventorPatronageRepository repository;
+	protected PatronPatronageRepository repository;
 
 	// AbstractListService<Administrator, Announcement> interface --------------
 
@@ -36,7 +46,7 @@ public class InventorPatronageListOwnService implements AbstractListService<Inve
 		assert request != null;
 
 		Collection<Patronage> result;
-		result = this.repository.findPatronagesByInventorId(request.getPrincipal().getActiveRoleId());
+		result = this.repository.findPatronagesByPatronId(request.getPrincipal().getActiveRoleId());
 		return result;
 	}
 

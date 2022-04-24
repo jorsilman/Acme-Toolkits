@@ -9,24 +9,21 @@
  * purposes. The copyright owner does not offer any warranties or representations, nor do
  * they accept any liabilities with respect to them.
  */
+ 
+package acme.features.administrator.systemConfiguration;
 
-package acme.features.patron.patronageReport;
-
-import java.util.Collection;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import acme.entities.patronageReport.PatronageReport;
+import acme.entities.systemConfiguration.SystemConfiguration;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface PatronPatronageReportRepository extends AbstractRepository {
-
-	@Query("select patronageReport from PatronageReport patronageReport where patronageReport.id = :id")
-	PatronageReport findOnePatronageReportById(int id);
-
-	@Query("select patronageReport from PatronageReport patronageReport where patronageReport.patronage.patron.id = :id")
-	Collection<PatronageReport> findPatronageReportsByPatronId(int id);
-
+public interface AdministratorSystemConfigurationRepository extends AbstractRepository {
+	
+	@Query("SELECT systemConfiguration FROM SystemConfiguration systemConfiguration")
+	List<SystemConfiguration> getSystemConfiguration();
 }
+
