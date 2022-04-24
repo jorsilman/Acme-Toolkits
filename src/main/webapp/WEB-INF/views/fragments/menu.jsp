@@ -25,6 +25,7 @@
       		<acme:menu-suboption code="master.menu.any.item.list.component" action="/any/item/list-component"/>
 			<acme:menu-suboption code="master.menu.any.chirp.list-recent" action="/any/chirp/list-recent"/>
 			<acme:menu-suboption code="master.menu.any.useraccount.list" action="/any/user-account/list"/>
+			<acme:menu-suboption code="master.menu.any.toolkit.list" action="/any/toolkit/list"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
@@ -50,8 +51,6 @@
 		
 		</acme:menu-option>
 
-
-
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
 			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
@@ -62,8 +61,12 @@
 	
 		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
 			<acme:menu-suboption code="master.menu.inventor.patronage.list" action="/inventor/patronage/list-own"/>
-      		<acme:menu-suboption code="master.menu.inventor.patronage-report.list" action="/inventor/patronage-report/list-own"/>
-      		<acme:menu-suboption code="master.menu.inventor.toolkit.list" action="/inventor/toolkit/list-own"/>
+
+      			<acme:menu-suboption code="master.menu.inventor.patronage-report.list" action="/inventor/patronage-report/list-own"/>
+     			<acme:menu-suboption code="master.menu.inventor.item.component" action="/inventor/item/list-component"/>
+			<acme:menu-suboption code="master.menu.inventor.item.tool" action="/inventor/item/list-tool"/>
+      <acme:menu-suboption code="master.menu.inventor.toolkit.list" action="/inventor/toolkit/list-own"/>
+
 		</acme:menu-option>
 
 

@@ -18,7 +18,14 @@ master.menu.sign-out = Salir
 
 # master.menu.any #######################################################
 
+
+
+
+
+# master.menu.any #######################################################
+
 master.menu.any = Todos
+master.menu.any.toolkit.list = Lista de conjunto de herramientas
 master.menu.any.item.list.tool = Lista de Herramientas
 master.menu.any.chirp.list-recent= Lista de Chirridos Recientes
 master.menu.any.item.list.component = Lista de Componentes
@@ -30,6 +37,7 @@ master.menu.any.useraccount.list = Mostrar usuarios
 master.menu.authenticated = Autenticado
 master.menu.authenticated.announcement.list = Lista de anuncios
 master.menu.authenticated.system-configuration.form = Configuracion del Sistema
+
 
 
 # master.menu.anonymous #######################################################

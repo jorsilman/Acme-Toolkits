@@ -20,6 +20,10 @@ public interface AnyItemRepository extends AbstractRepository{
 	@Query("select i from Item i where i.id = :id")
 	Item findItemById(int id);
 	
+	@Query("select distinct(q.item) from Quantity q where q.toolkit.id = :masterId")
+	Collection<Item> findItemsByToolkitId(int masterId);
+	
+	
 	
 
 }
