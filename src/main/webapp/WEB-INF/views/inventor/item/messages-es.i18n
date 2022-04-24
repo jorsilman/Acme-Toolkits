@@ -1,0 +1,10 @@
+# i18n-es.i18n
+
+inventor.item.list.label.name = Nombre
+inventor.item.list.label.code = Codigo
+inventor.item.list.label.technology = Tecnologia
+inventor.item.list.label.description = Descripcion
+inventor.item.list.label.retailprice = Precio
+inventor.item.list.label.type = Tipo
+inventor.item.list.label.link = Enlace
+inventor.item.list.label.inventor = Inventor

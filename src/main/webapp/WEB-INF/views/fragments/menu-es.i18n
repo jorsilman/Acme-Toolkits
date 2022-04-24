@@ -15,29 +15,81 @@ master.menu.sign-up = Registrarse
 master.menu.sign-in = Entrar
 master.menu.sign-out = Salir
 
+
 # master.menu.any #######################################################
 
-master.menu.any = Listas
+
+
+
+
+# master.menu.any #######################################################
+
+master.menu.any = Todos
 master.menu.any.toolkit.list = Lista de conjunto de herramientas
+master.menu.any.item.list.tool = Lista de Herramientas
+master.menu.any.chirp.list-recent= Lista de Chirridos Recientes
+master.menu.any.item.list.component = Lista de Componentes
+master.menu.any.useraccount.list = Mostrar usuarios
+
+
+# master.menu.authenticated #######################################################
+
+master.menu.authenticated = Autenticado
+master.menu.authenticated.announcement.list = Lista de anuncios
+
+
 
 # master.menu.anonymous #######################################################
 
-master.menu.anonymous = Anónimo
-master.menu.anonymous.favourite-link = Enlace favorito
-master.menu.anonymous.favourite-link-jorge = 20537563N: Sillero Manchon, Jorge
-master.menu.anonymous.favourite-link-fran = 44246876M: Caro Albarrán, Francisco Andrés
-master.menu.anonymous.favourite-link-francisco = 47560031X: Reyes Madrid, Francisco
-master.menu.anonymous.favourite-link-jose = 47428756L: Martín Luque, José Manuel
-master.menu.anonymous.favourite-link-alberto = 29499808P: Gallego Huerta, Alberto
+
+master.menu.anonymous = Anonimos
+
+
 
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
-master.menu.administrator.dashboard = Panel de indicadores
+master.menu.administrator.administrator-dashboard.show = Panel de indicadores
 master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
+master.menu.administrator.system-configuration.form = Configuración del sistema
+
+
+# master.menu.inventor ########################################################
+
+master.menu.inventor = Inventor
+master.menu.inventor.patronage.list = Ver mis patrocinios
+
+# master.menu.patron ########################################################
+
+master.menu.patron = Patrón
+master.menu.patron.patronage.list = Ver mis patrocinios
+master.menu.patron.patronageReport.list = Ver los reportes de mis patrocinios
+
+
+
+# master.menu.inventor ########################################################
+
+master.menu.inventor = Inventor
+master.menu.inventor.patronageReport.list = Ver los reportes de mis patrocinios
+
+# master.menu.patron ########################################################
+
+master.menu.patron = Patrón
+master.menu.patron.patronage.list = Ver mis patrocinios
+master.menu.patron.patronage-report.list = Ver los reportes de mis patrocinios
+master.menu.patron.patron-dashboard.show = Mostrar el panel de patrón
+
+# master.menu.any #######################################################
+
+master.menu.any = Listas
+
+# master.menu.inventor ########################################################
+
+master.menu.inventor = Inventor
+master.menu.inventor.toolkit.list = Ver mis herramientas
 
 # master.menu.provider ########################################################
 
@@ -49,11 +101,25 @@ master.menu.provider.favourite-link = Enlace favorito
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
 
+# master.menu.authenticated #####################################################
+
+master.menu.authenticated = Autenticado
+master.menu.authenticated.system-configuration.form = Configuracion del Sistema
+
+
+# master.menu.user-account ####################################################
+
+master.menu.inventor.item.tool = Listar Herramientas
+master.menu.inventor = Inventor
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta
+master.menu.user-account.system-configuration.form = Configuración del Sistema
 master.menu.user-account.general-data = Datos generales
 master.menu.user-account.provider = Datos de proveedor
 master.menu.user-account.become-provider = Hazte proveedor
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
+master.menu.user-account.inventor = Datos de inventor
+master.menu.user-account.become-inventor = Hazte inventor
