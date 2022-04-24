@@ -41,9 +41,7 @@ master.menu.anonymous = Anonymous
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
-
 master.menu.administrator.administrator-dashboard.show = Dashboard
-
 master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
@@ -54,7 +52,9 @@ master.menu.administrator.system-configuration.form = System configuration
 # master.menu.inventor ########################################################
 
 master.menu.inventor = Inventor
-master.menu.inventor.patronageReport.list = List my patronageReports
+master.menu.inventor.patronage.list = List my patronages
+master.menu.inventor.toolkit.list = List my toolkits
+master.menu.inventor.patronage-report.list = List my patronage reports
 
 # master.menu.patron ########################################################
 

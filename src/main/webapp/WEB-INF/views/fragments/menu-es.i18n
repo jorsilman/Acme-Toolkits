@@ -29,6 +29,7 @@ master.menu.any.useraccount.list = Mostrar usuarios
 
 master.menu.authenticated = Autenticado
 master.menu.authenticated.announcement.list = Lista de anuncios
+master.menu.authenticated.system-configuration.form = Configuracion del Sistema
 
 
 # master.menu.anonymous #######################################################
@@ -53,19 +54,8 @@ master.menu.administrator.system-configuration.form = Configuración del sistema
 
 master.menu.inventor = Inventor
 master.menu.inventor.patronage.list = Ver mis patrocinios
-
-# master.menu.patron ########################################################
-
-master.menu.patron = Patrón
-master.menu.patron.patronage.list = Ver mis patrocinios
-master.menu.patron.patronageReport.list = Ver los reportes de mis patrocinios
-
-
-
-# master.menu.inventor ########################################################
-
-master.menu.inventor = Inventor
-master.menu.inventor.patronageReport.list = Ver los reportes de mis patrocinios
+master.menu.inventor.toolkit.list = Listar mis cajas de herramientas
+master.menu.inventor.patronage-report.list = Listar mis reportes de patrocinios
 
 # master.menu.patron ########################################################
 
@@ -74,14 +64,6 @@ master.menu.patron.patronage.list = Ver mis patrocinios
 master.menu.patron.patronage-report.list = Ver los reportes de mis patrocinios
 master.menu.patron.patron-dashboard.show = Mostrar el panel de patrón
 
-# master.menu.any #######################################################
-
-master.menu.any = Listas
-
-# master.menu.inventor ########################################################
-
-master.menu.inventor = Inventor
-master.menu.inventor.toolkit.list = Ver mis herramientas
 
 # master.menu.provider ########################################################
 
@@ -93,16 +75,6 @@ master.menu.provider.favourite-link = Enlace favorito
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
 
-# master.menu.authenticated #####################################################
-
-master.menu.authenticated = Autenticado
-master.menu.authenticated.system-configuration.form = Configuracion del Sistema
-
-
-# master.menu.user-account ####################################################
-
-master.menu.inventor.item.tool = Listar Herramientas
-master.menu.inventor = Inventor
 
 # master.menu.user-account ####################################################
 
