@@ -19,7 +19,6 @@ public class InventorToolkitListService implements AbstractListService<Inventor,
 
 	@Override
 	public boolean authorise(final Request<Toolkit> request) {
-		// TODO Auto-generated method stub
 		assert request != null;
 		
 		return true;
@@ -27,16 +26,19 @@ public class InventorToolkitListService implements AbstractListService<Inventor,
 
 	@Override
 	public Collection<Toolkit> findMany(final Request<Toolkit> request) {
-		// TODO Auto-generated method stub
 		assert request != null;
 		final int id = request.getPrincipal().getActiveRoleId();
 		final Collection<Toolkit> result = this.repository.findToolkitsByInventorId(id);
+		/*for(final Toolkit t:result) {
+			if(!t.isPublished()) {
+				result.remove(t);
+			}
+		}*/
 		return result;
 	}
 
 	@Override
 	public void unbind(final Request<Toolkit> request, final Toolkit entity, final Model model) {
-		// TODO Auto-generated method stub
 		assert request != null;
 		assert entity != null;
 		assert model != null;
