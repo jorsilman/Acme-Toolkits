@@ -1,0 +1,16 @@
+# i18n-en.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.system-configuration.form.label.acceptedCurrencies = Accepted currencies
+administrator.system-configuration.form.label.systemCurrency = System currency
+administrator.system-configuration.form.label.strongSpamWords = Strong spam words
+administrator.system-configuration.form.label.strongSpamThreshold = Strong spam threshold
+administrator.system-configuration.form.label.weakSpamWords = Weak spam words
+administrator.system-configuration.form.label.weakSpamThreshold = Weak spam threshold

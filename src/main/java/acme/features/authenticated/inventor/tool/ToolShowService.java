@@ -1,4 +1,4 @@
-package acme.features.authenticated.inventor.item;
+package acme.features.authenticated.inventor.tool;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,11 +10,12 @@ import acme.framework.services.AbstractShowService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorToolShowService implements AbstractShowService<Inventor,Item> {
+public class ToolShowService implements AbstractShowService<Inventor, Item>{
+	
 	// Internal state --------------------------------------------------
 	
 		@Autowired
-		protected InventorItemRepository itemRepo;
+		protected ToolRepository itemRepo;
 		
 		// AbstractShowService<Inventor, Item> interface --------------------
 		
@@ -39,7 +40,6 @@ public class InventorToolShowService implements AbstractShowService<Inventor,Ite
 			Item item;
 			id = request.getModel().getInteger("id");
 			item = this.itemRepo.findItemById(id);
-			
 			return item;
 		}
 
@@ -48,10 +48,8 @@ public class InventorToolShowService implements AbstractShowService<Inventor,Ite
 			assert request != null;
 			assert entity != null;
 			assert model != null;
-			model.setAttribute("itemType", entity.getItemType());
 			
-			request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link");
+			request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link", "itemType");
 			
 		}
-		
 }
