@@ -18,12 +18,6 @@ master.menu.sign-out = Salir
 
 # master.menu.any #######################################################
 
-
-
-
-
-# master.menu.any #######################################################
-
 master.menu.any = Todos
 master.menu.any.toolkit.list = Lista de conjunto de herramientas
 master.menu.any.item.list.tool = Lista de Herramientas
@@ -64,6 +58,8 @@ master.menu.inventor = Inventor
 master.menu.inventor.patronage.list = Ver mis patrocinios
 master.menu.inventor.toolkit.list = Listar mis cajas de herramientas
 master.menu.inventor.patronage-report.list = Listar mis reportes de patrocinios
+master.menu.inventor.item.component = Ver mis componentes
+master.menu.inventor.item.tool = Ver mis herramientas
 
 # master.menu.patron ########################################################
 

@@ -26,5 +26,5 @@
 	<acme:input-textbox code="inventor.toolkit.form.label.retail-price-dollar" path="retailPriceDollar"/>
 	<acme:input-textbox code="inventor.toolkit.form.label.retail-price-gbd" path="retailPriceGBD"/>
 	
-	<acme:button code="inventor.toolkit.form.button.items" action="/inventor/item/list-by-toolkit?masterId=${id}"/>
+	<acme:button code="inventor.toolkit.form.button.items" action="/any/item/list-by-toolkit?masterId=${id}"/>
 </acme:form>

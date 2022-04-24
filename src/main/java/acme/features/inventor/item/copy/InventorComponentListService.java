@@ -1,4 +1,4 @@
-package acme.features.authenticated.inventor.item;
+package acme.features.inventor.item.copy;
 
 import java.util.Collection;
 
