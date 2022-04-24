@@ -30,7 +30,8 @@ public class InventorToolListService implements AbstractListService<Inventor, It
 		@Override
 		public Collection<Item> findMany(final Request<Item> request) {
 			final Principal principal = request.getPrincipal();
-			final Collection <Item> result = this.itemRepo.findToolsByInventorId(principal.getActiveRoleId());
+			final Collection <Item> result;
+			result = this.itemRepo.findToolsByInventorId(principal.getActiveRoleId());
 			return result;
 		}
 		@Override

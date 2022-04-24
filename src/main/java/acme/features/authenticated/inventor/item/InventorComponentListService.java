@@ -20,7 +20,7 @@ public class InventorComponentListService implements AbstractListService<Invento
 	@Autowired
 	protected InventorItemRepository itemRepo;
 	
-	// AbstractListService<Inventor, Item> interface ---------------------
+
 	
 	@Override
 	public boolean authorise(final Request<Item> request) {
@@ -31,7 +31,8 @@ public class InventorComponentListService implements AbstractListService<Invento
 	@Override
 	public Collection<Item> findMany(final Request<Item> request) {
 		final Principal principal = request.getPrincipal();
-		final Collection <Item> result = this.itemRepo.findComponentsByInventorId(principal.getActiveRoleId());
+		final Collection <Item> result;
+		result = this.itemRepo.findComponentsByInventorId(principal.getActiveRoleId());
 		return result;
 	}
 	@Override
