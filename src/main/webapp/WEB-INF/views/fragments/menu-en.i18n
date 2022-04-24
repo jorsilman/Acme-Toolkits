@@ -17,6 +17,10 @@ master.menu.sign-out = Sign out
 
 # master.menu.any #######################################################
 
+
+
+master.menu.any.toolkit.list = Toolkits list
+
 master.menu.any = All
 master.menu.any.item.list.tool = List tools
 master.menu.any.item.list.component = List Components

@@ -25,6 +25,7 @@
       		<acme:menu-suboption code="master.menu.any.item.list.component" action="/any/item/list-component"/>
 			<acme:menu-suboption code="master.menu.any.chirp.list-recent" action="/any/chirp/list-recent"/>
 			<acme:menu-suboption code="master.menu.any.useraccount.list" action="/any/user-account/list"/>
+			<acme:menu-suboption code="master.menu.any.toolkit.list" action="/any/toolkit/list"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
@@ -49,8 +50,6 @@
 			<acme:menu-suboption code="master.menu.administrator.administrator-dashboard.show" action="/administrator/administrator-dashboard/show" />
 		
 		</acme:menu-option>
-
-
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
 			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>
