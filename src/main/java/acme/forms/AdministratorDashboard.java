@@ -6,7 +6,11 @@ import java.util.Map;
 import org.apache.commons.lang3.tuple.Pair;
 
 import acme.entities.patronage.PatronageStatus;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class AdministratorDashboard implements Serializable{
 		// Serialisation identifier -----------------------------------------------
 
@@ -33,10 +37,10 @@ public class AdministratorDashboard implements Serializable{
 		int                                             totalNumberOfProposedPatronages;
 		int                                             totalNumberOfAcceptedPatronages;
 		int                                             totalNumberOfDeniedPatronages;
-		Map<PatronageStatus, Double>                    averageBudgetOfPatronagesByStatus;
-		Map<PatronageStatus, Double>                    deviationBudgetOfPatronagesByStatus;
-		Map<PatronageStatus, Double>                    minimumBudgetOfPatronagesByStatus;
-		Map<PatronageStatus, Double>                    maximumBudgetOfPatronagesByStatus;
+		Map<String, Double>                    averageBudgetOfPatronagesByStatus;
+		Map<String, Double>                    deviationBudgetOfPatronagesByStatus;
+		Map<String, Double>                    minimumBudgetOfPatronagesByStatus;
+		Map<String, Double>                    maximumBudgetOfPatronagesByStatus;
 		// Map<Status, Amount>
 		
 		
