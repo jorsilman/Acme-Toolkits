@@ -28,13 +28,9 @@ public class InventorToolkitListService implements AbstractListService<Inventor,
 	public Collection<Toolkit> findMany(final Request<Toolkit> request) {
 		assert request != null;
 		final int id = request.getPrincipal().getActiveRoleId();
-		final Collection<Toolkit> result = this.repository.findToolkitsByInventorId(id);
-		/*for(final Toolkit t:result) {
-			if(!t.isPublished()) {
-				result.remove(t);
-			}
-		}*/
-		return result;
+		return this.repository.findToolkitsByInventorId(id);
+		
+		
 	}
 
 	@Override
