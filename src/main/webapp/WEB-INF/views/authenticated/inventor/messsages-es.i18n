@@ -8,14 +8,12 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-any.user-account.list.label.username = Nombre de usuario
-any.user-account.list.label.name = Nombre
-any.user-account.list.label.surname= Apellido
-any.user-account.list.label.email = Email
-any.user-account.list.label.role = Rol
+authenticated.inventor.inventor.form.title.create = Hazte inventor
+authenticated.inventor.inventor.form.title.update = Actualiza tus datos de inventor
 
-any.user-account.form.label.username = Nombre de usuario
-any.user-account.form.label.name = Nombre
-any.user-account.form.label.surname= Apellido
-any.user-account.form.label.email = Email
-any.user-account.form.label.role-list = Rol
+authenticated.inventor.inventor.form.label.company = Compañía
+authenticated.inventor.inventor.form.label.statement = Sector
+authenticated.inventor.inventor.form.label.link = Link
+
+authenticated.inventor.inventor.form.button.create = Registrar
+authenticated.inventor.inventor.form.button.update = Actualizar

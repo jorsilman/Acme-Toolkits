@@ -17,6 +17,10 @@ master.menu.sign-out = Sign out
 
 # master.menu.any #######################################################
 
+
+
+master.menu.any.toolkit.list = Toolkits list
+
 master.menu.any = All
 master.menu.any.item.list.tool = List tools
 master.menu.any.item.list.component = List Components
@@ -29,6 +33,7 @@ master.menu.any.useraccount.list = List User Accounts
 
 master.menu.authenticated = Authenticated
 master.menu.authenticated.announcement.list = List announcements
+master.menu.authenticated.system-configuration.form = System Configuration
 
 
 # master.menu.anonymous #######################################################
@@ -40,9 +45,7 @@ master.menu.anonymous = Anonymous
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
-
 master.menu.administrator.administrator-dashboard.show = Dashboard
-
 master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
@@ -53,7 +56,10 @@ master.menu.administrator.system-configuration.form = System configuration
 # master.menu.inventor ########################################################
 
 master.menu.inventor = Inventor
-master.menu.inventor.patronageReport.list = List my patronageReports
+
+master.menu.inventor.patronage.list = List my patronages
+master.menu.inventor.toolkit.list = List my toolkits
+master.menu.inventor.patronage-report.list = List my patronage reports
 master.menu.inventor.item.tool = List my tools
 master.menu.inventor.item.component = List my components
 
@@ -74,15 +80,6 @@ master.menu.provider.favourite-link = Favourite link
 master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
 
-# master.menu.authenticated #####################################################
-
-master.menu.authenticated = Authenticated
-master.menu.authenticated.system-configuration.form = System Configuration
-
-# master.menu.user-account ####################################################
-
-master.menu.inventor.item.tool = ToolList
-master.menu.inventor = Inventor
 
 # master.menu.user-account ####################################################
 
@@ -93,3 +90,5 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+master.menu.user-account.inventor = inventor data
+master.menu.user-account.become-inventor = Become an inventor

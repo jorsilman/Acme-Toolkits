@@ -1,4 +1,4 @@
-package acme.features.authenticated.inventor.tool;
+package acme.features.inventor.item;
 
 import java.util.Collection;
 
@@ -13,12 +13,11 @@ import acme.framework.services.AbstractListService;
 import acme.roles.Inventor;
 
 @Service
-public class ToolListService implements AbstractListService<Inventor, Item>{
-	
+public class InventorToolListService implements AbstractListService<Inventor, Item>{
 	// Internal state ------------------------------------------------
 	
 		@Autowired
-		protected ToolRepository itemRepo;
+		protected InventorItemRepository itemRepo;
 		
 		// AbstractListService<Inventor, Item> interface ---------------------
 		
@@ -31,7 +30,8 @@ public class ToolListService implements AbstractListService<Inventor, Item>{
 		@Override
 		public Collection<Item> findMany(final Request<Item> request) {
 			final Principal principal = request.getPrincipal();
-			final Collection <Item> result = this.itemRepo.findToolsByInventorId(principal.getActiveRoleId());
+			final Collection <Item> result;
+			result = this.itemRepo.findToolsByInventorId(principal.getActiveRoleId());
 			return result;
 		}
 		@Override
@@ -40,7 +40,8 @@ public class ToolListService implements AbstractListService<Inventor, Item>{
 			assert entity != null;
 			assert model != null;
 			
-			request.unbind(entity, model, "name", "retailPrice", "itemType");
+			request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link");
 		}
 
 }
+
