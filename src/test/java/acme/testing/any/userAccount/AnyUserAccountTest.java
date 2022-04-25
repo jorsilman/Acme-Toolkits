@@ -9,11 +9,11 @@ import acme.testing.TestHarness;
 public class AnyUserAccountTest extends TestHarness {
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "/any/userAccount/list.csv", encoding = "utf-8", numLinesToSkip = 4)
+	@CsvFileSource(resources = "/any/userAccount/list.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void positiveTest(final int recordIndex, final String username,final String name, 
 			final String surname,final String email , 
-			final String roles, final String rolesShow) {
+			final String roles) {
 		
 		super.clickOnMenu("All","List User Accounts");
 		super.checkListingExists();
@@ -23,16 +23,18 @@ public class AnyUserAccountTest extends TestHarness {
 		super.checkColumnHasValue(recordIndex, 1, name);
 		super.checkColumnHasValue(recordIndex, 2, surname);
 		super.checkColumnHasValue(recordIndex, 3, email);
-		//super.checkColumnHasValue(recordIndex, 4, roles);
+		super.checkColumnHasValue(recordIndex, 4, roles);
 		
 
 
 		
-	/*	super.clickOnListingRecord(recordIndex);
+	super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
-		super.checkInputBoxHasValue("identity.surname", surname);
+		
+		super.checkInputBoxHasValue("surname", surname);
 		super.checkInputBoxHasValue("identity.name", name);
+		super.checkInputBoxHasValue("identity.surname", surname);
 		super.checkInputBoxHasValue("identity.email", email);
-		super.checkInputBoxHasValue("roles", rolesShow);*/
+		super.checkInputBoxHasValue("roleList", roles);
 	}
 }
