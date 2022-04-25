@@ -56,6 +56,7 @@ master.menu.administrator.system-configuration.form = System configuration
 # master.menu.inventor ########################################################
 
 master.menu.inventor = Inventor
+
 master.menu.inventor.patronage.list = List my patronages
 master.menu.inventor.toolkit.list = List my toolkits
 master.menu.inventor.patronage-report.list = List my patronage reports
