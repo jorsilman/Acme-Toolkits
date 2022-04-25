@@ -23,8 +23,8 @@ public class InventorItemListByToolkitService implements AbstractListService<Inv
 	public Collection<Item> findMany(final Request<Item> request) {
 		assert request != null;
 		final int id = request.getModel().getInteger("masterId");
-		final Collection<Item> items = this.repository.findItemsByToolkitId(id);
-		return items;
+		return this.repository.findItemsByToolkitId(id);
+		
 	}
 
 	@Override

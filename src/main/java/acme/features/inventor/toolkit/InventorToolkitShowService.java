@@ -18,7 +18,7 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 
 	@Override
 	public boolean authorise(final Request<Toolkit> request) {
-		// TODO Auto-generated method stub
+		
 		assert request != null;
 
 		return true;
@@ -26,11 +26,11 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 
 	@Override
 	public Toolkit findOne(final Request<Toolkit> request) {
-		// TODO Auto-generated method stub
+		
 		assert request != null;
 		final int id  = request.getModel().getInteger("id");
-		final Toolkit result = this.repository.findOneToolkitById(id);
-		return result;
+		return this.repository.findOneToolkitById(id);
+		
 	}
 
 	@Override
