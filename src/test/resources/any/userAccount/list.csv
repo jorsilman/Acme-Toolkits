@@ -1,0 +1,11 @@
+recordIndex,username,name,surname,email,role
+1,true,inventor1,Inventor1, Acme,inventor1@acme.com,inventor1,inventor1
+2,true,"UserIdentity{name: 'Inventor2', surname: 'Acme', email: 'inventor2@acme.com'}",inventor2,inventor2
+3,true,"UserIdentity{name: 'Inventor3', surname: 'Acme', email: 'inventor3@acme.com'}",inventor3,inventor3
+4,true,"UserIdentity{name: 'Inventor4', surname: 'Acme', email: 'inventor4@acme.com'}",inventor4,inventor4
+5,true,"UserIdentity{name: 'Inventor5', surname: 'Acme', email: 'inventor5@acme.com'}",inventor5,inventor5
+6,true,"UserIdentity{name: 'Patron1', surname: 'Acme', email: 'patron1@acme.com'}",patron1,patron1
+7,true,"UserIdentity{name: 'Patron2', surname: 'Acme', email: 'patron2@acme.com'}",patron2,patron2
+8,true,"UserIdentity{name: 'Patron3', surname: 'Acme', email: 'patron3@acme.com'}",patron3,patron3
+9,true,"UserIdentity{name: 'Patron4', surname: 'Acme', email: 'patron4@acme.com'}",patron4,patron4
+10,true,"UserIdentity{name: 'Patron5', surname: 'Acme', email: 'patron5@acme.com'}",patron5,patron5
