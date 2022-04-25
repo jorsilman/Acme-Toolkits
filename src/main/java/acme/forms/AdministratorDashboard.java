@@ -5,7 +5,6 @@ import java.util.Map;
 
 import org.apache.commons.lang3.tuple.Pair;
 
-import acme.entities.patronage.PatronageStatus;
 import lombok.Getter;
 import lombok.Setter;
 

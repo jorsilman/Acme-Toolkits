@@ -1,7 +1,6 @@
 package acme.features.any.useraccount;
 
 import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 

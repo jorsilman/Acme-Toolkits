@@ -95,7 +95,7 @@
 				action="/inventor/item/list-tool" />
 			<acme:menu-suboption code="master.menu.inventor.toolkit.list"
 				action="/inventor/toolkit/list-own" />
-
+</acme:menu-option>
 
 
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
