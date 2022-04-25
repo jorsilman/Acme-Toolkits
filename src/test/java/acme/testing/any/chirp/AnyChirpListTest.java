@@ -23,9 +23,9 @@ public class AnyChirpListTest extends TestHarness {
 
 		super.checkColumnHasValue(recordIndex, 0, creationMoment);
 		super.checkColumnHasValue(recordIndex, 1, title);
-		//super.checkColumnHasValue(recordIndex, 2, author);
-		//super.checkColumnHasValue(recordIndex, 3, body);
-		//super.checkColumnHasValue(recordIndex, 4, email);
+		super.checkColumnHasValue(recordIndex, 2, author);
+		super.checkColumnHasValue(recordIndex, 3, body);
+		super.checkColumnHasValue(recordIndex, 4, email);
 
 
 	}
