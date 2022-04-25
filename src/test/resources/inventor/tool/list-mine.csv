@@ -1,4 +1,4 @@
-key,key:inventor,item-type,name,code,technology,description,retail-price,link
-item-02,inventor-02,TOOL,name_2,AAA-000-B,technology_2,description2,"EUR 110.00",https://www.youtube.com/
-item-04,inventor-02,TOOL,name_4,AAA-000-D,technology_4,description4,"EUR 130.00",https://www.youtube.com/
-item-06,inventor-02,TOOL,name_6,AAA-000-F,technology_6,description6,"EUR 150.00",null
+recordIndex,item-type,name,code,technology,description,retail-price,link
+0,TOOL,name_2,AAA-000-B,technology_2,description2,"EUR 110.00",https://www.youtube.com/
+1,TOOL,name_4,AAA-000-D,technology_4,description4,"EUR 130.00",https://www.youtube.com/
+2,TOOL,name_6,AAA-000-F,technology_6,description6,"EUR 150.00",null

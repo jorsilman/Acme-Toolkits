@@ -54,6 +54,7 @@ master.menu.administrator.system-configuration.form = Configuración del sistema
 master.menu.inventor = Inventor
 master.menu.inventor.patronage.list = Ver mis patrocinios
 
+
 # master.menu.patron ########################################################
 
 master.menu.patron = Patrón
@@ -66,6 +67,8 @@ master.menu.patron.patronageReport.list = Ver los reportes de mis patrocinios
 
 master.menu.inventor = Inventor
 master.menu.inventor.patronageReport.list = Ver los reportes de mis patrocinios
+master.menu.inventor.item.component = Ver mis componentes
+master.menu.inventor.item.tool = Ver mis herramientas
 
 # master.menu.patron ########################################################
 

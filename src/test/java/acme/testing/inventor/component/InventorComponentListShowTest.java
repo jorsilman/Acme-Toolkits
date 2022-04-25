@@ -17,7 +17,7 @@ public class InventorComponentListShowTest extends TestHarness {
 		final String code, final String technology, final String description, final String retailPrice, final String link) {
 		super.signIn("inventor1", "inventor1");
 		
-		super.clickOnMenu("Inventor", "CompList");
+		super.clickOnMenu("Inventor", "List my components");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		
