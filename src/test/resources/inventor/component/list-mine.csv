@@ -1,4 +1,3 @@
-recordIndex,item-type,name,code,technology,description,retail-price,link
-0,COMPONENT,name_1,AAA-000-A,technology_1,description1,"EUR 100.00",https://www.youtube.com/
-1,COMPONENT,name_3,AAA-000-C,technology_3,description3,"EUR 120.00",https://www.youtube.com/
-2,COMPONENT,name_5,AAA-000-E,technology_5,description5,"EUR 140.00",null
+recordIndex,name,code,technology,description,retailPrice,link,type
+0,name_1,AAA-000-A,technology_1,description1,EUR 100.00,https://www.youtube.com/,COMPONENT
+1,name_5,AAA-000-I,technology_5,description5,USD 130.00,,COMPONENT
