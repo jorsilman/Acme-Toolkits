@@ -27,6 +27,8 @@
 				action="/any/item/list-component" />
 			<acme:menu-suboption code="master.menu.any.chirp.list-recent"
 				action="/any/chirp/list-recent" />
+			<acme:menu-suboption code="master.menu.any.chirp.create"
+				action="/any/chirp/create" />
 			<acme:menu-suboption code="master.menu.any.useraccount.list"
 				action="/any/user-account/list" />
 			<acme:menu-suboption code="master.menu.any.toolkit.list"
