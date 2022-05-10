@@ -60,6 +60,7 @@ master.menu.inventor.toolkit.list = Listar mis cajas de herramientas
 master.menu.inventor.patronage-report.list = Listar mis reportes de patrocinios
 master.menu.inventor.item.component = Ver mis componentes
 master.menu.inventor.item.tool = Ver mis herramientas
+master.menu.inventor.item.create = Crear un nuevo artículo
 
 
 # master.menu.patron ########################################################

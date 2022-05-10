@@ -2,12 +2,14 @@ package acme.features.inventor.item;
 
 import java.util.Collection;
 
+import org.springframework.stereotype.Service;
+
 import acme.entities.item.Item;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractListService;
 import acme.roles.Inventor;
-
+@Service
 public class InventorItemListByToolkitService implements AbstractListService<Inventor, Item>{
 
 	protected InventorItemRepository repository;

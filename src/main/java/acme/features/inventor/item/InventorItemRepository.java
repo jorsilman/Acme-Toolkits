@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import acme.entities.item.Item;
 import acme.framework.repositories.AbstractRepository;
+import acme.roles.Inventor;
 
 @Repository
 public interface InventorItemRepository extends AbstractRepository{
@@ -23,6 +24,9 @@ public interface InventorItemRepository extends AbstractRepository{
 	
 	@Query("SELECT i FROM Item i WHERE i.id = :id")
 	Item findItemById(int id);
+	
+	@Query("SELECT i FROM Inventor i WHERE i.id = :id")
+	Inventor findInventorById(int id);
 	
 	@Query("select q.item from Quantity q where q.toolkit.id = :masterId")
 	Collection<Item> findItemsByToolkitId(int masterId);

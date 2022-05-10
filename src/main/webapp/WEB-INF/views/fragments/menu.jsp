@@ -95,6 +95,8 @@
 				action="/inventor/item/list-tool" />
 			<acme:menu-suboption code="master.menu.inventor.toolkit.list"
 				action="/inventor/toolkit/list-own" />
+			<acme:menu-suboption code="master.menu.inventor.item.create"
+				action="/inventor/item/create" />
 </acme:menu-option>
 
 
