@@ -28,7 +28,7 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp>{
 		assert entity != null;
 		assert errors !=null;
 		
-		request.bind(entity, errors, "creationMoment","title","author","body","email");
+		request.bind(entity, errors,"creationMoment", "title","author","body","email");
 		
 	}
 
@@ -38,7 +38,8 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp>{
 		assert entity != null;
 		assert model !=null;
 		
-		request.unbind(entity, model, "creationMoment","title","author","body","email");
+		request.unbind(entity, model,"creationMoment", "title","author","body","email");
+		model.setAttribute("confirm", false);
 		
 	}
 
@@ -47,11 +48,8 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp>{
 		assert request != null;
 		
 		final Chirp result = new Chirp();
-		result.setAuthor("");
-		result.setBody("");
-		//result.setCreationMoment(Date.fro));
-		result.setEmail("");
-		result.setTitle("");
+		/*final Date now = new Date(System.currentTimeMillis()-1);
+		result.setCreationMoment(now);*/
 		
 		return result;
 	}
@@ -61,6 +59,8 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp>{
 		assert request != null;
 		assert entity != null;
 		assert errors !=null;
+		final boolean confirm = request.getModel().getBoolean("confirm");
+		errors.state(request, confirm, "confirm", "any.chirp.confirm.error");
 		
 	}
 
