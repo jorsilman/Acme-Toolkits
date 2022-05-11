@@ -17,3 +17,7 @@ patron.patronage-report.form.label.serialNumber = Número de serie
 patron.patronage-report.form.label.creationMoment = Momento de creación
 patron.patronage-report.form.label.memorandum = Memorándum
 patron.patronage-report.form.label.link = Enlace
+
+inventor.patronage-report.form.label.confirmation = Confirmar datos
+inventor.patronage-report.confirmatio.error = Debes confirmar
+inventor.patronage-report.form.button.create = Hacer reporte

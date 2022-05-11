@@ -15,7 +15,7 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
-<acme:form readonly="${readonly}">
+<acme:form>
 	<%-- <acme:input-textbox code="patron.patronage.list.label.status" path="status"/> --%>
 	<acme:input-select code="patron.patronage.form.label.status" path="status">
 		<acme:input-option code="patron.patronage.form.label.PROPOSED" value="PROPOSED" selected="${status == 'PROPOSED'}"/>
@@ -35,8 +35,5 @@
 	<acme:input-textbox code="patron.patronage.form.label.inventor-statement" path="inventorStatement"/>
 	<acme:input-textbox code="patron.patronage.form.label.inventor-link" path="inventorLink"/>
 	
-	<jstl:if test="${readonly}">
-		<acme:submit test="${command == 'create'}" code="authenticated.consumer.consumer.form.button.create" action="/authenticated/consumer/create"/>
-		<acme:submit test="${command == 'update'}" code="authenticated.consumer.consumer.form.button.update" action="/authenticated/consumer/update"/>
-	</jstl:if>
+	<acme:button code="inventor.patronage.form.button.create-report" action="/inventor/patronage-report/create?patronageId=${masterId}"/>
 </acme:form>
