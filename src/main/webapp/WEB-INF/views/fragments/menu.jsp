@@ -65,9 +65,6 @@
 			<acme:menu-suboption
 				code="master.menu.administrator.system-configuration.form"
 				action="/administrator/system-configuration/show" />
-			<%-- <acme:menu-suboption
-				code="master.menu.administrator.system-configuration.update"
-				action="/administrator/system-configuration/update" /> --%>
 			<acme:menu-suboption
 				code="master.menu.administrator.administrator-dashboard.show"
 				action="/administrator/administrator-dashboard/show" />

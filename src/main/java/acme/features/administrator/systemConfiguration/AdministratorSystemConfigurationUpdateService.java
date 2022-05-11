@@ -83,12 +83,8 @@ public class AdministratorSystemConfigurationUpdateService implements AbstractUp
 		final List<String> acceptedCurrenciesList = new ArrayList<String>();
 		String systemCurrency;
 		String acceptedCurrencies;
-//		String  strongSpamWords;
-//		String  weakSpamWords;
 		systemCurrency = request.getModel().getAttribute("systemCurrency").toString();
 		acceptedCurrencies = request.getModel().getAttribute("acceptedCurrencies").toString();
-//		strongSpamWords = request.getModel().getAttribute("strongSpamWords").toString();
-//		weakSpamWords = request.getModel().getAttribute("weakSpamWords").toString();
 		
 		String[] currencies;
 		currencies = acceptedCurrencies.split(",");
@@ -97,24 +93,15 @@ public class AdministratorSystemConfigurationUpdateService implements AbstractUp
 			acceptedCurrenciesList.add(currency.trim());
 		}
 		
-		boolean isSystemCurrencyAccepted;
-		isSystemCurrencyAccepted = acceptedCurrenciesList.contains(systemCurrency);
+		final boolean isSystemCurrencyAccepted;
+		final String patternSystemCurrency = "[A-Z]{3}";
+		isSystemCurrencyAccepted = (acceptedCurrenciesList.contains(systemCurrency) && systemCurrency.matches(patternSystemCurrency));
 		errors.state(request, isSystemCurrencyAccepted, "systemCurrency", "administrator.system-configuration.form.error.bad-system-currency");
 		
 		boolean acceptedCurrenciesGood;
 		final String patternAcceptedCurrencies = "[A-Z]{3}(?:, [A-Z]{3})*";
 		acceptedCurrenciesGood = acceptedCurrencies.matches(patternAcceptedCurrencies);
 		errors.state(request, acceptedCurrenciesGood, "acceptedCurrencies", "administrator.system-configuration.form.error.bad-accepted-currencies");
-		
-//		final String patternSpamWords = ".*(?:, .*)*";
-//		
-//		boolean strongSpamWordsGood;
-//		strongSpamWordsGood = strongSpamWords.matches(patternSpamWords);
-//		errors.state(request, strongSpamWordsGood, "strongSpamWords", "administrator.system-configuration.form.error.bad-spam-words");
-//		
-//		boolean weakSpamWordsGood;
-//		weakSpamWordsGood = weakSpamWords.matches(patternSpamWords);
-//		errors.state(request, weakSpamWordsGood, "weakSpamWords", "administrator.system-configuration.form.error.bad-spam-words");
 		
 	}
 
