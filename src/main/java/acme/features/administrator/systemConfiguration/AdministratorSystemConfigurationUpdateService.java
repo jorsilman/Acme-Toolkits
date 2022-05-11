@@ -80,7 +80,6 @@ public class AdministratorSystemConfigurationUpdateService implements AbstractUp
 		assert entity != null;
 		assert errors != null;
 		
-		final List<String> acceptedCurrenciesList = new ArrayList<String>();
 		String systemCurrency;
 		String acceptedCurrencies;
 		systemCurrency = request.getModel().getAttribute("systemCurrency").toString();
@@ -89,20 +88,14 @@ public class AdministratorSystemConfigurationUpdateService implements AbstractUp
 		String[] currencies;
 		currencies = acceptedCurrencies.split(",");
 		
+		final List<String> acceptedCurrenciesList = new ArrayList<String>();
 		for (final String currency : currencies) {
 			acceptedCurrenciesList.add(currency.trim());
 		}
 		
-		final boolean isSystemCurrencyAccepted;
-		final String patternSystemCurrency = "[A-Z]{3}";
-		isSystemCurrencyAccepted = (acceptedCurrenciesList.contains(systemCurrency) && systemCurrency.matches(patternSystemCurrency));
+		boolean isSystemCurrencyAccepted;
+		isSystemCurrencyAccepted = (acceptedCurrenciesList.contains(systemCurrency));
 		errors.state(request, isSystemCurrencyAccepted, "systemCurrency", "administrator.system-configuration.form.error.bad-system-currency");
-		
-		boolean acceptedCurrenciesGood;
-		final String patternAcceptedCurrencies = "[A-Z]{3}(?:, [A-Z]{3})*";
-		acceptedCurrenciesGood = acceptedCurrencies.matches(patternAcceptedCurrencies);
-		errors.state(request, acceptedCurrenciesGood, "acceptedCurrencies", "administrator.system-configuration.form.error.bad-accepted-currencies");
-		
 	}
 
 	@Override
