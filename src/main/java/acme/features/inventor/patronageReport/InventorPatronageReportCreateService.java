@@ -43,7 +43,7 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 
 		boolean result;
 		int patronageId;
-		final Patronage patronage;
+		Patronage patronage;
 
 		patronageId = request.getModel().getInteger("patronageId");
 		patronage = this.repository.findOnePatronageById(patronageId);
@@ -64,15 +64,15 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		String newSerialNumberParsed;
 		Date moment;
 		Calendar calendar;
-
+//
 		patronageId = request.getModel().getInteger("patronageId");
 		patronage = this.repository.findOnePatronageById(patronageId);
-		
+//		
 		lastSerialNumber = this.repository.findLastSerialNumber();
 		newSerialNumber = Integer.valueOf(lastSerialNumber) + 1;
 		newSerialNumberParsed = String.format("%04d", newSerialNumber); // Must be 4 characters long, left-pads as many 0s as necessary
-		
-
+//		
+//
 		moment = new Date();
 		calendar = Calendar.getInstance();
 		calendar.setTime(moment);
@@ -81,10 +81,8 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 
 		result = new PatronageReport();
 		result.setSerialNumber(newSerialNumberParsed);
-		result.setMemorandum("");
-		result.setLink("");
 		result.setCreationMoment(moment);
-		//result.setSequenceNumber("");
+//		//result.setSequenceNumber("");
 		result.setPatronage(patronage);
 
 		return result;
@@ -96,7 +94,7 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "serialNumber", "memorandum", "link", "confirmation");
+		request.bind(entity, errors, "serialNumber", "creationMoment", "memorandum", "link");
 	}
 
 	@Override
@@ -117,26 +115,17 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "serialNumber", "memorandum", "link");
+		request.unbind(entity, model, "serialNumber", "creationMoment", "memorandum", "link");
 		model.setAttribute("confirmation", false);
 		model.setAttribute("patronageId", request.getModel().getAttribute("patronageId"));
+//		model.setAttribute("patronage", this.repository.findOnePatronageById(Integer.valueOf(request.getModel().getAttribute("patronageId").toString())));
 	}
 
 	@Override
 	public void create(final Request<PatronageReport> request, final PatronageReport entity) {
 		assert request != null;
 		assert entity != null;
-
-		Date moment;
-		Calendar calendar;
-
-		moment = new Date();
-		calendar = Calendar.getInstance();
-		calendar.setTime(moment);
-		calendar.add(Calendar.SECOND, -1);
-		moment = calendar.getTime();
-
-		entity.setCreationMoment(moment);
+		
 		this.repository.save(entity);
 	}
 

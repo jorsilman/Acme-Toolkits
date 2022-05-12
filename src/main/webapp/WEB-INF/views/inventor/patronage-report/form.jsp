@@ -19,10 +19,11 @@
 	<acme:hidden-data path="patronageId"/>
 	
 	<acme:input-textbox code="patron.patronage-report.form.label.serialNumber" path="serialNumber" readonly="true"/>
+	<acme:input-moment code="patron.patronage-report.form.label.creationMoment" path="creationMoment" readonly="true"/>
 
-	<jstl:if test="${command == 'show'}">
-		<acme:input-textbox code="patron.patronage-report.form.label.creationMoment" path="creationMoment"/>
-	</jstl:if>
+	<%--<jstl:if test="${command == 'show'}">
+		
+	</jstl:if>--%>
 	
 	<acme:input-textarea code="patron.patronage-report.form.label.memorandum" path="memorandum"/>
 	<acme:input-url code="patron.patronage-report.form.label.link" path="link"/>
