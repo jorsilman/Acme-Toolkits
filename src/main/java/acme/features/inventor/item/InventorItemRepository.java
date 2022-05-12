@@ -2,6 +2,7 @@ package acme.features.inventor.item;
 
 import java.util.Collection;
 
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -30,6 +31,13 @@ public interface InventorItemRepository extends AbstractRepository{
 	
 	@Query("select q.item from Quantity q where q.toolkit.id = :masterId")
 	Collection<Item> findItemsByToolkitId(int masterId);
+	
+	@Query("SELECT i FROM Item i WHERE i.id = :id and i.itemType = 0")
+	Item findToolById(int id);
+
+	@Modifying
+	@Query("DELETE FROM Quantity q WHERE q.item.id = :id")
+	void deleteQuantityByItemId(int id);
 	
 
 }

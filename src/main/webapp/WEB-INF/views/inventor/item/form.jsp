@@ -12,10 +12,20 @@
 	<acme:input-textbox code="inventor.item.form.label.link" path="link"/>
 	<acme:input-select code="inventor.item.form.label.type" path="itemType">
 		<acme:input-option value="TOOL" code="inventor.item.form.label.tool" selected ="${itemType == 'TOOL' }"/>
-		<acme:input-option value ="COMPONENT" code="inventor.item.form.label.component" selected="${ itemType == 'COMPONENT' }" />
+		
 	</acme:input-select>
 	
-	<acme:submit code="inventor.item.form.button.create" action="/inventor/item/create"/>
+	<jstl:choose>
+		<jstl:when test="${command == 'create-tool' }">
+			<acme:submit code="inventor.item.form.button.create" action="/inventor/item/create-tool"/>
+		</jstl:when>
+		<jstl:when test="${acme:anyOf(command,'show, update, delete')}"> 
+            <acme:submit code="inventor.item.form.button.update" action="/inventor/item/update-tool"/>
+            <acme:submit code="inventor.item.form.button.delete" action="delete-tool"/>
+        </jstl:when>
+	</jstl:choose>
+	
+	
 	
 	
 		

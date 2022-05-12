@@ -4,29 +4,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.item.Item;
-import acme.entities.item.ItemType;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
-import acme.framework.services.AbstractCreateService;
+import acme.framework.services.AbstractDeleteService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorToolCreateService implements AbstractCreateService<Inventor, Item>{
-	
+public class InventorToolDeleteService implements AbstractDeleteService<Inventor, Item>{
 	// Internal state ------------------------------------------------
 	
 		@Autowired
 		protected InventorItemRepository itemRepo;
-		
-		
+				
+				
 		@Override
 		public boolean authorise(final Request<Item> request) {
 			assert request != null;
 			return true;
 		}
-		
-
 		
 		@Override
 		public void bind(final Request<Item> request, final Item entity, final Errors errors) {
@@ -34,43 +30,35 @@ public class InventorToolCreateService implements AbstractCreateService<Inventor
 			assert entity != null;
 			assert errors != null;
 			
+			
 			request.bind(entity, errors, "name","code",  "technology", "description", "retailPrice", "link");
 		}
 		
-	
 		@Override
 		public void unbind(final Request<Item> request, final Item entity, final Model model) {
 			assert request != null;
 			assert entity != null;
 			assert model != null;
 			
+			
 			request.unbind(entity, model, "name","code", "technology", "description", "retailPrice", "link");
 			
 		}
 		
 		@Override
-		public Item instantiate (final Request<Item> request) {
+		public Item findOne(final Request<Item> request) {
 			assert request != null;
-			
-			
-			
-			
-			Inventor inventor;
-			final Integer id = request.getPrincipal().getActiveRoleId();
-			inventor = this.itemRepo.findInventorById(id);
-			
+
 			Item result;
-			result = new Item();
-		
-			result.setInventor(inventor);
-			result.setItemType(ItemType.TOOL);
-		
+			int id;
+
+			id = request.getModel().getInteger("id");
+			result = this.itemRepo.findItemById(id);
 			
-		
+			
+
 			return result;
-			
-			
-			}
+		}
 		
 		@Override
 		public void validate(final Request<Item> request, final Item entity, final Errors errors) {
@@ -80,14 +68,20 @@ public class InventorToolCreateService implements AbstractCreateService<Inventor
 			
 			
 		}
-				
+		
 		@Override
-		public void create(final Request<Item> request, final Item entity) {
+		public void delete(final Request<Item> request, final Item entity) {
 			assert request != null;
 			assert entity != null;
-			this.itemRepo.save(entity);
+			
+			this.itemRepo.deleteQuantityByItemId(entity.getId());
+			this.itemRepo.delete(entity);
+			
 			
 		}
+		
 
+		
 
-}
+	}
+
