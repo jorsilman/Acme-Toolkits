@@ -16,8 +16,8 @@ public interface InventorPatronageReportRepository extends AbstractRepository {
 	@Query("select patronageReport from PatronageReport patronageReport where patronageReport.id = :id")
 	PatronageReport findOnePatronageReportById(int id);
 	
-	@Query("select max(patronageReport.serialNumber) from PatronageReport patronageReport")
-	String findLastSerialNumber();
+	@Query("select patronageReport.sequenceNumber from PatronageReport patronageReport where patronageReport.patronage.id = :id")
+	Collection<String> getPatronageReportSequenceNumbersByPatronageId(int id);
 
 	@Query("select patronageReport from PatronageReport patronageReport where patronageReport.patronage.inventor.id = :id")
 	Collection<PatronageReport> findPatronageReportsByInventorId(int id);

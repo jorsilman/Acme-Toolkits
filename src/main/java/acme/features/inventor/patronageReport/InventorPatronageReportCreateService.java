@@ -12,8 +12,12 @@
 
 package acme.features.inventor.patronageReport;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -57,22 +61,43 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		assert request != null;
 
 		PatronageReport result;
+		
 		int patronageId;
 		Patronage patronage;
-		String lastSerialNumber;
+		
+		Collection<String> sequenceNumbers;
+		final List<Integer> serialNumbers = new ArrayList<Integer>();;
+		int lastSerialNumber;
 		int newSerialNumber;
 		String newSerialNumberParsed;
+		String newSequenceNumber;
+		
 		Date moment;
 		Calendar calendar;
-//
+		
 		patronageId = request.getModel().getInteger("patronageId");
 		patronage = this.repository.findOnePatronageById(patronageId);
-//		
-		lastSerialNumber = this.repository.findLastSerialNumber();
-		newSerialNumber = Integer.valueOf(lastSerialNumber) + 1;
-		newSerialNumberParsed = String.format("%04d", newSerialNumber); // Must be 4 characters long, left-pads as many 0s as necessary
-//		
-//
+		
+		// Sequence Number
+		sequenceNumbers = this.repository.getPatronageReportSequenceNumbersByPatronageId(patronageId);
+		
+		if (sequenceNumbers.isEmpty()) {
+			newSequenceNumber = patronage.getCode() + ":0001";
+		} else {
+			
+			for (final String sequenceNumber : sequenceNumbers) {
+				serialNumbers.add(Integer.valueOf(sequenceNumber.split(":")[1]));
+			}
+			
+			Collections.sort(serialNumbers);
+			
+			lastSerialNumber = serialNumbers.get(serialNumbers.size() - 1);
+			newSerialNumber = Integer.valueOf(lastSerialNumber) + 1;
+			newSerialNumberParsed = String.format("%04d", newSerialNumber); // Must be 4 characters long, left-pads as many 0s as necessary
+			newSequenceNumber = patronage.getCode() + ":" + newSerialNumberParsed;
+		}
+		
+		// Creation Moment
 		moment = new Date();
 		calendar = Calendar.getInstance();
 		calendar.setTime(moment);
@@ -80,9 +105,8 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		moment = calendar.getTime();
 
 		result = new PatronageReport();
-		result.setSerialNumber(newSerialNumberParsed);
 		result.setCreationMoment(moment);
-//		//result.setSequenceNumber("");
+		result.setSequenceNumber(newSequenceNumber);
 		result.setPatronage(patronage);
 
 		return result;
@@ -94,7 +118,7 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "serialNumber", "creationMoment", "memorandum", "link");
+		request.bind(entity, errors, "memorandum", "link");
 	}
 
 	@Override
@@ -105,8 +129,6 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		
 		final boolean confirmation = request.getModel().getBoolean("confirmation");
 		errors.state(request, confirmation, "confirmation", "inventor.patronage-report.confirmatio.error");
-		
-		// TODO: Check sequenceNumber
 	}
 
 	@Override
@@ -115,16 +137,26 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "serialNumber", "creationMoment", "memorandum", "link");
+		request.unbind(entity, model, "memorandum", "link");
 		model.setAttribute("confirmation", false);
 		model.setAttribute("patronageId", request.getModel().getAttribute("patronageId"));
-//		model.setAttribute("patronage", this.repository.findOnePatronageById(Integer.valueOf(request.getModel().getAttribute("patronageId").toString())));
 	}
 
 	@Override
 	public void create(final Request<PatronageReport> request, final PatronageReport entity) {
 		assert request != null;
 		assert entity != null;
+		
+		Date moment;
+		Calendar calendar;
+		
+		moment = new Date();
+		calendar = Calendar.getInstance();
+		calendar.setTime(moment);
+		calendar.add(Calendar.SECOND, -1);
+		moment = calendar.getTime();
+		
+		entity.setCreationMoment(moment);
 		
 		this.repository.save(entity);
 	}
