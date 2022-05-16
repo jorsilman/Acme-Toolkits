@@ -14,3 +14,10 @@ administrator.system-configuration.form.label.strongSpamWords = Palabras spam fu
 administrator.system-configuration.form.label.strongSpamThreshold = Límite spam fuerte
 administrator.system-configuration.form.label.weakSpamWords = Palabras spam débiles
 administrator.system-configuration.form.label.weakSpamThreshold = Límite spam débil
+
+administrator.system-configuration.form.button.update = Actualizar
+administrator.system-configuration.form.button.save = Guardar
+
+administrator.system-configuration.form.error.bad-system-currency = Esta moneda del sistema no está entre las aceptadas
+administrator.system-configuration.form.error.bad-accepted-currencies = Debe ser una lista de palabras de 3 letras mayúsculas separadas por una coma y un espacio
+administrator.system-configuration.form.error.bad-spam-words = Debe ser una lista de palabras separadas por una coma y un espacio
