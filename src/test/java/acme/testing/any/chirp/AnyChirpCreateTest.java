@@ -24,7 +24,7 @@ public class AnyChirpCreateTest extends TestHarness{
 		super.fillInputBoxIn("confirm", confirm);
 		super.clickOnSubmit("Create");
 		
-		super.clickOnMenu("All", "Show recent chirps");
+		super.clickOnMenu("All", "Show recents chirps");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		super.checkColumnHasValue(recordIndex, 0, creationMoment);
