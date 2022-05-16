@@ -15,14 +15,19 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
-<acme:form readonly="${readonly}">
-	<acme:input-textbox code="patron.patronage-report.form.label.serialNumber" path="serialNumber"/>
-	<acme:input-moment code="patron.patronage-report.form.label.creationMoment" path="creationMoment"/>
+<acme:form>
+	<acme:hidden-data path="patronageId"/>
+	
+	<jstl:if test="${command == 'show'}">
+		<acme:input-textbox code="patron.patronage-report.form.label.sequenceNumber" path="sequenceNumber" readonly="true"/>
+		<acme:input-moment code="patron.patronage-report.form.label.creationMoment" path="creationMoment" readonly="true"/>
+	</jstl:if>
+	
 	<acme:input-textarea code="patron.patronage-report.form.label.memorandum" path="memorandum"/>
 	<acme:input-url code="patron.patronage-report.form.label.link" path="link"/>
-
-	<jstl:if test="${readonly}">
-		<acme:submit test="${command == 'create'}" code="authenticated.consumer.consumer.form.button.create" action="/authenticated/consumer/create"/>
-		<acme:submit test="${command == 'update'}" code="authenticated.consumer.consumer.form.button.update" action="/authenticated/consumer/update"/>
+	
+	<jstl:if test="${command == 'create'}">
+		<acme:input-checkbox code="inventor.patronage-report.form.label.confirmation" path="confirmation"/>
+		<acme:submit code="inventor.patronage-report.form.button.create" action="/inventor/patronage-report/create?patronageId=${patronageId}"/>
 	</jstl:if>
 </acme:form>
