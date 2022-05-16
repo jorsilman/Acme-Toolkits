@@ -14,3 +14,10 @@ administrator.system-configuration.form.label.strongSpamWords = Strong spam word
 administrator.system-configuration.form.label.strongSpamThreshold = Strong spam threshold
 administrator.system-configuration.form.label.weakSpamWords = Weak spam words
 administrator.system-configuration.form.label.weakSpamThreshold = Weak spam threshold
+
+administrator.system-configuration.form.button.update = Update
+administrator.system-configuration.form.button.save = Save
+
+administrator.system-configuration.form.error.bad-system-currency = This system currency is not amongst the accepted ones
+administrator.system-configuration.form.error.bad-accepted-currencies = Must be a list of words of 3 capital letters separated by a comma and a space
+administrator.system-configuration.form.error.bad-spam-words = Must be a list of words separated by a comma and a space

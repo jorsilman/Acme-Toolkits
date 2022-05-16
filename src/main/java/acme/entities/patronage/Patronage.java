@@ -52,7 +52,7 @@ public class Patronage extends AbstractEntity{
 	
 	@NotNull
 	@Past
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	protected Date				creationDate;
 	
 	@NotNull
