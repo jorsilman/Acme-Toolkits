@@ -32,12 +32,16 @@ public interface InventorItemRepository extends AbstractRepository{
 	@Query("select q.item from Quantity q where q.toolkit.id = :masterId")
 	Collection<Item> findItemsByToolkitId(int masterId);
 	
+
+	@Query("SELECT i FROM Inventor i WHERE i.id = :id")
+	Inventor findInventorById(int id);
+
 	@Query("SELECT i FROM Item i WHERE i.id = :id and i.itemType = 0")
 	Item findToolById(int id);
 
 	@Modifying
 	@Query("DELETE FROM Quantity q WHERE q.item.id = :id")
 	void deleteQuantityByItemId(int id);
-	
+
 
 }
