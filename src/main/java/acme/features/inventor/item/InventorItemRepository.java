@@ -33,9 +33,6 @@ public interface InventorItemRepository extends AbstractRepository{
 	Collection<Item> findItemsByToolkitId(int masterId);
 	
 
-	@Query("SELECT i FROM Inventor i WHERE i.id = :id")
-	Inventor findInventorById(int id);
-
 	@Query("SELECT i FROM Item i WHERE i.id = :id and i.itemType = 0")
 	Item findToolById(int id);
 

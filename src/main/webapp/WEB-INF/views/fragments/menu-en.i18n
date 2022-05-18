@@ -68,7 +68,7 @@ master.menu.inventor.item.component = List my components
 
 master.menu.inventor.item.create-component = Create a new component
 
-master.menu.inventor.item.create = Create a new item
+master.menu.inventor.item.create = Create a new tool
 
 
 # master.menu.patron ########################################################
