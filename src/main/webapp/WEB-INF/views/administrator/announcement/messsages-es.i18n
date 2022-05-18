@@ -1,0 +1,14 @@
+authenticated.announcement.list.label.title = Título:
+authenticated.announcement.list.label.body = Cuerpo:
+authenticated.announcement.list.label.creationMoment = Momento de creación:
+
+administrator.announcement.form.label.title = Título
+administrator.announcement.form.label.email = Email:
+administrator.announcement.form.label.critical = Bandera Crítica:
+administrator.announcement.form.label.link = Enlace
+administrator.announcement.form.label.body = Cuerpo
+administrator.announcement.form.label.creationMoment = Momento de creación:
+administrator.announcement.form.label.confirm = Confirmar
+administrator.announcement.form.button.create = Crear
+
+administrator.announcement.confirm.error = Debes confirmar

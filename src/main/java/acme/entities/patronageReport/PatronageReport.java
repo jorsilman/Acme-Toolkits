@@ -31,11 +31,6 @@ public class PatronageReport extends AbstractEntity {
 		
 		//Attributes
 		
-		@Column(unique = true)
-		@Pattern(regexp = "^[0-9]{4}$")
-		@NotBlank
-		protected String 			serialNumber;
-		
 		@NotNull
 		@Temporal(TemporalType.TIMESTAMP)
 		@Past
@@ -50,12 +45,10 @@ public class PatronageReport extends AbstractEntity {
 		
 		//Derived attributes 
 		
+		@Column(unique = true)
+		@Pattern(regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])?:[0-9]{4}$")
 		@NotBlank
-		//protected String			sequenceNumber;
-		
-		public String sequenceNumber() {
-			return this.patronage.getCode() + ":" + this.serialNumber;
-		}
+		protected String 			sequenceNumber;
 		
 		//Relationships
 		@Valid
