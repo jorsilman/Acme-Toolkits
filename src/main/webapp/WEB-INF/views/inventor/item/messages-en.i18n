@@ -17,7 +17,7 @@ inventor.item.form.button.create-component = Create component
 
 inventor.item.form.button.delete-component = Delete component
 inventor.item.form.button.update-component = Update component
-inventor.item.form.button.publish = Publish component
+inventor.item.form.button.publish = Publish 
 inventor.item.list.label.published = Published
 
 inventor.item.form.label.retailprice = Price

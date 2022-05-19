@@ -34,6 +34,7 @@ public class InventorToolCreateService implements AbstractCreateService<Inventor
 			assert entity != null;
 			assert errors != null;
 			
+			entity.setPublished(false);
 			request.bind(entity, errors, "name","code",  "technology", "description", "retailPrice", "link");
 		}
 		
@@ -44,7 +45,7 @@ public class InventorToolCreateService implements AbstractCreateService<Inventor
 			assert entity != null;
 			assert model != null;
 			
-			request.unbind(entity, model, "name","code", "technology", "description", "retailPrice", "link");
+			request.unbind(entity, model, "name","code", "technology", "description", "retailPrice", "link", "published");
 			
 		}
 		

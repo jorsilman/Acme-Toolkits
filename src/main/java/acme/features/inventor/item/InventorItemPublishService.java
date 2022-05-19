@@ -37,7 +37,16 @@ public class InventorItemPublishService implements AbstractUpdateService<Invento
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		entity.setItemType(ItemType.COMPONENT);
+		
+		Item item;
+		int masterId;
+		masterId = request.getModel().getInteger("id");
+		item = this.itemRepo.findItemById(masterId);
+		if(item.getItemType() == ItemType.COMPONENT) {
+			entity.setItemType(ItemType.COMPONENT);
+		}else {
+			entity.setItemType(ItemType.TOOL);
+		}
 		
 		request.bind(entity, errors, "name","code",  "technology", "description", "retailPrice", "link");
 	}
@@ -47,7 +56,17 @@ public class InventorItemPublishService implements AbstractUpdateService<Invento
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		entity.setItemType(ItemType.COMPONENT);
+		
+		Item item;
+		int masterId;
+		masterId = request.getModel().getInteger("id");
+		item = this.itemRepo.findItemById(masterId);
+		if(item.getItemType() == ItemType.COMPONENT) {
+			entity.setItemType(ItemType.COMPONENT);
+		}else {
+			entity.setItemType(ItemType.TOOL);
+		}
+		
 		
 		request.unbind(entity, model, "name","code", "technology", "description", "retailPrice", "link", "published");
 		
