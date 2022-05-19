@@ -12,6 +12,9 @@
 
 package acme.features.administrator.systemConfiguration;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -53,5 +56,18 @@ public class AdministratorSystemConfigurationShowService implements AbstractShow
 			assert model != null;
 
 			request.unbind(entity, model, "acceptedCurrencies", "systemCurrency", "strongSpamWords", "strongSpamThreshold", "weakSpamWords", "weakSpamThreshold");
+			
+			String acceptedCurrencies;
+			acceptedCurrencies = this.repository.getSystemConfiguration().get(0).getAcceptedCurrencies();
+			
+			String[] currencies;
+			currencies = acceptedCurrencies.split(",");
+			
+			final List<String> acceptedCurrenciesList = new ArrayList<String>();
+			for (final String currency : currencies) {
+				acceptedCurrenciesList.add(currency.trim());
+			}
+			
+			model.setAttribute("acceptedCurrenciesList", acceptedCurrenciesList);
 		}
 }
