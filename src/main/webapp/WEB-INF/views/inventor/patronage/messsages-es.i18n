@@ -33,4 +33,8 @@ patron.patronage.form.label.inventor-company = Compañía
 patron.patronage.form.label.inventor-statement = Declaración
 patron.patronage.form.label.inventor-link = Enlace
 
+
 inventor.patronage.form.button.update.accept = Actualizar
+
+inventor.patronage.form.button.create-report = Hacer reporte
+
