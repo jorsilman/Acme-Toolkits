@@ -9,12 +9,14 @@
 		<jstl:when test="${command == 'create'}">
 		<acme:input-textbox code="inventor.toolkit.form.label.code" path="code" placeholder="inventor.toolkit.form.placeholder.code"/>
 		</jstl:when>
-		<jstl:otherwise>
+		
+		<jstl:when test="${command != 'create'}">
 			<acme:input-textbox code="inventor.toolkit.form.label.code" path="code" placeholder="inventor.toolkit.form.placeholder.code" readonly="true"/>
-		</jstl:otherwise>	
+		</jstl:when>
+		
 	</jstl:choose>
 
-			<acme:input-textbox code="inventor.toolkit.form.label.code" path="code" placeholder="inventor.toolkit.form.placeholder.code"/>
+		
 			<acme:input-textbox code="inventor.toolkit.form.label.title" path="title"/>
 			<acme:input-textarea code="inventor.toolkit.form.label.description" path="description"/>
 			<acme:input-textarea code="inventor.toolkit.form.label.assembly-notes" path="assemblyNotes"/>
@@ -26,8 +28,7 @@
 			<acme:button code="inventor.toolkit.form.button.quantities" action="/inventor/quantity/list?masterId=${id}"/>
 			<acme:submit code="inventor.toolkit.form.button.update" action="update"/>
 			<acme:submit code="inventor.toolkit.form.button.delete" action="delete"/>
-			<acme:submit code="inventor.toolkit.form.button.publish" action="publish"/>
-		<acme:button  code="inventor.quantity.form.button.create" action="/inventor/quantity/create?masterId=${id}"/>
+			<acme:submit code="inventor.toolkit.form.button.publish" action="/inventor/toolkit/publish?id=${id}"/>
 		</jstl:when>
 	
 		<jstl:when test="${published == true}">

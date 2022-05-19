@@ -52,15 +52,19 @@ public class InventorToolkitPublishService implements AbstractUpdateService<Inve
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		
-		request.unbind(entity, model, "code", "title", "description", "assemblyNotes", "link", "published");
+		int id;
+		id = request.getModel().getInteger("id");
+		model.setAttribute("id", id);
+		request.unbind(entity, model, "code", "title", "description", "assemblyNotes", "link","published");
 				
 	}
 
 	@Override
 	public Toolkit findOne(Request<Toolkit> request) {
 		Toolkit toolkit;
-		toolkit = this.repository.findToolkitById(request.getModel().getInteger("id"));
+		int toolkitId;
+		toolkitId = request.getModel().getInteger("id");
+		toolkit = this.repository.findToolkitById(toolkitId);
 	
 		return toolkit;
 	}
@@ -72,10 +76,12 @@ public class InventorToolkitPublishService implements AbstractUpdateService<Inve
 		assert errors != null;
 		
 		final Collection<Item> items;
+		int toolkitId;
+		toolkitId = request.getModel().getInteger("id");
+		items = this.repository.findItemsOfToolkitByToolkitId(toolkitId);
 		
-		items = this.repository.findItemsOfToolkitByToolkitId(entity.getId());
-		
-		errors.state(request, !items.isEmpty(),"*", "inventor.toolkit.form.error.no-items");
+		//VALIDAR SI TIENE ARTICULOS
+		//errors.state(request, !items.isEmpty(),"*", "inventor.toolkit.form.error.no-items");
 		//FILTRO DE PUBLICACION DE ITEMS
 		
 		

@@ -48,7 +48,7 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model,"code", "title", "description", "assemblyNotes", "published", "link");
+		request.unbind(entity, model,"code", "title", "description", "assemblyNotes", "link");
 
 	}
 

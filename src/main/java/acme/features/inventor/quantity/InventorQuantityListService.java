@@ -55,39 +55,28 @@ public class InventorQuantityListService implements AbstractListService<Inventor
 
 
 	@Override
-	public void unbind(Request<Quantity> request, Quantity entity, Model model) {
+	public void unbind(Request<Quantity> request, Collection<Quantity> entity, Model model) {
 		assert request != null;
-		//assert !CollectionHelper.someNull(entities);
+
 		assert model != null;
 
 		int toolkitId;
-		//Toolkit toolkit;
-
-		//final boolean showCreate;
 
 		toolkitId = request.getModel().getInteger("masterId");
-		//toolkit = this.repository.findToolkitById(toolkitId);
-		
-		//showCreate = (!toolkit.isPublished() && request.isPrincipal(toolkit.getInventor()));
 
-		model.setAttribute("toolkitId", toolkitId);
-		//model.setAttribute("showCreate", showCreate);	
+		model.setAttribute("masterId", toolkitId);
+
 		request.unbind(entity, model, "number", "item.code", "item.name", "item.itemType");
 
 	}
-/*
+
 	@Override
 	public void unbind(final Request<Quantity> request, final Quantity entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
+		request.unbind(entity, model, "number", "item.code", "item.name", "item.itemType");
+	}
 
-		final String defaultCurrency = this.repository.getSystemConfiguration().getSystemCurrency();
-
-		final Money retailPrice = MoneyExchanger.of(entity.getItem().getRetailPrice(), defaultCurrency)//.execute().getTarget();
-
-		model.setAttribute("item.retailPrice", retailPrice);
-		request.unbind(entity, model, "number", "item.code", "item.name", "item.technology");
-	}*/
 }

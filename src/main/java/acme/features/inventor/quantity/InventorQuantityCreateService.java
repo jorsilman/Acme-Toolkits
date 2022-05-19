@@ -2,6 +2,8 @@ package acme.features.inventor.quantity;
 
 
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -59,11 +61,15 @@ public class InventorQuantityCreateService implements AbstractCreateService<Inve
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-
+		
+		final int inventorId = request.getPrincipal().getActiveRoleId();
+		
+		Collection<Item> items = this.repository.findItemsByInventorId(inventorId);
+		
 		request.unbind(entity, model, "number", "item.code");
 		model.setAttribute("masterId", request.getModel().getAttribute("masterId"));
 		model.setAttribute("published", entity.getToolkit().isPublished());
-		
+		model.setAttribute("items", items);
 		
 
 	}
@@ -105,7 +111,7 @@ public class InventorQuantityCreateService implements AbstractCreateService<Inve
 			exists = item.getId() != 0;
 			
 			errors.state(request, exists, "item.code", "inventor.quantity.form.error.invalid");
-			if (exists)	errors.state(request, this.repository.countByItemIdAndToolkitId(item.getId(), entity.getToolkit().getId()) == 0, "Item.code", "inventor.quantity.form.error.duplicated");
+			if (exists)	errors.state(request, this.repository.countByItemIdAndToolkitId(item.getId(), entity.getToolkit().getId()) == 0, "item.code", "inventor.quantity.form.error.duplicated");
 		}
 		
 		if (!errors.hasErrors("number")) {

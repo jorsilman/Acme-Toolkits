@@ -18,7 +18,12 @@
 <acme:form>
 	<jstl:choose>
 		<jstl:when test="${command == 'create'}">
-			<acme:input-textbox code="inventor.quantity.form.label.item.code" path="item.code"/>
+			<acme:input-select code="inventor.quantity.form.label.item" path="item.code">
+				<jstl:forEach items="${items}" var="item">
+					<acme:input-option code="${item.getName()}" value="${item.getCode()}"
+						selected="${ item.getCode() == item.code}" />
+				</jstl:forEach>
+			</acme:input-select>
 		</jstl:when>
 		<jstl:otherwise>
 			<acme:input-textbox code="inventor.quantity.form.label.item.code" path="item.code" readonly="true"/>
