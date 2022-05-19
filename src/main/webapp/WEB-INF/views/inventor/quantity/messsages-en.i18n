@@ -1,0 +1,28 @@
+# i18n-en.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+inventor.quantity.list.label.item.code = Code
+inventor.quantity.list.label.item.name = Name
+inventor.quantity.list.label.number = Quantity
+inventor.quantity.list.label.item.retailPrice = Retail Price
+
+inventor.quantity.form.label.item.code = Code
+inventor.quantity.form.label.number = Quantity
+
+
+inventor.quantity.list.button.create = Add Item
+
+
+inventor.quantity.form.button.update = Update
+inventor.quantity.form.button.delete = Delete
+inventor.quantity.form.button.create = Add
+
+inventor.quantity.form.error.invalid = There is already an article with this code
+inventor.quantity.form.error.exceed = You can´t add more than 1 Tool

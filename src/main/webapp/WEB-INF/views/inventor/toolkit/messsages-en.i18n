@@ -10,18 +10,27 @@
 
 inventor.toolkit.list.label.code = Code
 inventor.toolkit.list.label.title = Title
-inventor.toolkit.list.label.description = Description
 inventor.toolkit.list.label.published = Published
-inventor.toolkit.list.label.assembly-notes = Assembly notes
-inventor.toolkit.list.label.link = Link
+
+inventor.toolkit.list.button.create = Create
+
 
 inventor.toolkit.form.label.code = Code
 inventor.toolkit.form.label.title = Title
 inventor.toolkit.form.label.description = Description
 inventor.toolkit.form.label.assembly-notes = Assembly notes
-inventor.toolkit.form.label.published = Published
 inventor.toolkit.form.label.link = Link
+
 inventor.toolkit.form.label.retail-price-euro = Retail price euro
 inventor.toolkit.form.label.retail-price-dollar = Retail price dollar
 inventor.toolkit.form.label.retail-price-gbd = Retail price gbd
-inventor.toolkit.form.button.items = Items
+
+inventor.toolkit.form.button.quantities = Items
+inventor.toolkit.form.button.update = Update
+inventor.toolkit.form.button.delete = Delete
+inventor.toolkit.form.button.publish = Publish
+inventor.quantity.form.button.create = Add Items
+
+
+inventor.toolkit.form.button.create = Create
+inventor.toolkit.form.placeholder.code = Codigo similar a XXX-000-X

@@ -10,18 +10,26 @@
 
 inventor.toolkit.list.label.code = Código
 inventor.toolkit.list.label.title = Título
-inventor.toolkit.list.label.description = Descripción
-inventor.toolkit.list.label.assembly-notes = Notas de montaje
-inventor.toolkit.list.label.published = Publicada
-inventor.toolkit.list.label.link = Link
+inventor.toolkit.list.label.published = Publicado
+
+
+inventor.toolkit.list.button.create = Crear
 
 inventor.toolkit.form.label.code = Code
 inventor.toolkit.form.label.title = Title
 inventor.toolkit.form.label.description = Description
 inventor.toolkit.form.label.assembly-notes = Notas de montaje
 inventor.toolkit.form.label.link = Link
-inventor.toolkit.form.label.published = Publicada
+
 inventor.toolkit.form.label.retail-price-euro = Precio de venta euros
 inventor.toolkit.form.label.retail-price-dollar = Precio de venta dolares
 inventor.toolkit.form.label.retail-price-gbd = Precio de venta libras
-inventor.toolkit.form.button.items = Artículos
+
+inventor.toolkit.form.button.quantities = Artículos
+inventor.toolkit.form.button.update = Actualizar
+inventor.toolkit.form.button.delete = Borrar
+inventor.toolkit.form.button.publish = Publicar
+inventor.quantity.form.button.create = Añadir Artículos
+
+inventor.toolkit.form.button.create = Crear
+inventor.toolkit.form.placeholder.code = Code similar to XXX-000-X

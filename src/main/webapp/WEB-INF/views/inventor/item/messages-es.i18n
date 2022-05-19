@@ -1,10 +1,30 @@
 # i18n-es.i18n
 
 inventor.item.list.label.name = Nombre
-inventor.item.list.label.code = Codigo
-inventor.item.list.label.technology = Tecnologia
-inventor.item.list.label.description = Descripcion
+inventor.item.form.label.name = Nombre
+inventor.item.form.label.code = Código
+inventor.item.form.label.technology = Tecnología
 inventor.item.list.label.retailprice = Precio
+
 inventor.item.list.label.type = Tipo
 inventor.item.list.label.link = Enlace
 inventor.item.list.label.inventor = Inventor
+inventor.item.list.label.publish = Publicado
+inventor.item.form.label.component = Componente
+inventor.item.form.button.create-component = Crear componente
+inventor.item.form.label.type = Tipo
+inventor.item.form.button.delete-component = Borrar componente
+inventor.item.form.button.update-component = Actualizar componente
+inventor.item.form.button.publish = Publicar 
+inventor.item.list.label.published = Publicado
+
+inventor.item.form.label.retailprice = Precio
+inventor.item.form.label.type = Tipo
+inventor.item.form.label.link = Enlace
+inventor.item.form.label.inventor = Inventor
+inventor.item.form.button.create = Crear herramienta
+inventor.item.form.label.tool = HERRAMIENTA
+inventor.item.form.label.component = COMPONENTE
+inventor.item.form.button.update = Actualizar herramienta
+inventor.item.form.button.delete = Borrrar herramienta
+

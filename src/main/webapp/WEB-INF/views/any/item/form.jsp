@@ -12,7 +12,7 @@
 	<acme:input-money code="any.item.form.label.price" path="retailPrice"/>
 	<acme:input-url code="any.item.form.label.link" path="link"/>
 
-		<acme:input-textbox code="any.item.form.label.type" path ="type"/>
+	<acme:input-textbox code="any.item.form.label.type" path ="type"/>
 		
 
 </acme:form>
