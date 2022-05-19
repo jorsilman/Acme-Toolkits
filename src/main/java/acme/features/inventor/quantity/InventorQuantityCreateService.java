@@ -62,14 +62,20 @@ public class InventorQuantityCreateService implements AbstractCreateService<Inve
 		assert entity != null;
 		assert model != null;
 		
-		final int inventorId = request.getPrincipal().getActiveRoleId();
+				final int toolkitId = request.getModel().getInteger("masterId");
 		
-		Collection<Item> items = this.repository.findItemsByInventorId(inventorId);
+		
+		Collection<Item> publishedItems = this.repository.findPublishedItems();
+		Collection<Item> assignedItems = this.repository.findItemsByToolkitId(toolkitId);
+		Collection<Item> nonAssignedItems = publishedItems;
+		
+		nonAssignedItems.removeAll(assignedItems);
+		
 		
 		request.unbind(entity, model, "number", "item.code");
 		model.setAttribute("masterId", request.getModel().getAttribute("masterId"));
 		model.setAttribute("published", entity.getToolkit().isPublished());
-		model.setAttribute("items", items);
+		model.setAttribute("items", nonAssignedItems);
 		
 
 	}
