@@ -2,7 +2,6 @@ package acme.features.inventor.item;
 
 import java.util.Collection;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +12,7 @@ import acme.framework.services.AbstractListService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorItemListByToolkitService implements AbstractListService<Inventor, Item>{
+public class InventorItemListByInventorService implements AbstractListService<Inventor, Item>{
 
 	@Autowired
 	protected InventorItemRepository repository;
@@ -28,13 +27,10 @@ public class InventorItemListByToolkitService implements AbstractListService<Inv
 	@Override
 	public Collection<Item> findMany(final Request<Item> request) {
 		assert request != null;
-
 		Collection<Item> result;
-		final int id;
-
-		id = request.getModel().getInteger("masterId");
-		result = this.repository.findItemsByToolkitId(id);
-
+		final int id; 
+		id= request.getPrincipal().getActiveRoleId();
+		result = this.repository.findItemsByInventorId(id);
 		return result;
 		
 	}
