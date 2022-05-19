@@ -28,3 +28,7 @@ inventor.item.form.label.component = COMPONENTE
 inventor.item.form.button.update = Actualizar herramienta
 inventor.item.form.button.delete = Borrrar herramienta
 
+inventor.item.create-component = Crear un nuevo componente
+
+inventor.item.create = Crear una nueva herramienta
+

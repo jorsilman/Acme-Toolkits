@@ -30,3 +30,7 @@ inventor.item.form.label.component = COMPONENT
 inventor.item.form.button.update = Update tool
 inventor.item.form.button.delete = Delete tool
 
+inventor.item.create-component = Create a new component
+
+inventor.item.create = Create a new tool
+

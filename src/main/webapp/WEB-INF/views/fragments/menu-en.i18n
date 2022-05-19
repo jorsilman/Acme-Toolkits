@@ -66,9 +66,6 @@ master.menu.inventor.patronage-report.list = List my patronage reports
 master.menu.inventor.item.tool = List my tools
 master.menu.inventor.item.component = List my components
 
-master.menu.inventor.item.create-component = Create a new component
-
-master.menu.inventor.item.create = Create a new tool
 
 
 # master.menu.patron ########################################################

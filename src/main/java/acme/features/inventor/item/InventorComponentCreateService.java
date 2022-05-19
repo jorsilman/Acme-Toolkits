@@ -22,8 +22,8 @@ public class InventorComponentCreateService implements AbstractCreateService<Inv
 		
 		@Override
 		public boolean authorise(final Request<Item> request) {
-			assert request != null;
-			return true;
+			assert request !=null; 
+			return true;  
 		}
 		
 
