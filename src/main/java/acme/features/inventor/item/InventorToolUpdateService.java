@@ -22,8 +22,21 @@ public class InventorToolUpdateService implements AbstractUpdateService<Inventor
 			
 	@Override
 	public boolean authorise(final Request<Item> request) {
+		
 		assert request != null;
-		return true;
+		final boolean result;
+		int itemId;
+		final Item item;
+		final Inventor inventor;
+		
+		itemId=request.getModel().getInteger("id");
+		item=this.itemRepo.findItemById(itemId);
+		inventor=item.getInventor();
+		
+		result= !item.isPublished() && request.isPrincipal(inventor);
+		
+		
+		return result;
 	}
 	
 	@Override

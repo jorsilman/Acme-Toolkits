@@ -20,8 +20,17 @@ public class InventorComponentDeleteService implements AbstractDeleteService<Inv
 				
 		@Override
 		public boolean authorise(final Request<Item> request) {
-			assert request != null;
-			return true;
+			boolean result;
+			int masterId;
+			Item item;
+			Inventor inventor;
+
+			masterId = request.getModel().getInteger("id");
+			item = this.itemRepo.findItemById(masterId);
+			inventor = item.getInventor();
+			result =  !item.isPublished() && request.isPrincipal(inventor);
+
+			return result;
 		}
 		
 		@Override
