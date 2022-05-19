@@ -50,7 +50,7 @@ public class InventorToolShowService implements AbstractShowService<Inventor,Ite
 			assert model != null;
 			model.setAttribute("itemType", entity.getItemType());
 			
-			request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link");
+			request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link", "published");
 			
 		}
 		
