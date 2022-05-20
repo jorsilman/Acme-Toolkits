@@ -62,6 +62,19 @@ public class AdministratorSystemConfigurationUpdateService implements AbstractUp
 		assert model != null;
 
 		request.unbind(entity, model, "acceptedCurrencies", "systemCurrency", "strongSpamWords", "strongSpamThreshold", "weakSpamWords", "weakSpamThreshold");
+		
+		String acceptedCurrencies;
+		acceptedCurrencies = request.getModel().getAttribute("acceptedCurrencies").toString();
+		
+		String[] currencies;
+		currencies = acceptedCurrencies.split(",");
+		
+		final List<String> acceptedCurrenciesList = new ArrayList<String>();
+		for (final String currency : currencies) {
+			acceptedCurrenciesList.add(currency.trim());
+		}
+		
+		model.setAttribute("acceptedCurrenciesList", acceptedCurrenciesList);
 	}
 
 	@Override
