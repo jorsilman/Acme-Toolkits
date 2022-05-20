@@ -23,6 +23,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.patronage.Patronage;
+import acme.entities.patronage.PatronageStatus;
 import acme.entities.patronageReport.PatronageReport;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
@@ -51,7 +52,7 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 
 		patronageId = request.getModel().getInteger("patronageId");
 		patronage = this.repository.findOnePatronageById(patronageId);
-		result = (patronage != null && request.isPrincipal(patronage.getInventor()));
+		result = (patronage != null && request.isPrincipal(patronage.getInventor()) && patronage.getStatus().equals(PatronageStatus.ACCEPTED));
 
 		return result;
 	}
