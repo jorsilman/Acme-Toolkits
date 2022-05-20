@@ -4,9 +4,11 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:list>
+
 		<acme:list-column code="inventor.item.list.label.name" path="name" width="10%"/>
 		<acme:list-column code="inventor.item.list.label.retailprice" path="retailPrice" width="20%"/>
 		<acme:list-column code="inventor.item.list.label.publish" path="published" width="10%"/>
+
 </acme:list>
 <jstl:choose>
 	<jstl:when test="${command == 'list-component' }">

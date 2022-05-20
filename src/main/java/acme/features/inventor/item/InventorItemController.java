@@ -47,6 +47,7 @@ public class InventorItemController extends AbstractController<Inventor, Item>{
 	@Autowired
 	protected InventorToolDeleteService deleteToolService;
 
+
 	
 	// Constructors ----------------------------------------------------------------------------
 	

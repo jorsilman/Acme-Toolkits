@@ -29,7 +29,7 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		
 		assert request != null;
 		final int id  = request.getModel().getInteger("id");
-		return this.repository.findOneToolkitById(id);
+		return this.repository.findToolkitById(id);
 		
 	}
 
