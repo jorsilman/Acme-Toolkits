@@ -40,5 +40,7 @@
 	<acme:input-textbox code="patron.patronage.form.label.inventor-statement" path="inventorStatement"/>
 	<acme:input-textbox code="patron.patronage.form.label.inventor-link" path="inventorLink"/>
 	
-	<acme:button code="inventor.patronage.form.button.create-report" action="/inventor/patronage-report/create?patronageId=${masterId}"/>
+	<jstl:if test="${status == 'ACCEPTED'}">
+		<acme:button code="inventor.patronage.form.button.create-report" action="/inventor/patronage-report/create?patronageId=${masterId}"/>
+	</jstl:if>
 </acme:form>
