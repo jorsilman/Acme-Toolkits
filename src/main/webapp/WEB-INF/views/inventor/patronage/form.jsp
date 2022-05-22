@@ -31,7 +31,7 @@
 	<acme:input-url code="patron.patronage.form.label.link" path="link"/>
 	<jstl:choose>
 		<jstl:when test="${status == 'PROPOSED'}">
-			<acme:submit  code="inventor.patronage.form.button.update.accept" action="/inventor/patronage/update"/>
+			<acme:submit  code="inventor.patronage.form.button.update.accept" action="/inventor/patronage/update"/><br>
 		</jstl:when>
 	</jstl:choose>
 	<br>

@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import acme.entities.item.Item;
 import acme.entities.item.Quantity;
-import acme.entities.systemConfiguration.SystemConfiguration;
 import acme.entities.toolkit.Toolkit;
 import acme.framework.repositories.AbstractRepository;
 

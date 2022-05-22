@@ -1,0 +1,4 @@
+recordIndex,sequenceNumber,memorandum,link,confirmation,,,
+0,AAA-000-F:0001,Example memorandum 2,https://www.youtube.com/,true,,,
+1,AAA-000-F:0002,Example memorandum 3,https://www.twitch.tv/,true,,,
+2,AAA-000-F:0003,Example memorandum 4,,true,,,

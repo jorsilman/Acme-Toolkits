@@ -5,7 +5,6 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.item.ItemType;
 import acme.entities.item.Quantity;
 import acme.entities.toolkit.Toolkit;
 import acme.framework.components.models.Model;
@@ -55,7 +54,7 @@ public class InventorQuantityListService implements AbstractListService<Inventor
 
 
 	@Override
-	public void unbind(Request<Quantity> request, Collection<Quantity> entity, Model model) {
+	public void unbind(final Request<Quantity> request, final Collection<Quantity> entity, final Model model) {
 		assert request != null;
 
 		assert model != null;
