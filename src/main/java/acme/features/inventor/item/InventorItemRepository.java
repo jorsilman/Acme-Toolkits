@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.item.Item;
+import acme.framework.datatypes.Money;
 import acme.framework.repositories.AbstractRepository;
 import acme.roles.Inventor;
 
@@ -43,6 +44,13 @@ public interface InventorItemRepository extends AbstractRepository{
 	@Modifying
 	@Query("DELETE FROM Quantity q WHERE q.item.id = :id")
 	void deleteQuantityByItemId(int id);
+	
+	@Query("select i.retailPrice from Item i where i.id= :id and i.itemType = 1")
+	Money findToolPriceById(int id);
 
-
+	@Query("select i.retailPrice from Item i where i.id= :id and i.itemType = 0")
+	Money findComponentPriceById(int id);
+	
+	@Query("select sc.systemCurrency from SystemConfiguration sc ")
+	String findSystemCurrency();
 }

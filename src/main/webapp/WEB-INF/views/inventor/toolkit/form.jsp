@@ -33,9 +33,8 @@
 	
 		<jstl:when test="${published == true}">
 			
-			<acme:input-textbox code="inventor.toolkit.form.label.retail-price-euro" path="retailPriceEuro"/>
-			<acme:input-textbox code="inventor.toolkit.form.label.retail-price-dollar" path="retailPriceDollar"/>
-			<acme:input-textbox code="inventor.toolkit.form.label.retail-price-gbd" path="retailPriceGBD"/>
+			<acme:input-money code="inventor.toolkit.form.label.retail-price" path="retailPriceTookit"/>
+			
 			<acme:button code="inventor.toolkit.form.button.quantities" action="/inventor/quantity/list?masterId=${id}"/>
 		</jstl:when>
 			

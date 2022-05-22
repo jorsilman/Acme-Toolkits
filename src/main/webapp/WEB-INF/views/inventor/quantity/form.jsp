@@ -17,18 +17,32 @@
 
 <acme:form>
 	<jstl:choose>
-		<jstl:when test="${command == 'create'}">
+		<jstl:when test="${command == 'create-tool'}">
 			<acme:input-select code="inventor.quantity.form.label.item" path="item.code">
 				<jstl:forEach items="${items}" var="item">
-					<acme:input-option code="${item.getName()}" value="${item.getCode()}"
-						selected="${ item.getCode() == item.code}" />
+					<acme:input-option code="${item.getName().concat(item.getCode())}" value="${item.getCode()}"
+						selected="${item.getCode() == item.code}" />
 				</jstl:forEach>
 			</acme:input-select>
 		</jstl:when>
-		<jstl:otherwise>
+		
+		<jstl:when test="${command == 'create-component'}">
+			<acme:input-select code="inventor.quantity.form.label.item" path="item.code">
+				<jstl:forEach items="${items}" var="item">
+					<acme:input-option code="${item.getName().concat(item.getCode())}" value="${item.getCode()}"
+						selected="${item.getCode() == item.code}" />
+				</jstl:forEach>
+			</acme:input-select>
+		</jstl:when>
+		
+		
+		<jstl:when test="${acme:anyOf(command,'show, update, delete')}">
 			<acme:input-textbox code="inventor.quantity.form.label.item.code" path="item.code" readonly="true"/>
-		</jstl:otherwise>	
+		</jstl:when>
+		
+			
 	</jstl:choose>
+	
 	<acme:input-integer code="inventor.quantity.form.label.number" path="number"/>
 	
 	<jstl:choose>
@@ -36,8 +50,11 @@
 			<acme:submit code="inventor.quantity.form.button.update" action="/inventor/quantity/update"/>
 			<acme:submit code="inventor.quantity.form.button.delete" action="/inventor/quantity/delete"/>
 		</jstl:when>
-		<jstl:when test="${command == 'create'}">
-			<acme:submit code="inventor.quantity.form.button.create" action="/inventor/quantity/create?masterId=${masterId}"/>
+		<jstl:when test="${command == 'create-component'}">
+			<acme:submit code="inventor.quantity.form.button.create" action="/inventor/quantity/create-component?masterId=${masterId}"/>
+		</jstl:when>
+		<jstl:when test="${command == 'create-tool'}">
+			<acme:submit code="inventor.quantity.form.button.create" action="/inventor/quantity/create-tool?masterId=${masterId}"/>
 		</jstl:when>		
 	</jstl:choose>		
 </acme:form>

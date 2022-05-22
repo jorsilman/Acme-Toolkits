@@ -29,14 +29,20 @@ public interface InventorQuantityRepository extends AbstractRepository{
 	@Query("SELECT i FROM Item i WHERE i.code = :itemCode")
 	Item findItemByCode(String itemCode);
 	
-	@Query("select i from Item i where i.published = true")
-	Collection<Item> findPublishedItems();
+	@Query("select i from Item i where i.published = true and i.itemType = 1")
+	Collection<Item> findPublishedTools();
 
+	@Query("select i from Item i where i.published = true and i.itemType = 0")
+	Collection<Item> findPublishedComponents();
+	
 	@Query("SELECT COUNT(*) FROM Quantity q WHERE q.item.id = :itemId AND q.toolkit.id = :toolkitId")
 	int countByItemIdAndToolkitId(int itemId, int toolkitId);
 
-	@Query("select q.item from Quantity q where q.toolkit.id = :toolkitId")
-	Collection<Item> findItemsByToolkitId(int toolkitId);
+	@Query("select q.item from Quantity q where q.toolkit.id = :toolkitId and q.item.itemType = 0")
+	Collection<Item> findToolsByToolkitId(int toolkitId);
+	
+	@Query("select q.item from Quantity q where q.toolkit.id = :toolkitId and q.item.itemType = 0")
+	Collection<Item> findComponentsByToolkitId(int toolkitId);
 	
 	
 
