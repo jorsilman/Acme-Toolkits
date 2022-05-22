@@ -16,7 +16,6 @@ public class AnyChirpCreateTest extends TestHarness{
 		
 		super.clickOnMenu("All","Create chirp");
 		
-		super.fillInputBoxIn("creationMoment", creationMoment);
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("author", author);
 		super.fillInputBoxIn("body", body);
@@ -27,11 +26,10 @@ public class AnyChirpCreateTest extends TestHarness{
 		super.clickOnMenu("All", "Show recent chirps");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
-		super.checkColumnHasValue(recordIndex, 0, creationMoment);
 		super.checkColumnHasValue(recordIndex, 1, title);
-		super.checkColumnHasValue(recordIndex, 3, author);
-		super.checkColumnHasValue(recordIndex, 4, body);
-		super.checkColumnHasValue(recordIndex, 5, email);
+		super.checkColumnHasValue(recordIndex, 2, author);
+		super.checkColumnHasValue(recordIndex, 3, body);
+		super.checkColumnHasValue(recordIndex, 4, email);
 		
 	}
 	
@@ -43,7 +41,6 @@ public class AnyChirpCreateTest extends TestHarness{
 		
 		super.clickOnMenu("All","Create chirp");
 		
-		super.fillInputBoxIn("creationMoment", creationMoment);
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("author", author);
 		super.fillInputBoxIn("body", body);
