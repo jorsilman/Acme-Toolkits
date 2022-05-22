@@ -39,6 +39,12 @@ public interface InventorItemRepository extends AbstractRepository{
 	@Modifying
 	@Query("DELETE FROM Quantity q WHERE q.item.id = :id")
 	void deleteQuantityByItemId(int id);
+	
+	@Query("SELECT i FROM Item i WHERE i.code = :code")
+	Item findItemByCode(String code);
+	
+	@Query("select sc.acceptedCurrencies from SystemConfiguration sc")
+	String findAcceptedCurrencies();
 
 
 }
