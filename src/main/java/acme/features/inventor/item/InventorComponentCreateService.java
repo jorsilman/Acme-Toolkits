@@ -79,7 +79,16 @@ public class InventorComponentCreateService implements AbstractCreateService<Inv
 			assert entity != null;
 			assert errors != null;
 			
+			if(!errors.hasErrors("code")) {
+				final Item existing = this.itemRepo.findItemByCode(entity.getCode());
+				errors.state(request, existing == null || existing.getId() == entity.getId(), "code", "inventor.item.form.error.duplicated");
 			
+			}
+			if(!errors.hasErrors("retailPrice")) {
+				final boolean accepted = this.itemRepo.findAcceptedCurrencies().matches("(.*)" + entity.getRetailPrice().getCurrency()+ "(.*)");
+				errors.state(request, accepted, "retailPrice", "inventor.item.form.error.currency");
+				errors.state(request, entity.getRetailPrice().getAmount()>0, "retailPrice", "inventor.item.form.error.negative");
+			}
 		}
 				
 		@Override

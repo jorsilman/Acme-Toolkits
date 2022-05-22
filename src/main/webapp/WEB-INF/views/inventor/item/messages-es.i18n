@@ -31,4 +31,10 @@ inventor.item.form.button.delete = Borrrar herramienta
 inventor.item.create-component = Crear un nuevo componente
 
 inventor.item.create = Crear una nueva herramienta
+inventor.item.form.error.code = El código no puede ser actualizado
+inventor.item.form.error.duplicated = El código ya existe
 
+inventor.item.form.error.currency = La moneda no es aceptada en el sistema
+inventor.item.form.error.codeChanged = El código no puede ser actualizado
+
+inventor.item.form.error.negative = El precio no puede ser negativo ni cero.
