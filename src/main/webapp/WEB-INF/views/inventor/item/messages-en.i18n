@@ -43,3 +43,4 @@ inventor.item.form.error.codeChanged = Code can´t be changed
 
 inventor.item.form.error.negative = Price can´t be negative or zero
 
+inventor.item.form.error.invalidCode = Code format must be: XXX-000-X

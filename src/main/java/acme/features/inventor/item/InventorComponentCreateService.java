@@ -82,6 +82,7 @@ public class InventorComponentCreateService implements AbstractCreateService<Inv
 			if(!errors.hasErrors("code")) {
 				final Item existing = this.itemRepo.findItemByCode(entity.getCode());
 				errors.state(request, existing == null || existing.getId() == entity.getId(), "code", "inventor.item.form.error.duplicated");
+				errors.state(request, entity.getCode().length() == 9, "code", "inventor.item.form.error.invalidCode");
 			
 			}
 			if(!errors.hasErrors("retailPrice")) {
