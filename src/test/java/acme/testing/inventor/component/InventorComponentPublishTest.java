@@ -15,14 +15,14 @@ public class InventorComponentPublishTest extends TestHarness{
 		super.signIn("inventor2", "inventor2");
 		super.clickOnMenu("Inventor", "List my components");
 		super.checkListingExists();
-		super.sortListing(0, "asc");
-		super.clickOnListingRecord(1);
+		super.sortListing(0, "desc");
+		super.clickOnListingRecord(0);
 		super.checkFormExists();
 		super.clickOnSubmit("Publish");
 		super.clickOnMenu("Inventor", "List my components");
 		super.checkListingExists();
-		super.sortListing(0, "asc");
-		super.checkColumnHasValue(1, 2, "true");
+		super.sortListing(0, "desc");
+		super.checkColumnHasValue(0, 2, "true");
 	}
 	
 	@ParameterizedTest

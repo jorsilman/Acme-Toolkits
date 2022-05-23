@@ -20,7 +20,7 @@ public class InventorComponentUpdateTest extends TestHarness {
 		super.clickOnMenu("Inventor", "List my components");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
-		super.clickOnListingRecord(0);
+		super.clickOnListingRecord(1);
 		super.checkFormExists();
 		super.fillInputBoxIn("name", name);
 		
