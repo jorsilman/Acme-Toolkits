@@ -1,2 +1,6 @@
-recordIndex, status, code, legal-stuff, budget, creation-date, start-period-of-time, end-period-of-time, link
-0, PROPOSED,AAA-000-A,legalStuff_20, -100.00, 2020/06/18 15:51, 2020/12/18 15:51, 2022/06/22 15:51,https://www.youtube.com/
+recordIndex,legalStuff,budget,startPeriodOfTime,endPeriodOfTime,link
+0,,USD 190.00,2022/12/16 15:51,2022/09/08 17:51,
+1,legalStuff_1,GBP 100.00,2020/12/20 15:51,2019/08/15 11:51,https://www.youtube.com/
+1,legalStuff_3,XXX 100.00,2020/12/20 15:51,,https://www.youtube.com/
+1,,EUR 100.00,,2019/08/15 11:51,https://www.youtube.com/
+1,legalStuff_6,,2020/12/20 15:51,2019/08/15 11:51,https://www.youtube.com/
