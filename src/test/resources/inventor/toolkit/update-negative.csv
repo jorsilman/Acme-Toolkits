@@ -1,0 +1,6 @@
+recordIndex,title,description, assemblyNotes,published,link
+0, ,Hola , , , false,pepe
+1, , , 456, negat, false,pepe
+2, , , , negat, false,pepe
+3, , , , Actualizacion neg, null, ,pepe
+4, , , Actualizacion neg, Positiva, false,https://www.youtube.com/
