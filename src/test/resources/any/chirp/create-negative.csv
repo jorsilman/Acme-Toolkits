@@ -1,6 +1,6 @@
-recordIndex,creation-moment,title,author,body,email,confirm
-0,2022/05/1,Gym Tonic,Carlos Sobera,Un gimnasio alcoholico,toni@acme.com,false
-0,2022/05/11 06:57,,Juan Sobera,Un gimnasio guapo,toni2@acme.com,true
-0,2022/05/10 06,Adios Tonic,Antonio Sobera,Un gimnasio feo,toni3@acme.com,false
-0,2022/05/09 06:57,España Tonic,Jorge Sobera,Un gimnasio antiguo,toni4@acme.com,false
-0,2022/05/08 06:57,Betis Tonic,David Sobera,Un gimnasio nuevo,toni5@acme.com,false
+recordIndex,title,author,body,email,confirm
+0,Gym Tonic,Carlos Sobera,Un gimnasio alcoholico,toni@acme.com,false
+1,,Juan Sobera,Un gimnasio guapo,toni2@acme.com,true
+2,Adios Tonic,Antonio Sobera,Un gimnasio feo,mal,true
+3,España Tonic,Jorge Sobera,,toni4@acme.com,true
+4,Betis Tonic,,Un gimnasio nuevo,toni5@acme.com,true
