@@ -91,6 +91,7 @@
         
         
         
+        
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/webapp"/>
 
         
@@ -103,7 +104,6 @@
 
         
         
-        
 
         
         
@@ -120,10 +120,12 @@
 
         
 
+        
         
         
         
         <property name="java-output-path" value="/Hello-World-22.0/target/classes"/>
+
 
         
         
@@ -134,15 +136,15 @@
                                                                         
 
         
+        
         <property name="java-output-path" value="/Hello-World-22.0/target/classes"/>
-                                                                                
 
         
         
-        
 
         
         
+
 
  
         
@@ -155,6 +157,7 @@
         
         <property name="context-root" value="Acme-Toolkits"/>
 
+
     
     
     
@@ -184,6 +187,7 @@
     
     
 
+    
     
     
     

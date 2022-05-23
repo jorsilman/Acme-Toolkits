@@ -66,6 +66,9 @@ public class Patronage extends AbstractEntity{
 	@URL
 	protected String 			link;
 	
+	@NotNull
+	protected boolean 			published;
+	
 	// Derived attributes 	----------------------------------
 	
 	public Duration periodOfTime(){

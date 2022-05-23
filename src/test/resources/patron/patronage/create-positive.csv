@@ -1,0 +1,3 @@
+recordIndex, status, code, legal-stuff, budget, creation-date, start-period-of-time, end-period-of-time, link
+0, PROPOSED, AAA-234-Z, legalStuff1, 120.00, 2020/06/18 00:00,2020/12/18 15:51,2022/06/22 15:51, https://www.youtube.com/
+1, PROPOSED, AAA-345-R, legalStuff2, 150.00, 2020/08/18 00:00,2020/12/18 15:51,2022/10/22 15:51,

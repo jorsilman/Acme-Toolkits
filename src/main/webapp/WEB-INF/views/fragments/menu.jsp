@@ -107,6 +107,8 @@
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
 			<acme:menu-suboption code="master.menu.patron.patronage.list"
 				action="/patron/patronage/list-own" />
+			<acme:menu-suboption code="master.menu.patron.patronage.create"
+				action="/patron/patronage/create" />
 			<acme:menu-suboption code="master.menu.patron.patronage-report.list"
 				action="/patron/patronage-report/list-own" />
 			<acme:menu-suboption code="master.menu.patron.patron-dashboard.show"
@@ -130,6 +132,20 @@
 			<acme:menu-suboption code="master.menu.user-account.general-data"
 				action="/authenticated/user-account/update" />
 
+
+			<acme:menu-suboption code="master.menu.user-account.become-provider"
+				action="/authenticated/provider/create"
+				access="!hasRole('Provider')" />
+			<acme:menu-suboption code="master.menu.user-account.provider"
+				action="/authenticated/provider/update" access="hasRole('Provider')" />
+
+			<acme:menu-suboption code="master.menu.user-account.become-consumer"
+				action="/authenticated/consumer/create"
+				access="!hasRole('Consumer')" />
+			<acme:menu-suboption code="master.menu.user-account.consumer"
+				action="/authenticated/consumer/update" access="hasRole('Consumer')" />
+			<acme:menu-suboption code="master.menu.user-account.patron" action="/authenticated/patron/update" access="hasRole('Patron')"/>
+
 			<acme:menu-suboption code="master.menu.user-account.become-patron"
 				action="/authenticated/patron/create"
 				access="!hasRole('Patron')" />
@@ -143,6 +159,7 @@
 		
 			<acme:menu-suboption code="master.menu.user-account.inventor"
 				action="/authenticated/inventor/update" access="hasRole('Inventor')" />
+
 
 		</acme:menu-option>
 

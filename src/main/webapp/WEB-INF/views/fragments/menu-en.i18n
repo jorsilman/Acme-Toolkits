@@ -74,6 +74,7 @@ master.menu.patron = Patron
 master.menu.patron.patronage.list = List my patronages
 master.menu.patron.patronage-report.list = List my patronageReports
 master.menu.patron.patron-dashboard.show = Show the patron dashboard
+master.menu.patron.patronage.create = Create a patronage
 
 # master.menu.provider ########################################################
 

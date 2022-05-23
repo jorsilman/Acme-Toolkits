@@ -16,6 +16,7 @@ patron.patronage.list.label.creationDate = Fecha de creación
 patron.patronage.list.label.startPeriodOfTime = Fecha de comienzo
 patron.patronage.list.label.endPeriodOfTime = Fecha de fin
 patron.patronage.list.label.link = Enlace
+patron.patronage.list.label.publish = Publicado
 
 patron.patronage.form.label.status = Estado
 patron.patronage.form.label.PROPOSED = Propuesto
@@ -32,3 +33,16 @@ patron.patronage.form.label.inventor = Inventor
 patron.patronage.form.label.inventor-company = Compañía
 patron.patronage.form.label.inventor-statement = Declaración
 patron.patronage.form.label.inventor-link = Enlace
+patron.patronage.form.label.published = Publicado
+
+patron.patronage.form.button.update = Actualizar
+patron.patronage.form.button.delete = Eliminar
+patron.patronage.form.button.publish = Publicar
+patron.patronage.form.button.create = Crear
+
+patron.patronage.form.error.duplicated = El código no puede estar duplicado
+patron.patronage.form.error.codeChanged = El código no puede ser cambiado
+patron.patronage.form.error.soon-to-close = Es muy pronto para comenzar un patrocinio
+patron.patronage.form.error.minimum = La duración debe ser de al menos un mes
+patron.patronage.form.error.negative = No se pueden usar cantidades negativas
+patron.patronage.form.error.non-accepted = No se puede usar una divisa no aceptada

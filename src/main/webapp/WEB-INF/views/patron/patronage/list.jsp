@@ -24,4 +24,5 @@
 	<acme:list-column code="patron.patronage.list.label.startPeriodOfTime" path="startPeriodOfTime" width="12.5%"/>
 	<acme:list-column code="patron.patronage.list.label.endPeriodOfTime" path="endPeriodOfTime" width="12.5%"/>
 	<acme:list-column code="patron.patronage.list.label.link" path="link" width="12.5%"/>
+	<acme:list-column code="patron.patronage.list.label.publish" path="published" width="12.5%"/>
 </acme:list>
