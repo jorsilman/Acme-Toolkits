@@ -16,14 +16,8 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form readonly="${readonly}">
-	<%-- <acme:input-textbox code="patron.patronage.list.label.status" path="status"/> --%>
-	<acme:input-select code="patron.patronage.form.label.status" path="status">
-		<acme:input-option code="patron.patronage.form.label.PROPOSED" value="PROPOSED" selected="${status == 'PROPOSED'}"/>
-		<acme:input-option code="patron.patronage.form.label.ACCEPTED" value="ACCEPTED" selected="${status == 'ACCEPTED'}"/>
-		<acme:input-option code="patron.patronage.form.label.DENIED" value="DENIED" selected="${status == 'DENIED'}"/>
-	</acme:input-select>
+	
 	<jstl:choose>
-
 	<jstl:when test="${acme:anyOf(command, 'show,update,delete, publish')}">
 	<acme:input-textbox code="patron.patronage.form.label.code" path="code" placeholder="XXX-000-X" readonly="TRUE"/>
 	</jstl:when>
@@ -31,15 +25,23 @@
 	<acme:input-textbox code="patron.patronage.form.label.code" path="code" placeholder="XXX-000-X"/>
 	</jstl:when>
 	</jstl:choose>
+	
+	
 	<acme:input-textarea code="patron.patronage.form.label.legalStuff" path="legalStuff"/>
 	<acme:input-money code="patron.patronage.form.label.budget" path="budget"/>
-	<acme:input-money code="patron.patronage.form.label.budgetInSC" path="priceInSC"/>
-	<acme:input-moment code="patron.patronage.form.label.creationDate" path="creationDate"/>
+	<jstl:choose>
+	<jstl:when test="${acme:anyOf(command, 'show,update,delete, publish')}">
+	<acme:input-money code="patron.patronage.form.label.budgetInSC" path="priceInSC" readonly="true"/>
+	</jstl:when>
+	</jstl:choose>
 	<acme:input-moment code="patron.patronage.form.label.startPeriodOfTime" path="startPeriodOfTime"/>
 	<acme:input-moment code="patron.patronage.form.label.endPeriodOfTime" path="endPeriodOfTime"/>
 	<acme:input-url code="patron.patronage.form.label.link" path="link"/>
 	<jstl:choose>
 
+	
+	
+	
 		<jstl:when test="${acme:anyOf(command, 'show,update,delete')}">
 	<acme:input-textbox code="patron.patronage.list.label.publish" path="published" readonly="TRUE"/>
 	</jstl:when>
