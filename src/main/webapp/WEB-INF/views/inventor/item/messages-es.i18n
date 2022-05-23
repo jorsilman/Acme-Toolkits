@@ -39,3 +39,5 @@ inventor.item.form.error.currency = La moneda no es aceptada en el sistema
 inventor.item.form.error.codeChanged = El código no puede ser actualizado
 
 inventor.item.form.error.negative = El precio no puede ser negativo ni cero.
+
+inventor.item.form.error.invalidCode = El formato del código debe ser XXX-000-X
