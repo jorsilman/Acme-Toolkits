@@ -12,6 +12,7 @@ patron.patronage.list.label.status = Status
 patron.patronage.list.label.code = Code
 patron.patronage.list.label.legalStuff = Legal stuff
 patron.patronage.list.label.budget = Budget
+patron.patronage.list.label.budgetInSC = Budget in System Currency
 patron.patronage.list.label.creationDate = Creation date
 patron.patronage.list.label.startPeriodOfTime = Start period of time
 patron.patronage.list.label.endPeriodOfTime = End period of time
@@ -32,3 +33,9 @@ patron.patronage.form.label.inventor = Inventor
 patron.patronage.form.label.inventor-company = Company
 patron.patronage.form.label.inventor-statement = Statement
 patron.patronage.form.label.inventor-link = Link
+
+
+inventor.patronage.form.button.update.accept = Update
+
+inventor.patronage.form.button.create-report = Create report
+

@@ -1,10 +1,47 @@
 # i18n-en.i18n
 
 inventor.item.list.label.name = Name
-inventor.item.list.label.code = Code
-inventor.item.list.label.technology = Technology
-inventor.item.list.label.description = Description
+inventor.item.form.label.name = Name
+inventor.item.form.label.code = Code
+inventor.item.form.label.technology = Technology
+inventor.item.form.label.description = Description
 inventor.item.list.label.retailprice = Price
-inventor.item.list.label.type = Type
+inventor.item.list.label.retailpriceInSC = Price in System Currency
+
+
+inventor.item.form.label.type = Type
 inventor.item.list.label.link = Link
+inventor.item.list.label.publish = Published
 inventor.item.list.label.inventor = Inventor
+inventor.item.form.label.component = Component
+inventor.item.form.button.create-component = Create component
+
+inventor.item.form.button.delete-component = Delete component
+inventor.item.form.button.update-component = Update component
+inventor.item.form.button.publish = Publish 
+inventor.item.list.label.published = Published
+
+inventor.item.form.label.retailprice = Price
+
+inventor.item.form.label.link = Link
+inventor.item.form.label.inventor = Inventor
+inventor.item.form.button.create = Create tool
+inventor.item.form.label.tool = TOOL
+inventor.item.form.label.component = COMPONENT
+inventor.item.form.button.update = Update tool
+inventor.item.form.button.delete = Delete tool
+
+inventor.item.create-component = Create a new component
+
+inventor.item.create = Create a new tool
+
+inventor.item.form.error.code = Code can´t be updated
+inventor.item.form.error.duplicated = Code already exists
+
+inventor.item.form.error.currency = Currency is not accepted by the system 
+
+inventor.item.form.error.codeChanged = Code can´t be changed
+
+inventor.item.form.error.negative = Price can´t be negative or zero
+
+inventor.item.form.error.invalidCode = Code format must be: XXX-000-X

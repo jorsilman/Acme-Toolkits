@@ -10,21 +10,21 @@
 
 
 administrator.administrator-dashboard.form.label.totalNumberOfComponents = Numero total de componentes
-administrator.admin-dashboard.form.label.avgRPriceOfComponentsByTechnologyAndCurrency = Precio medio de los componentes por tecnología
-administrator.admin-dashboard.form.label.devRPriceOfComponentsByTechnologyAndCurrency = Desviación del precio de los componentes por tecnología
-administrator.admin-dashboard.form.label.minRPriceOfComponentsByTechnologyAndCurrency = Precio minimo de los componentes por tecnología
-administrator.admin-dashboard.form.label.maxRPriceOfComponentsByTechnologyAndCurrency = Precio máximo de los componentes por tecnología
+administrator.admin-dashboard.form.label.avgRPriceOfComponentsByTechnologyAndCurrency = Precio medio de los componentes por tecnología y moneda
+administrator.admin-dashboard.form.label.devRPriceOfComponentsByTechnologyAndCurrency = Desviación del precio de los componentes por tecnología y moneda
+administrator.admin-dashboard.form.label.minRPriceOfComponentsByTechnologyAndCurrency = Precio minimo de los componentes por tecnología y moneda
+administrator.admin-dashboard.form.label.maxRPriceOfComponentsByTechnologyAndCurrency = Precio máximo de los componentes por tecnología y moneda
 
 administrator.administrator-dashboard.form.label.totalNumberOfTools = Número total de herramientas
-administrator.admin-dashboard.form.label.avgItems = Precio medio de las herramientas
-administrator.admin-dashboard.form.label.devItems = Desviación del precio de las herramientas
-administrator.admin-dashboard.form.label.minItems = Precio mínimo de las herramientas
-administrator.admin-dashboard.form.label.maxItems = Precio máximo de las herramientas
+administrator.admin-dashboard.form.label.avgItems = Precio medio de las herramientas por moneda
+administrator.admin-dashboard.form.label.devItems = Desviación del precio de las herramientas por moneda
+administrator.admin-dashboard.form.label.minItems = Precio mínimo de las herramientas por moneda
+administrator.admin-dashboard.form.label.maxItems = Precio máximo de las herramientas por moneda
 
 administrator.administrator-dashboard.form.label.totalNumberOfProposedPatronages = Número total de patronazgos propuestos
 administrator.administrator-dashboard.form.label.totalNumberOfAcceptedPatronages = Número total de patronazgos aceptados
 administrator.administrator-dashboard.form.label.totalNumberOfDeniedPatronages = Número total de patronazgos denegados
-administrator.admin-dashboard.form.label.avgPatronages = Presupuesto medio de patronazgos por status
+administrator.admin-dashboard.form.label.avgPatronages = Presupuesto medio de patronazgos por estado
 administrator.admin-dashboard.form.label.devPatronages = Desviación de los presupuestos de patronazgos por estado
 administrator.admin-dashboard.form.label.minPatronages = Presupuesto mínimo de patronazgos por estado
 administrator.admin-dashboard.form.label.maxPatronages = Presupuesto máximo de patronazgos por estado

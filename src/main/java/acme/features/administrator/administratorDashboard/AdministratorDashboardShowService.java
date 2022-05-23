@@ -7,9 +7,12 @@ import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.MoneyExchange;
+import acme.features.authenticated.moneyExchange.AuthenticatedMoneyExchangePerformService;
 import acme.forms.AdministratorDashboard;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.datatypes.Money;
 import acme.framework.roles.Administrator;
 import acme.framework.services.AbstractShowService;
 
@@ -101,24 +104,48 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			maxRPriceOfToolsByCurrency.put(o[0].toString(),(Double) o[1]);
 		}
 
-
+		String systemCurrency = this.repository.findSystemCurrency();
 
 		//PATRONAGES
 
 		for(Object[] o: this.repository.getAverageBudgetOfPatronagesByStatus()) {
+			Money m = new Money();
+			m.setAmount((Double) o[1]);
+			m.setCurrency(o[2].toString());
+			AuthenticatedMoneyExchangePerformService moneyExchange = new AuthenticatedMoneyExchangePerformService();
+			MoneyExchange change = moneyExchange.computeMoneyExchange(m, systemCurrency);
+			
 			avgBudgetOfPatronagesByStatus.put(o[0].toString(), (Double) o[1]);
 		}
 
 		for(Object[] o: this.repository.getDeviationBudgetOfPatronagesByStatus()) {
+			Money m = new Money();
+			m.setAmount((Double) o[1]);
+			m.setCurrency(o[2].toString());
+			AuthenticatedMoneyExchangePerformService moneyExchange = new AuthenticatedMoneyExchangePerformService();
+			MoneyExchange change = moneyExchange.computeMoneyExchange(m, systemCurrency);
+			
 			minBudgetOfPatronagesByStatus.put(o[0].toString(), (Double) o[1]);
 		}
 
 		for(Object[] o: this.repository.getMinimumBudgetOfPatronagesByStatus()) {
+			Money m = new Money();
+			m.setAmount((Double) o[1]);
+			m.setCurrency(o[2].toString());
+			AuthenticatedMoneyExchangePerformService moneyExchange = new AuthenticatedMoneyExchangePerformService();
+			MoneyExchange change = moneyExchange.computeMoneyExchange(m, systemCurrency);
+			
 			minBudgetOfPatronagesByStatus.put(o[0].toString(), (Double) o[1]);
 		}
 
 		for(Object[] o: this.repository.getMaximumBudgetOfPatronagesByStatus()) {
-			maxBudgetOfPatronagesByStatus.put(o[0].toString(), (Double) o[1]);
+			Money m = new Money();
+			m.setAmount((Double) o[1]);
+			m.setCurrency(o[2].toString());
+			AuthenticatedMoneyExchangePerformService moneyExchange = new AuthenticatedMoneyExchangePerformService();
+			MoneyExchange change = moneyExchange.computeMoneyExchange(m, systemCurrency);
+			
+			maxBudgetOfPatronagesByStatus.put(o[0].toString(), change.getTarget().getAmount());
 		}
 		
 		result = new AdministratorDashboard();
@@ -170,10 +197,12 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			//ITEMS
 		model.setAttribute("avI", entity.getAverageRetailPriceOfToolsByCurrency().toString());
 		model.setAttribute("devI", entity.getDeviationRetailPriceOfToolsByCurrency().toString());
-		model.setAttribute("minI", entity.getMinimumRetailPriceOfComponentsByTechnologyAndCurrency().toString());
+		model.setAttribute("minI", entity.getMinimumRetailPriceOfToolsByCurrency().toString());
 		model.setAttribute("maxI", entity.getMaximumRetailPriceOfToolsByCurrency().toString());
 		
 			//PATRONAGES
+			
+		
 		model.setAttribute("avP", entity.getAverageBudgetOfPatronagesByStatus().toString());
 		model.setAttribute("devP", entity.getDeviationBudgetOfPatronagesByStatus().toString());
 		model.setAttribute("minP", entity.getMinimumBudgetOfPatronagesByStatus().toString());

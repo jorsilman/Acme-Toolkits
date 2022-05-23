@@ -15,7 +15,7 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
-<acme:form readonly="${readonly}">
+<acme:form>
 	<%-- <acme:input-textbox code="patron.patronage.list.label.status" path="status"/> --%>
 	<acme:input-select code="patron.patronage.form.label.status" path="status">
 		<acme:input-option code="patron.patronage.form.label.PROPOSED" value="PROPOSED" selected="${status == 'PROPOSED'}"/>
@@ -25,18 +25,23 @@
 	<acme:input-textbox code="patron.patronage.form.label.code" path="code"/>
 	<acme:input-textarea code="patron.patronage.form.label.legalStuff" path="legalStuff"/>
 	<acme:input-money code="patron.patronage.form.label.budget" path="budget"/>
+	<acme:input-money code="patron.patronage.form.label.budgetInSC" path="priceInSC"/>
 	<acme:input-moment code="patron.patronage.form.label.creationDate" path="creationDate"/>
 	<acme:input-moment code="patron.patronage.form.label.startPeriodOfTime" path="startPeriodOfTime"/>
 	<acme:input-moment code="patron.patronage.form.label.endPeriodOfTime" path="endPeriodOfTime"/>
 	<acme:input-url code="patron.patronage.form.label.link" path="link"/>
+	<jstl:choose>
+		<jstl:when test="${status == 'PROPOSED'}">
+			<acme:submit  code="inventor.patronage.form.button.update.accept" action="/inventor/patronage/update"/><br>
+		</jstl:when>
+	</jstl:choose>
 	<br>
 	<h2>Inventor:</h2>
 	<acme:input-textbox code="patron.patronage.form.label.inventor-company" path="inventorCompany"/>
 	<acme:input-textbox code="patron.patronage.form.label.inventor-statement" path="inventorStatement"/>
 	<acme:input-textbox code="patron.patronage.form.label.inventor-link" path="inventorLink"/>
 	
-	<jstl:if test="${readonly}">
-		<acme:submit test="${command == 'create'}" code="authenticated.consumer.consumer.form.button.create" action="/authenticated/consumer/create"/>
-		<acme:submit test="${command == 'update'}" code="authenticated.consumer.consumer.form.button.update" action="/authenticated/consumer/update"/>
+	<jstl:if test="${status == 'ACCEPTED'}">
+		<acme:button code="inventor.patronage.form.button.create-report" action="/inventor/patronage-report/create?patronageId=${masterId}"/>
 	</jstl:if>
 </acme:form>

@@ -1,6 +1,2 @@
-key,key:patronage,serial-number,creation-moment,memorandum,link
-patronage-report-01,patronage-01,0000,"2021/06/1 23:59","Example memorandum 1",https://google.com/
-patronage-report-02,patronage-02,0001,"2021/06/8 00:59","Example memorandum 2",null
-patronage-report-03,patronage-03,0002,"2021/07/5 09:59","Example memorandum 3",null
-patronage-report-04,patronage-04,0003,"2021/07/7 10:59","Example memorandum 4",null
-patronage-report-05,patronage-05,0004,"2021/09/8 11:59","Example memorandum 5",https://google.com/
+key,key:patronage,creation-moment,memorandum,link,sequence-number
+patronage-report-04,patronage-04,"2021/07/7 10:59","Example memorandum 4",null,AAA-000-D:0001

@@ -1,0 +1,6 @@
+recordIndex,title,author,body,email,confirm
+0,Gym Tonic,Carlos Sobera,Un gimnasio alcoholico,toni@acme.com,false
+1,,Juan Sobera,Un gimnasio guapo,toni2@acme.com,true
+2,Adios Tonic,Antonio Sobera,Un gimnasio feo,mal,true
+3,España Tonic,Jorge Sobera,,toni4@acme.com,true
+4,Betis Tonic,,Un gimnasio nuevo,toni5@acme.com,true

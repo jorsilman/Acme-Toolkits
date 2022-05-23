@@ -15,16 +15,20 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
-<acme:form readonly="${readonly}">
+<acme:form>
 	<acme:input-textbox code="administrator.system-configuration.form.label.acceptedCurrencies" path="acceptedCurrencies"/>
-	<acme:input-textbox code="administrator.system-configuration.form.label.systemCurrency" path="systemCurrency"/>
+	<%--<acme:input-textbox code="administrator.system-configuration.form.label.systemCurrency" path="systemCurrency"/>--%>
+	<acme:input-select code="administrator.system-configuration.form.label.systemCurrency" path="systemCurrency">
+		<jstl:forEach items="${acceptedCurrenciesList}" var="acceptedCurrenciesListOption">
+			<acme:input-option code="${acceptedCurrenciesListOption}" value="${acceptedCurrenciesListOption}" selected="${systemCurrency == acceptedCurrenciesListOption}"/>
+		</jstl:forEach>
+		
+	</acme:input-select>
 	<acme:input-textbox code="administrator.system-configuration.form.label.strongSpamWords" path="strongSpamWords"/>
 	<acme:input-double code="administrator.system-configuration.form.label.strongSpamThreshold" path="strongSpamThreshold"/>
 	<acme:input-textbox code="administrator.system-configuration.form.label.weakSpamWords" path="weakSpamWords"/>
 	<acme:input-double code="administrator.system-configuration.form.label.weakSpamThreshold" path="weakSpamThreshold"/>
 
-	<jstl:if test="${readonly}">
-		<acme:submit test="${command == 'create'}" code="authenticated.consumer.consumer.form.button.create" action="/authenticated/consumer/create"/>
-		<acme:submit test="${command == 'update'}" code="authenticated.consumer.consumer.form.button.update" action="/authenticated/consumer/update"/>
-	</jstl:if>
+	<%--<acme:button test="${command == 'show'}" code="administrator.system-configuration.form.button.update" action="/administrator/system-configuration/update"/> --%>
+	<acme:submit code="administrator.system-configuration.form.button.update" action="/administrator/system-configuration/update"/>
 </acme:form> 

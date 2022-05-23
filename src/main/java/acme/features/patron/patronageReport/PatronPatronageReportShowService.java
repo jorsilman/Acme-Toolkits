@@ -59,7 +59,7 @@ public class PatronPatronageReportShowService implements AbstractShowService<Pat
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "serialNumber", "creationMoment", "memorandum", "link");
+		request.unbind(entity, model, "sequenceNumber", "creationMoment", "memorandum", "link");
 	}
 
 }

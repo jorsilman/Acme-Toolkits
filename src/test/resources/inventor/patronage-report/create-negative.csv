@@ -1,0 +1,10 @@
+recordIndex,memorandum,link,confirmation
+0,,https://www.twitch.tv/,true
+1,,,false
+2,,,true
+3,Example memorandum 5,https://www.youtube.com/,false
+4,Example memorandum 6,,false
+5,Example memorandum 7,Not a url 1, true
+6,Example memorandum 8,Not a url 2, false
+7,,Not a url 3, true
+7,,Not a url 4, false

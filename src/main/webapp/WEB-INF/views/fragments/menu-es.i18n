@@ -22,6 +22,7 @@ master.menu.any = Todos
 master.menu.any.toolkit.list = Lista de conjunto de herramientas
 master.menu.any.item.list.tool = Lista de Herramientas
 master.menu.any.chirp.list-recent= Lista de Chirridos Recientes
+master.menu.any.chirp.create = Crear chirrido
 master.menu.any.item.list.component = Lista de Componentes
 master.menu.any.useraccount.list = Mostrar usuarios
 
@@ -50,6 +51,7 @@ master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
 master.menu.administrator.system-configuration.form = Configuración del sistema
+master.menu.administrator.create-announcement = Crear anuncio
 
 
 # master.menu.inventor ########################################################
@@ -60,6 +62,8 @@ master.menu.inventor.toolkit.list = Listar mis cajas de herramientas
 master.menu.inventor.patronage-report.list = Listar mis reportes de patrocinios
 master.menu.inventor.item.component = Ver mis componentes
 master.menu.inventor.item.tool = Ver mis herramientas
+
+
 
 
 # master.menu.patron ########################################################
@@ -93,9 +97,8 @@ master.menu.consumer.favourite-link = Enlace favorito
 master.menu.user-account = Cuenta
 master.menu.user-account.system-configuration.form = Configuración del Sistema
 master.menu.user-account.general-data = Datos generales
-master.menu.user-account.provider = Datos de proveedor
-master.menu.user-account.become-provider = Hazte proveedor
-master.menu.user-account.consumer = Datos de consumidor
-master.menu.user-account.become-consumer = Hazte consumidor
 master.menu.user-account.inventor = Datos de inventor
 master.menu.user-account.become-inventor = Hazte inventor
+master.menu.user-account.patron = Datos de patron
+master.menu.user-account.become-patron= Hazte patron
+

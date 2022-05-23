@@ -1,0 +1,14 @@
+authenticated.announcement.list.label.title = Title:
+authenticated.announcement.list.label.body = Body:
+authenticated.announcement.list.label.creationMoment = Creation Moment:
+
+administrator.announcement.form.label.title = Title:
+administrator.announcement.form.label.email = Email:
+administrator.announcement.form.label.critical = Critical Flag
+administrator.announcement.form.label.link = Link
+administrator.announcement.form.label.body = Body
+administrator.announcement.form.label.creationMoment = Creation Moment:
+administrator.announcement.form.label.confirm = Confirm
+administrator.announcement.form.button.create = Create
+
+administrator.announcement.confirm.error= You must confirm

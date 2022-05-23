@@ -1,4 +1,4 @@
-# i18n-en.i18n
+# i18n-es.i18n
 #
 # Copyright (C) 2012-2022 Rafael Corchuelo.
 #
@@ -8,11 +8,12 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.provider.provider.form.title.create = Become an provider
-authenticated.provider.provider.form.title.update = Update provider data
+authenticated.patron.patron.form.title.create = Hazte patron
+authenticated.patron.patron.form.title.update = Actualiza tus datos de patron
 
-authenticated.provider.form.label.company = Company: 
-authenticated.provider.form.label.sector = Sector:
+authenticated.patron.patron.form.label.company = Compañía
+authenticated.patron.patron.form.label.statement = Sector
+authenticated.patron.patron.form.label.link = Link
 
-authenticated.provider.form.button.create = Register
-authenticated.provider.form.button.update = Update
+authenticated.patron.patron.form.button.create = Registrar
+authenticated.patron.patron.form.button.update = Actualizar
