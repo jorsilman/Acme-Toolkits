@@ -31,7 +31,7 @@ public class AnyUserAccountTest extends TestHarness {
 	super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
 		
-		super.checkInputBoxHasValue("surname", surname);
+		super.checkInputBoxHasValue("username", username);
 		super.checkInputBoxHasValue("identity.name", name);
 		super.checkInputBoxHasValue("identity.surname", surname);
 		super.checkInputBoxHasValue("identity.email", email);
