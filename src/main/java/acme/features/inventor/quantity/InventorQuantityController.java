@@ -20,7 +20,10 @@ public class InventorQuantityController extends AbstractController<Inventor, Qua
 	protected InventorQuantityShowService		showService;
 
 	@Autowired
-	protected InventorQuantityCreateService		createService;
+	protected InventorQuantityCreateToolService		createToolService;
+	
+	@Autowired
+	protected InventorQuantityCreateComponentService		createComponentService;
 
 	@Autowired
 	protected InventorQuantityUpdateService		updateService;
@@ -35,7 +38,8 @@ public class InventorQuantityController extends AbstractController<Inventor, Qua
 	protected void initialise() {
 		super.addCommand("list", this.listService);
 		super.addCommand("show", this.showService);
-		super.addCommand("create", this.createService);
+		super.addCommand("create-tool","create", this.createToolService);
+		super.addCommand("create-component", "create",this.createComponentService);
 		super.addCommand("update", this.updateService);
 		super.addCommand("delete", this.deleteService);
 	}

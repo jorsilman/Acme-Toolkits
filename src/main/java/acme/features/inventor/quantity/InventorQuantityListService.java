@@ -5,11 +5,11 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.item.ItemType;
 import acme.entities.item.Quantity;
 import acme.entities.toolkit.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.datatypes.Money;
 import acme.framework.services.AbstractListService;
 import acme.roles.Inventor;
 
@@ -61,12 +61,21 @@ public class InventorQuantityListService implements AbstractListService<Inventor
 		assert model != null;
 
 		int toolkitId;
+		
+		
+					
 
 		toolkitId = request.getModel().getInteger("masterId");
+		
+		Money precio;
 
 		model.setAttribute("masterId", toolkitId);
+		
+		
+		
+		//model.setAttribute("prize", precio);
 
-		request.unbind(entity, model, "number", "item.code", "item.name", "item.itemType");
+		request.unbind(entity, model, "number", "item.code", "item.name","item.retailPrice");
 
 	}
 
@@ -76,7 +85,7 @@ public class InventorQuantityListService implements AbstractListService<Inventor
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "number", "item.code", "item.name", "item.itemType");
+		request.unbind(entity, model, "number", "item.code", "item.name","item.retailPrice");
 	}
 
 }

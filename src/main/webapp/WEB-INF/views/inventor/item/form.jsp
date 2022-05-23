@@ -17,8 +17,12 @@
 	</jstl:choose>
 	<acme:input-textbox code="inventor.item.form.label.technology" path="technology"/>
 	<acme:input-textarea code="inventor.item.form.label.description" path="description"/>
+
+	<acme:input-textbox code="inventor.item.list.label.link" path="link"/>
 	<acme:input-money code="inventor.item.list.label.retailprice" path="retailPrice"/>
-	<acme:input-textbox code="inventor.item.list.label.link" path="link" placeholder="https://www.google.es"/>
+	<acme:input-money code="inventor.item.list.label.retailpriceInSC" path="priceInSC"/>
+	<acme:input-textbox code="inventor.item.list.label.published" path="published" readonly="TRUE"/>
+
 	<jstl:choose>
 
 		<jstl:when test="${acme:anyOf(command, 'show,update,delete')}">

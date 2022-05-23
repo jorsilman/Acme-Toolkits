@@ -1,9 +1,15 @@
 package acme.features.any.toolkit;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.MoneyExchange;
 import acme.entities.toolkit.Toolkit;
+import acme.features.authenticated.moneyExchange.AuthenticatedMoneyExchangePerformService;
+import acme.features.inventor.toolkit.InventorToolkitRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.datatypes.Money;
@@ -17,6 +23,9 @@ public class AnyToolkitShowService implements AbstractShowService<Any, Toolkit>{
 	
 	@Autowired
 	protected AnyToolkitRepository repository;
+	
+	@Autowired
+	protected InventorToolkitRepository toolkitRepo;
 	
 	//AbstractShowService<Any, Toolkit> interface
 	
@@ -40,26 +49,34 @@ public class AnyToolkitShowService implements AbstractShowService<Any, Toolkit>{
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "code", "title", "description", "assemblyNotes", "totalPrice", "moreInfo");
+		AuthenticatedMoneyExchangePerformService moneyExchange = new AuthenticatedMoneyExchangePerformService();
+		final int tookitId  = request.getModel().getInteger("id");
+		String targetCurrency = this.toolkitRepo.findSystemCurrency();
 		
-		final int id = request.getModel().getInteger("id");
-		final Double euros = this.repository.findRetailPriceByToolkitId(id, "EUR");
-		final Money retailPriceEuro = new Money();
-		retailPriceEuro.setAmount(euros);
-		retailPriceEuro.setCurrency("EUR");
-		final Money retailPriceDollar = new Money();
-		final Double dollar = this.repository.findRetailPriceByToolkitId(id, "USD");
-		retailPriceDollar.setAmount(dollar);
-		retailPriceDollar.setCurrency("USD");
-		final Money retailPriceGBD = new Money();
-		final Double gbd = this.repository.findRetailPriceByToolkitId(id, "GBD");
-		retailPriceGBD.setAmount(gbd);
-		retailPriceGBD.setCurrency("GBD");
-		model.setAttribute("retailPriceEuro", retailPriceEuro.toString());
-		model.setAttribute("retailPriceDollar", retailPriceDollar.toString());
-		model.setAttribute("retailPriceGBD", retailPriceGBD.toString());
+		List<MoneyExchange> priceInSC = new ArrayList<MoneyExchange>();
+		Money result = new Money();
+		List<Object[]> prices = this.toolkitRepo.getRetailPriceItemsOfToolkit(tookitId);
 		
+		for(Object[] p:prices) {
+			result.setAmount((Double)p[0]);
+			result.setCurrency(p[1].toString());
+			priceInSC.add(moneyExchange.computeMoneyExchange(result, targetCurrency));
 
+		}
+		
+		Double amount = 0.0;
+		for(MoneyExchange m:priceInSC) {
+			amount += m.getTarget().getAmount();
+		}
+		result.setAmount(amount);
+		result.setCurrency(targetCurrency);
+		
+		
+		
+		
+		model.setAttribute("retailPriceTookit", result);
+		request.unbind(entity, model, "code", "title", "description", "assemblyNotes","published", "link");
+		
 	}
 
 	@Override

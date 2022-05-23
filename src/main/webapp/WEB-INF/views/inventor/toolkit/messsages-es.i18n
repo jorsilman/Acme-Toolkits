@@ -33,3 +33,6 @@ inventor.quantity.form.button.create = Añadir Artículos
 
 inventor.toolkit.form.button.create = Crear
 inventor.toolkit.form.placeholder.code = Code similar to XXX-000-X
+inventor.toolkit.form.error.no-items = La caja de herramientas no tiene artículos
+inventor.toolkit.form.error.codeChanged = El codigo no puede ser cambiado
+inventor.toolkit.form.error.duplicated = Ya existe el codigo

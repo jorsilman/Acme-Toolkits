@@ -34,3 +34,6 @@ inventor.quantity.form.button.create = Add Items
 
 inventor.toolkit.form.button.create = Create
 inventor.toolkit.form.placeholder.code = Codigo similar a XXX-000-X
+inventor.toolkit.form.error.no-items = Toolkit has no articles
+inventor.toolkit.form.error.codeChanged = Code can´t be changed
+inventor.toolkit.form.error.duplicated = Code already exists

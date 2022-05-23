@@ -11,14 +11,14 @@
 inventor.quantity.list.label.item.code = Codigo
 inventor.quantity.list.label.item.name = Nombre
 inventor.quantity.list.label.number = Cantidad
-inventor.quantity.list.label.item.retailPrice = Precio
+inventor.quantity.list.label.item.retailPrice = Precio por unidad
 
 inventor.quantity.form.label.item.code = Codigo
 inventor.quantity.form.label.number = Cantidad
 
 
-inventor.quantity.list.button.create = Añadir Objeto
-
+inventor.quantity.list.button.createComponent = Añadir componente
+inventor.quantity.list.button.createTool = Añadir herramienta
 
 inventor.quantity.form.button.update = Actualizar
 inventor.quantity.form.button.delete = Borrar

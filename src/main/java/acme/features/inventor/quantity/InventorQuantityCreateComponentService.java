@@ -18,7 +18,7 @@ import acme.framework.services.AbstractCreateService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorQuantityCreateService implements AbstractCreateService<Inventor, Quantity> {
+public class InventorQuantityCreateComponentService implements AbstractCreateService<Inventor, Quantity> {
 
 	@Autowired
 	InventorQuantityRepository repository;
@@ -51,7 +51,7 @@ public class InventorQuantityCreateService implements AbstractCreateService<Inve
 		
 		itemCode = request.getModel().getString("item.code");
 		item = this.repository.findItemByCode(itemCode);
-		
+		item.setItemType(ItemType.COMPONENT);
 		entity.setItem(item);
 		request.bind(entity, errors, "number", "item.code");
 	}
@@ -65,11 +65,12 @@ public class InventorQuantityCreateService implements AbstractCreateService<Inve
 				final int toolkitId = request.getModel().getInteger("masterId");
 		
 		
-		Collection<Item> publishedItems = this.repository.findPublishedItems();
-		Collection<Item> assignedItems = this.repository.findItemsByToolkitId(toolkitId);
+		Collection<Item> publishedItems = this.repository.findPublishedComponents();
+		Collection<Item> assignedItems = this.repository.findComponentsByToolkitId(toolkitId);
 		Collection<Item> nonAssignedItems = publishedItems;
 		
 		nonAssignedItems.removeAll(assignedItems);
+		
 		
 		
 		request.unbind(entity, model, "number", "item.code");
@@ -93,10 +94,12 @@ public class InventorQuantityCreateService implements AbstractCreateService<Inve
 		masterId = request.getModel().getInteger("masterId");
 		toolkit = this.repository.findToolkitById(masterId);
 		item = new Item();
-
+		item.setItemType(ItemType.COMPONENT);
+		
 		result = new Quantity();
 		result.setToolkit(toolkit);
 		result.setItem(item);
+		
 		
 		return result;
 

@@ -5,6 +5,7 @@ inventor.item.form.label.name = Nombre
 inventor.item.form.label.code = Código
 inventor.item.form.label.technology = Tecnología
 inventor.item.list.label.retailprice = Precio
+inventor.item.list.label.retailpriceInSC = Precio en la moneda del sistema
 
 inventor.item.list.label.type = Tipo
 inventor.item.list.label.link = Enlace

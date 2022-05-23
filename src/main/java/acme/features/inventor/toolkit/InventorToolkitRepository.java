@@ -1,15 +1,14 @@
 package acme.features.inventor.toolkit;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.item.Item;
 import acme.entities.item.Quantity;
-import acme.entities.systemConfiguration.SystemConfiguration;
 import acme.entities.toolkit.Toolkit;
-
 import acme.framework.repositories.AbstractRepository;
 import acme.roles.Inventor;
 
@@ -38,8 +37,13 @@ public interface InventorToolkitRepository extends AbstractRepository {
 	@Query("select q.item from Quantity q where q.toolkit.id = :id")
 	Collection<Item> findItemsOfToolkitByToolkitId(int id);
 	
-	@Query("select sc from SystemConfiguration sc ")
-	SystemConfiguration getSystemConfiguration();
+	@Query("select sc.systemCurrency from SystemConfiguration sc ")
+	String findSystemCurrency();
 
+	@Query("select sc.acceptedCurrencies from SystemConfiguration sc ")
+	String findSystemCurrencies();
+	
+	@Query("select (q.number*q.item.retailPrice.amount), q.item.retailPrice.currency from Quantity q where q.toolkit.id = :toolkitId")
+	List<Object[]> getRetailPriceItemsOfToolkit(int toolkitId);
 
 }
