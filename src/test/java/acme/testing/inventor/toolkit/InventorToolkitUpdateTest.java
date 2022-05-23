@@ -52,14 +52,14 @@ public class InventorToolkitUpdateTest extends TestHarness{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/inventor/toolkit/update-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
-	public void negativeTest(final int recordIndex, final String code, final String title, final String description, 
-			final String assemblyNotes, final String published, final String link) {
+	public void negativeTest(final int recordIndex, final String title, final String description, 
+			final String assemblyNotes, final String link) {
 	super.signIn("inventor2", "inventor2");
 	
 	super.clickOnMenu("Inventor", "List my toolkits");
 	super.checkListingExists();
 	super.sortListing(0, "asc");
-	super.clickOnListingRecord(1);
+	super.clickOnListingRecord(0);
 	super.checkFormExists();
 	
 
