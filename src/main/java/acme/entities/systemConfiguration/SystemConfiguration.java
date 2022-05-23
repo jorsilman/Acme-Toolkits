@@ -31,17 +31,21 @@ public class SystemConfiguration extends AbstractEntity {
 	protected String 			systemCurrency;
 	
 	@NotBlank
+	@Pattern(regexp = "^[\\p{L}]+([ '][\\p{L}]+)*(, [\\p{L}]+([ '][\\p{L}]+)*)*$")
+	//@Pattern(regexp = "^[\\p{Ll}]+([ '][\\p{Ll}]+)*(, [\\p{Ll}]+([ '][\\p{Ll}]+)*)*$") // lowercase only
 	protected String 			strongSpamWords;
 	
 	@Digits(integer = 2, fraction = 2)
-	@Range(min=0, max=100)
+	@Range(min=1, max=100)
 	protected Double 			strongSpamThreshold;
 	
 	@NotBlank
+	@Pattern(regexp = "^[\\p{L}]+([ '][\\p{L}]+)*(, [\\p{L}]+([ '][\\p{L}]+)*)*$")
+	//@Pattern(regexp = "^[\\p{Ll}]+([ '][\\p{Ll}]+)*(, [\\p{Ll}]+([ '][\\p{Ll}]+)*)*$") // lowercase only
 	protected String 			weakSpamWords;
 	
 	@Digits(integer = 2, fraction = 2)
-	@Range(min=0, max=100)
+	@Range(min=1, max=100)
 	protected Double 			weakSpamThreshold;
 	
 		

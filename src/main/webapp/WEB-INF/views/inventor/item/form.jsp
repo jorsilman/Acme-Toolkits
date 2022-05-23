@@ -6,24 +6,32 @@
 
 <acme:form readonly="${readOnly}"> 
 	<acme:input-textbox code="inventor.item.list.label.name" path="name"/>
-	<acme:input-textbox code="inventor.item.form.label.code" path="code"/>
+	<jstl:choose>
+
+	<jstl:when test="${acme:anyOf(command, 'show,update,delete, publish, update-component, update-tool')}">
+	<acme:input-textbox code="inventor.item.form.label.code" path="code" placeholder="XXX-000-X" readonly="TRUE"/>
+	</jstl:when>
+	<jstl:when test="${acme:anyOf(command, 'create-component, create-tool') }">
+	<acme:input-textbox code="inventor.item.form.label.code" path="code" placeholder="XXX-000-X"/>
+	</jstl:when>
+	</jstl:choose>
 	<acme:input-textbox code="inventor.item.form.label.technology" path="technology"/>
 	<acme:input-textarea code="inventor.item.form.label.description" path="description"/>
+
 	<acme:input-textbox code="inventor.item.list.label.link" path="link"/>
 	<acme:input-money code="inventor.item.list.label.retailprice" path="retailPrice"/>
 	<acme:input-money code="inventor.item.list.label.retailpriceInSC" path="priceInSC"/>
 	<acme:input-textbox code="inventor.item.list.label.published" path="published" readonly="TRUE"/>
+
 	<jstl:choose>
-	<jstl:when test="${command == 'create-component' }">
-		<acme:input-select code="inventor.item.form.label.type" path="itemType">
-			<acme:input-option value="TOOL" code="inventor.item.form.label.component" selected ="${itemType == 'COMPONENT' }"/>
-		</acme:input-select>
+
+		<jstl:when test="${acme:anyOf(command, 'show,update,delete')}">
+	<acme:input-textbox code="inventor.item.list.label.published" path="published" readonly="TRUE"/>
 	</jstl:when>
-	<jstl:when test="${command == 'create-tool' }">
-		<acme:input-select code="inventor.item.form.label.type" path="itemType">
-			<acme:input-option value="TOOL" code="inventor.item.form.label.tool" selected ="${itemType == 'TOOL' }"/>
-		</acme:input-select>
-	</jstl:when>
+	</jstl:choose>
+	
+	<jstl:choose>
+	
 	
 	<jstl:when test="${acme:anyOf(command,'show, update, delete, publish') && itemType == 'COMPONENT'}">
 	<acme:input-select code="inventor.item.form.label.type" path="itemType" readonly="TRUE">

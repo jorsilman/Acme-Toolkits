@@ -31,3 +31,16 @@ inventor.item.form.label.component = COMPONENT
 inventor.item.form.button.update = Update tool
 inventor.item.form.button.delete = Delete tool
 
+inventor.item.create-component = Create a new component
+
+inventor.item.create = Create a new tool
+
+inventor.item.form.error.code = Code can´t be updated
+inventor.item.form.error.duplicated = Code already exists
+
+inventor.item.form.error.currency = Currency is not accepted by the system 
+
+inventor.item.form.error.codeChanged = Code can´t be changed
+
+inventor.item.form.error.negative = Price can´t be negative or zero
+

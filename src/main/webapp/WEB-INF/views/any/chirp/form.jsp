@@ -4,7 +4,6 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:input-moment code="any.chirp.form.label.creation-moment" path="creationMoment"/>
 	<acme:input-textbox code="any.chirp.form.label.title" path="title"/>
 	<acme:input-textbox code="any.chirp.form.label.author" path="author"/>
 	<acme:input-textbox code="any.chirp.form.label.body" path="body"/>
