@@ -28,5 +28,8 @@ public interface PatronPatronageRepository extends AbstractRepository {
 
 	@Query("select patronage from Patronage patronage where patronage.patron.id = :id")
 	Collection<Patronage> findPatronagesByPatronId(int id);
+	
+	@Query("select sc.systemCurrency from SystemConfiguration sc ")
+	String findSystemCurrency();
 
 }

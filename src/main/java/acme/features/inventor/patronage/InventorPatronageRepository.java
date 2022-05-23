@@ -19,5 +19,9 @@ public interface InventorPatronageRepository extends AbstractRepository{
 	
 	@Query("select patronage from Patronage patronage where patronage.inventor.id = :id and patronage.status = PROPOSED")
 	Collection<Patronage> findProposedPatronageByInventorId(int id);
+	
+	@Query("select sc.systemCurrency from SystemConfiguration sc ")
+	String findSystemCurrency();
+
 
 }
