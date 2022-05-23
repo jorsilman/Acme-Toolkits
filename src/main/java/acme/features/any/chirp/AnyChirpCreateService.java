@@ -1,5 +1,7 @@
 package acme.features.any.chirp;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,7 +30,7 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp>{
 		assert entity != null;
 		assert errors !=null;
 		
-		request.bind(entity, errors,"creationMoment", "title","author","body","email");
+		request.bind(entity, errors, "title","author","body","email");
 		
 	}
 
@@ -38,7 +40,7 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp>{
 		assert entity != null;
 		assert model !=null;
 		
-		request.unbind(entity, model,"creationMoment", "title","author","body","email");
+		request.unbind(entity, model, "title","author","body","email");
 		model.setAttribute("confirm", false);
 		
 	}
@@ -48,8 +50,9 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp>{
 		assert request != null;
 		
 		final Chirp result = new Chirp();
-		/*final Date now = new Date(System.currentTimeMillis()-1);
-		result.setCreationMoment(now);*/
+		Date now;
+		now = new Date(System.currentTimeMillis()-1);
+		result.setCreationMoment(now);
 		
 		return result;
 	}

@@ -34,6 +34,7 @@ public class InventorToolCreateService implements AbstractCreateService<Inventor
 			assert entity != null;
 			assert errors != null;
 			
+			entity.setPublished(false);
 			request.bind(entity, errors, "name","code",  "technology", "description", "retailPrice", "link");
 		}
 		
@@ -44,7 +45,7 @@ public class InventorToolCreateService implements AbstractCreateService<Inventor
 			assert entity != null;
 			assert model != null;
 			
-			request.unbind(entity, model, "name","code", "technology", "description", "retailPrice", "link");
+			request.unbind(entity, model, "name","code", "technology", "description", "retailPrice", "link", "published");
 			
 		}
 		
@@ -78,6 +79,18 @@ public class InventorToolCreateService implements AbstractCreateService<Inventor
 			assert entity != null;
 			assert errors != null;
 			
+			if(!errors.hasErrors("code")) {
+				final Item existing = this.itemRepo.findItemByCode(entity.getCode());
+				errors.state(request, existing == null || existing.getId() == entity.getId(), "code", "inventor.item.form.error.duplicated");
+				
+			
+			}
+			
+			if(!errors.hasErrors("retailPrice")) {
+				final boolean accepted = this.itemRepo.findAcceptedCurrencies().matches("(.*)" + entity.getRetailPrice().getCurrency()+ "(.*)");
+				errors.state(request, accepted, "retailPrice", "inventor.item.form.error.currency");
+				errors.state(request, entity.getRetailPrice().getAmount()>0, "retailPrice", "inventor.item.form.error.negative");
+			}
 			
 		}
 				

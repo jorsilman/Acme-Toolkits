@@ -10,8 +10,7 @@
 - they accept any liabilities with respect to them.
 --%>
 
-<%@page language="java"
-	import="acme.framework.helpers.PrincipalHelper,acme.roles.Provider,acme.roles.Consumer"%>
+<%@page language="java"%>
 
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
@@ -100,8 +99,8 @@
 				action="/inventor/item/list-tool" />
 			<acme:menu-suboption code="master.menu.inventor.toolkit.list"
 				action="/inventor/toolkit/list-own" />
-			<acme:menu-suboption code="master.menu.inventor.item.create"
-				action="/inventor/item/create-tool" />
+
+				
 </acme:menu-option>
 
 

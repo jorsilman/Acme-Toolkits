@@ -1,6 +1,2 @@
 key,key:patronage,creation-moment,memorandum,link,sequence-number
-patronage-report-01,patronage-01,"2021/06/1 23:59","Example memorandum 1",https://google.com/,AAA-000-A:0001
-patronage-report-02,patronage-02,"2021/06/8 00:59","Example memorandum 2",null,AAA-000-B:0001
-patronage-report-03,patronage-03,"2021/07/5 09:59","Example memorandum 3",null,AAA-000-C:0001
 patronage-report-04,patronage-04,"2021/07/7 10:59","Example memorandum 4",null,AAA-000-D:0001
-patronage-report-05,patronage-05,"2021/09/8 11:59","Example memorandum 5",https://google.com/,AAA-000-E:0001

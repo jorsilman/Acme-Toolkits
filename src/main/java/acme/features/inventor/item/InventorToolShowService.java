@@ -3,9 +3,12 @@ package acme.features.inventor.item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.MoneyExchange;
 import acme.entities.item.Item;
+import acme.features.authenticated.moneyExchange.AuthenticatedMoneyExchangePerformService;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.datatypes.Money;
 import acme.framework.services.AbstractShowService;
 import acme.roles.Inventor;
 
@@ -48,9 +51,19 @@ public class InventorToolShowService implements AbstractShowService<Inventor,Ite
 			assert request != null;
 			assert entity != null;
 			assert model != null;
-			model.setAttribute("itemType", entity.getItemType());
 			
-			request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link");
+			AuthenticatedMoneyExchangePerformService moneyExchange = new AuthenticatedMoneyExchangePerformService();
+			final int itemId  = request.getModel().getInteger("id");
+			String targetCurrency = this.itemRepo.findSystemCurrency();
+			Money actualCurrency = this.itemRepo.findToolPriceById(itemId);
+			
+			MoneyExchange change = moneyExchange.computeMoneyExchange(actualCurrency, targetCurrency);
+			Money result = change.getTarget();
+			
+			
+			model.setAttribute("priceInSC", result);
+			model.setAttribute("itemType", entity.getItemType());
+			request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link", "published");
 			
 		}
 		

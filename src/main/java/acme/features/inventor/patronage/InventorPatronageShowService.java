@@ -3,9 +3,12 @@ package acme.features.inventor.patronage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.MoneyExchange;
 import acme.entities.patronage.Patronage;
+import acme.features.authenticated.moneyExchange.AuthenticatedMoneyExchangePerformService;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.datatypes.Money;
 import acme.framework.services.AbstractShowService;
 import acme.roles.Inventor;
 
@@ -16,6 +19,8 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 
 	@Autowired
 	protected InventorPatronageRepository repository;
+	
+	
 
 	// AbstractShowService<Administrator, Announcement> interface --------------
 
@@ -48,6 +53,18 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+		
+		AuthenticatedMoneyExchangePerformService moneyExchange = new AuthenticatedMoneyExchangePerformService();
+		final int itemId  = request.getModel().getInteger("id");
+		String targetCurrency = this.repository.findSystemCurrency();
+		Money actualCurrency = this.repository.findOnePatronageById(itemId).getBudget();
+		
+		MoneyExchange change = moneyExchange.computeMoneyExchange(actualCurrency, targetCurrency);
+		Money result = change.getTarget();
+		
+		
+		model.setAttribute("priceInSC", result);
+		
 		
 		model.setAttribute("inventorCompany", entity.getInventor().getCompany());
 		model.setAttribute("inventorStatement", entity.getInventor().getStatement());
