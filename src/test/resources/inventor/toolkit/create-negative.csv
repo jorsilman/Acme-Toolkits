@@ -1,0 +1,6 @@
+recordIndex,code,title,description, assemblyNotes,published,link
+0,AAA-123-A,, , , false,https://www.youtube.com/
+1,AA-123-h,, , , false,aitor
+2,BBB-123-h,, Creacion positiva, Positiva, false,pepe
+3,CCC-13-g,, Creacion positiva, null, ,pepe
+4,asf-123-a,null, Creacion positiva, Positiva, false,https://www.youtube.com/

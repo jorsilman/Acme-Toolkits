@@ -1,0 +1,6 @@
+key,code,title,description,assembly-notes,published,link
+0,AAA-000-A,title1,Example description 1,Example assembly notes 1,true,https://www.google.com/
+1,BBB-111-B,title2,Example description 2,Example assembly notes 2,false,null
+2,CCC-222-C,title3,Example description 3,Example assembly notes 3,false,null
+3,DDD-333-D,title4,Example description 4,Example assembly notes 4,false,null
+4,EEE-444-E,title5,Example description 5,Example assembly notes 5,false,https://www.google.com/
