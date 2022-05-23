@@ -20,10 +20,7 @@ inventor.toolkit.form.label.title = Title
 inventor.toolkit.form.label.description = Description
 inventor.toolkit.form.label.assembly-notes = Assembly notes
 inventor.toolkit.form.label.link = Link
-
-inventor.toolkit.form.label.retail-price-euro = Retail price euro
-inventor.toolkit.form.label.retail-price-dollar = Retail price dollar
-inventor.toolkit.form.label.retail-price-gbd = Retail price gbd
+inventor.toolkit.form.label.retail-price = Price
 
 inventor.toolkit.form.button.quantities = Items
 inventor.toolkit.form.button.update = Update

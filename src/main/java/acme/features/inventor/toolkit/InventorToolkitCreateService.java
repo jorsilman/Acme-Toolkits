@@ -24,16 +24,7 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 	@Override
 	public boolean authorise(Request<Toolkit> request) {
 		assert request != null;
-
-		boolean result;
-		int masterId;
-		Toolkit toolkit;
- 
-		masterId = request.getModel().getInteger("id");
-		toolkit = this.repository.findToolkitById(masterId);
-		result = (toolkit != null && !toolkit.isPublished() && request.isPrincipal(toolkit.getInventor()));
-
-		return result;
+		return true;
 	}
 
 	@Override

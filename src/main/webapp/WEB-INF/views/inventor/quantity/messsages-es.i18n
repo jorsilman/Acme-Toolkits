@@ -13,7 +13,7 @@ inventor.quantity.list.label.item.name = Nombre
 inventor.quantity.list.label.number = Cantidad
 inventor.quantity.list.label.item.retailPrice = Precio por unidad
 
-inventor.quantity.form.label.item.code = Codigo
+inventor.quantity.form.label.item= Objeto
 inventor.quantity.form.label.number = Cantidad
 
 

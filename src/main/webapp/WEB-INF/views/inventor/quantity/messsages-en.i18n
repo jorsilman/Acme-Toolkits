@@ -13,7 +13,7 @@ inventor.quantity.list.label.item.name = Name
 inventor.quantity.list.label.number = Quantity
 inventor.quantity.list.label.item.retailPrice = Retail Price Unit
 
-inventor.quantity.form.label.item.code = Code
+inventor.quantity.form.label.item = Item
 inventor.quantity.form.label.number = Quantity
 
 

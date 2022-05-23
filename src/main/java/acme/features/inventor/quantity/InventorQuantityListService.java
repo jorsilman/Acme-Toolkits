@@ -61,20 +61,13 @@ public class InventorQuantityListService implements AbstractListService<Inventor
 		assert model != null;
 
 		int toolkitId;
-		
-		
-					
-
+		boolean published;
 		toolkitId = request.getModel().getInteger("masterId");
-		
-		Money precio;
+		published = this.repository.findToolkitById(toolkitId).isPublished();
 
 		model.setAttribute("masterId", toolkitId);
+		model.setAttribute("published", published);
 		
-		
-		
-		//model.setAttribute("prize", precio);
-
 		request.unbind(entity, model, "number", "item.code", "item.name","item.retailPrice");
 
 	}
