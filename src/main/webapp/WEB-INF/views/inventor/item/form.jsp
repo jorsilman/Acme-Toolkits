@@ -20,8 +20,16 @@
 
 	<acme:input-textbox code="inventor.item.list.label.link" path="link"/>
 	<acme:input-money code="inventor.item.list.label.retailprice" path="retailPrice"/>
+	
+	
+	
+	<jstl:choose>
+	<jstl:when test="${acme:anyOf(command,'show, update, delete, publish')}">
 	<acme:input-money code="inventor.item.list.label.retailpriceInSC" path="priceInSC"/>
-	<acme:input-textbox code="inventor.item.list.label.published" path="published" readonly="TRUE"/>
+	</jstl:when>
+	</jstl:choose>
+	
+
 
 	<jstl:choose>
 

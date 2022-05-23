@@ -52,13 +52,13 @@ public class InventorToolShowService implements AbstractShowService<Inventor,Ite
 			assert entity != null;
 			assert model != null;
 			
-			AuthenticatedMoneyExchangePerformService moneyExchange = new AuthenticatedMoneyExchangePerformService();
+			final AuthenticatedMoneyExchangePerformService moneyExchange = new AuthenticatedMoneyExchangePerformService();
 			final int itemId  = request.getModel().getInteger("id");
-			String targetCurrency = this.itemRepo.findSystemCurrency();
-			Money actualCurrency = this.itemRepo.findToolPriceById(itemId);
+			final String targetCurrency = this.itemRepo.findSystemCurrency();
+			final Money actualCurrency = this.itemRepo.findToolPriceById(itemId);
 			
-			MoneyExchange change = moneyExchange.computeMoneyExchange(actualCurrency, targetCurrency);
-			Money result = change.getTarget();
+			final MoneyExchange change = moneyExchange.computeMoneyExchange(actualCurrency, targetCurrency);
+			final Money result = change.getTarget();
 			
 			
 			model.setAttribute("priceInSC", result);

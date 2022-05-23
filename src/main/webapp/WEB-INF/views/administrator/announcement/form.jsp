@@ -6,7 +6,7 @@
 <acme:form>
 	<acme:input-textbox code="administrator.announcement.form.label.title" path="title" placeholder="administrator.announcement.form.label.title"/>
 	<acme:input-textbox code="administrator.announcement.form.label.body" path="body" placeholder="administrator.announcement.form.label.body"/>
-	<!--<acme:input-moment code="administrator.announcement.form.label.creationMoment" path="creationMoment"/>	-->
+	
 	<acme:input-checkbox code="administrator.announcement.form.label.critical" path="criticalFlag"/>
 	<acme:input-textbox code="administrator.announcement.form.label.link" path="link" placeholder="administrator.announcement.form.label.link"/>
 	<acme:input-checkbox code="administrator.announcement.form.label.confirm" path="confirm"/>

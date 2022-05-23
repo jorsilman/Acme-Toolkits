@@ -11,7 +11,7 @@
 			<acme:input-textbox code="inventor.toolkit.form.label.title" path="title"/>
 			<acme:input-textarea code="inventor.toolkit.form.label.description" path="description"/>
 			<acme:input-textarea code="inventor.toolkit.form.label.assembly-notes" path="assemblyNotes"/>
-			<acme:input-url code="inventor.toolkit.form.label.link" path="link"/>
+			<acme:input-url code="inventor.toolkit.form.label.link" path="link" placeholder="https://www.google.com"/>
 		</jstl:when>
 		
 		<jstl:when test="${command != 'create'}">

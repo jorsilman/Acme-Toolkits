@@ -1,7 +1,6 @@
 package acme.features.inventor.toolkit;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,15 +52,15 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		assert entity != null;
 		assert model != null;
 
-		AuthenticatedMoneyExchangePerformService moneyExchange = new AuthenticatedMoneyExchangePerformService();
+		final AuthenticatedMoneyExchangePerformService moneyExchange = new AuthenticatedMoneyExchangePerformService();
 		final int tookitId  = request.getModel().getInteger("id");
-		String targetCurrency = this.repository.findSystemCurrency();
+		final String targetCurrency = this.repository.findSystemCurrency();
 		
-		List<MoneyExchange> priceInSC = new ArrayList<MoneyExchange>();
-		Money result = new Money();
-		List<Object[]> prices = this.repository.getRetailPriceItemsOfToolkit(tookitId);
+		final List<MoneyExchange> priceInSC = new ArrayList<MoneyExchange>();
+		final Money result = new Money();
+		final List<Object[]> prices = this.repository.getRetailPriceItemsOfToolkit(tookitId);
 		
-		for(Object[] p:prices) {
+		for(final Object[] p:prices) {
 			result.setAmount((Double)p[0]);
 			result.setCurrency(p[1].toString());
 			priceInSC.add(moneyExchange.computeMoneyExchange(result, targetCurrency));
@@ -69,7 +68,7 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		}
 		
 		Double amount = 0.0;
-		for(MoneyExchange m:priceInSC) {
+		for(final MoneyExchange m:priceInSC) {
 			amount += m.getTarget().getAmount();
 		}
 		result.setAmount(amount);
