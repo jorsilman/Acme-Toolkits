@@ -55,7 +55,7 @@ public class InventorQuantityListService implements AbstractListService<Inventor
 
 
 	@Override
-	public void unbind(Request<Quantity> request, Collection<Quantity> entity, Model model) {
+	public void unbind(final Request<Quantity> request, final Collection<Quantity> entity, final Model model) {
 		assert request != null;
 
 		assert model != null;
