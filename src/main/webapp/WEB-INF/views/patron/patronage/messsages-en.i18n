@@ -16,6 +16,7 @@ patron.patronage.list.label.creationDate = Creation date
 patron.patronage.list.label.startPeriodOfTime = Start period of time
 patron.patronage.list.label.endPeriodOfTime = End period of time
 patron.patronage.list.label.link = Link
+patron.patronage.list.label.publish = Published
 
 patron.patronage.form.label.status = Status
 patron.patronage.form.label.PROPOSED = Proposed
@@ -32,3 +33,16 @@ patron.patronage.form.label.inventor = Inventor
 patron.patronage.form.label.inventor-company = Company
 patron.patronage.form.label.inventor-statement = Statement
 patron.patronage.form.label.inventor-link = Link
+patron.patronage.form.label.published = Published
+
+patron.patronage.form.button.update = Update
+patron.patronage.form.button.delete = Delete
+patron.patronage.form.button.publish = Publish
+patron.patronage.form.button.create = Create
+
+patron.patronage.form.error.duplicated = Code can't be duplicated
+patron.patronage.form.error.codeChanged = Code can't be modified
+patron.patronage.form.error.soon-to-close = Is too close to start the patronage
+patron.patronage.form.error.minimum = Duration must be 1 month at least
+patron.patronage.form.error.negative = Budget can't be negative
+patron.patronage.form.error.non-accepted = Currency not accepted

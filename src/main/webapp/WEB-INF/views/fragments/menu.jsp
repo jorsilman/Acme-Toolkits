@@ -101,6 +101,8 @@
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
 			<acme:menu-suboption code="master.menu.patron.patronage.list"
 				action="/patron/patronage/list-own" />
+			<acme:menu-suboption code="master.menu.patron.patronage.create"
+				action="/patron/patronage/create" />
 			<acme:menu-suboption code="master.menu.patron.patronage-report.list"
 				action="/patron/patronage-report/list-own" />
 			<acme:menu-suboption code="master.menu.patron.patron-dashboard.show"
@@ -134,7 +136,7 @@
 				access="!hasRole('Consumer')" />
 			<acme:menu-suboption code="master.menu.user-account.consumer"
 				action="/authenticated/consumer/update" access="hasRole('Consumer')" />
-
+			<acme:menu-suboption code="master.menu.user-account.patron" action="/authenticated/patron/update" access="hasRole('Patron')"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.sign-out"

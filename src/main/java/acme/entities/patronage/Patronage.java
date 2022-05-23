@@ -52,7 +52,7 @@ public class Patronage extends AbstractEntity{
 	
 	@NotNull
 	@Past
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	protected Date				creationDate;
 	
 	@NotNull
@@ -65,6 +65,9 @@ public class Patronage extends AbstractEntity{
 	
 	@URL
 	protected String 			link;
+	
+	@NotNull
+	protected boolean 			published;
 	
 	// Derived attributes 	----------------------------------
 	
