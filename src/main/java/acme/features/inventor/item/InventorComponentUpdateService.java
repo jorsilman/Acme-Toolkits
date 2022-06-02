@@ -3,11 +3,14 @@ package acme.features.inventor.item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.MoneyExchange;
 import acme.entities.item.Item;
 import acme.entities.item.ItemType;
+import acme.features.authenticated.moneyExchange.AuthenticatedMoneyExchangePerformService;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
+import acme.framework.datatypes.Money;
 import acme.framework.services.AbstractUpdateService;
 import acme.roles.Inventor;
 
@@ -27,13 +30,12 @@ public class InventorComponentUpdateService implements AbstractUpdateService<Inv
 		final boolean result;
 		int itemId;
 		final Item item;
-		final Inventor inventor;
-		
+
 		itemId=request.getModel().getInteger("id");
 		item=this.itemRepo.findItemById(itemId);
-		inventor=item.getInventor();
-		
-		result= !item.isPublished() && request.isPrincipal(inventor);
+		final int inventorId = request.getPrincipal().getActiveRoleId();
+
+		result= !item.isPublished() && item.getInventor().getId()==inventorId;
 		
 		
 		return result;
@@ -46,7 +48,7 @@ public class InventorComponentUpdateService implements AbstractUpdateService<Inv
 		assert errors != null;
 		entity.setItemType(ItemType.COMPONENT);
 		
-		request.bind(entity, errors, "name","code",  "technology", "description", "retailPrice", "link");
+		request.bind(entity, errors, "name","code",  "technology", "description", "retailPrice", "link", "published", "itemType");
 	}
 	
 	@Override
@@ -56,7 +58,24 @@ public class InventorComponentUpdateService implements AbstractUpdateService<Inv
 		assert model != null;
 		entity.setItemType(ItemType.COMPONENT);
 		
-		request.unbind(entity, model, "name","code", "technology", "description", "retailPrice", "link");
+		final AuthenticatedMoneyExchangePerformService moneyExchange = new AuthenticatedMoneyExchangePerformService();
+		final int itemId  = request.getModel().getInteger("id");
+		final String targetCurrency = this.itemRepo.findSystemCurrency();
+		Money actualCurrency;
+		if(entity.getItemType() == ItemType.COMPONENT) {
+			 actualCurrency = this.itemRepo.findComponentPriceById(itemId);
+		}else {
+			 actualCurrency = this.itemRepo.findToolPriceById(itemId);
+			
+		}
+		
+		final MoneyExchange change = moneyExchange.computeMoneyExchange(actualCurrency, targetCurrency);
+		final Money result = change.getTarget();
+		
+		
+		model.setAttribute("priceInSC", result);
+		
+		request.unbind(entity, model, "name","code", "technology", "description", "retailPrice", "link", "published", "itemType");
 		
 	}
 	
