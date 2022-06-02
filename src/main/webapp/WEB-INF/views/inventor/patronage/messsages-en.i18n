@@ -39,3 +39,11 @@ inventor.patronage.form.button.update.accept = Update
 
 inventor.patronage.form.button.create-report = Create report
 
+inventor.patronage.form.error.codeChanged = Code can't be modified
+inventor.patronage.form.error.linkChanged = Link can't be modified
+inventor.patronage.form.error.endPeriodOfTimeChanged = Final Date can't be modified
+inventor.patronage.form.error.startPeriodOfTimeChanged = Initial Date can't be modified
+inventor.patronage.form.error.creationMomentChanged = Creation moment can't be modified
+inventor.patronage.form.error.legalStuffChanged = Legal Stuff can't be modified
+inventor.patronage.form.error.budgetChanged = Budget can't be modified
+

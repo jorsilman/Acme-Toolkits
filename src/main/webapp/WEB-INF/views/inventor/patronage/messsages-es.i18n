@@ -40,3 +40,10 @@ inventor.patronage.form.button.update.accept = Actualizar
 
 inventor.patronage.form.button.create-report = Hacer reporte
 
+inventor.patronage.form.error.codeChanged = No se puede modificar el codigo
+inventor.patronage.form.error.linkChanged = No se puede modificar el enlace
+inventor.patronage.form.error.endPeriodOfTimeChanged = No se puede modificar la fecha final
+inventor.patronage.form.error.startPeriodOfTimeChanged = No se puede modificar la fecha inicial
+inventor.patronage.form.error.creationMomentChanged = No se puede modificar la fecha de creacion
+inventor.patronage.form.error.legalStuffChanged = No se pueden modificar las legalidades
+inventor.patronage.form.error.budgetChanged = No se puede modificar el presupuesto
