@@ -49,7 +49,7 @@ public class AnyItemListByToolkitService implements AbstractListService<Any, Ite
 
 				
 				
-				request.unbind(entity, model, "name","code","technology","description","retailPrice","link","type");
+				request.unbind(entity, model, "name","code","technology","description","retailPrice","link","itemType");
 			}
 
 }
