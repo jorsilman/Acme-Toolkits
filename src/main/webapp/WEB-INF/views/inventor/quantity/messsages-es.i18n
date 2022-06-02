@@ -16,6 +16,7 @@ inventor.quantity.list.label.item.retailPrice = Precio por unidad
 inventor.quantity.form.label.item= Objeto
 inventor.quantity.form.label.number = Cantidad
 
+inventor.quantity.form.label.item.code = Codigo
 
 inventor.quantity.list.button.createComponent = Añadir componente
 inventor.quantity.list.button.createTool = Añadir herramienta
@@ -26,3 +27,4 @@ inventor.quantity.form.button.create = Añadir
 
 inventor.quantity.form.error.invalid = Ya existe un articulo con este codigo
 inventor.quantity.form.error.exceed = No se puede añadir mas de una Herramienta
+inventor.quantity.form.error.duplicated = Codigo duplicado

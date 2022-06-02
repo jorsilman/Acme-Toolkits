@@ -56,7 +56,7 @@ public class InventorQuantityListService implements AbstractListService<Inventor
 	@Override
 	public void unbind(final Request<Quantity> request, final Collection<Quantity> entity, final Model model) {
 		assert request != null;
-
+		assert entity != null;
 		assert model != null;
 
 		int toolkitId;
@@ -66,8 +66,8 @@ public class InventorQuantityListService implements AbstractListService<Inventor
 
 		model.setAttribute("masterId", toolkitId);
 		model.setAttribute("published", published);
-		
-		request.unbind(entity, model, "number", "item.code", "item.name","item.retailPrice");
+
+
 
 	}
 
@@ -76,6 +76,9 @@ public class InventorQuantityListService implements AbstractListService<Inventor
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+
+
+	
 
 		request.unbind(entity, model, "number", "item.code", "item.name","item.retailPrice");
 	}
