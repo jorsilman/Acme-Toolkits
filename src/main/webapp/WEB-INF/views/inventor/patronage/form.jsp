@@ -36,10 +36,10 @@
 		</jstl:when>
 	</jstl:choose>
 	<br>
-	<h2>Inventor:</h2>
-	<acme:input-textbox code="patron.patronage.form.label.inventor-company" path="inventorCompany"/>
-	<acme:input-textbox code="patron.patronage.form.label.inventor-statement" path="inventorStatement"/>
-	<acme:input-textbox code="patron.patronage.form.label.inventor-link" path="inventorLink"/>
+	<h2>Patron:</h2>
+	<acme:input-textbox code="patron.patronage.form.label.patron-company" path="patronCompany"/>
+	<acme:input-textbox code="patron.patronage.form.label.patron-statement" path="patronStatement"/>
+	<acme:input-textbox code="patron.patronage.form.label.patron-link" path="patronLink"/>
 	
 	<jstl:if test="${status == 'ACCEPTED'}">
 		<acme:button code="inventor.patronage.form.button.create-report" action="/inventor/patronage-report/create?patronageId=${masterId}"/>
