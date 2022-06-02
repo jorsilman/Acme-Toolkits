@@ -31,7 +31,7 @@ public class InventorQuantityListService implements AbstractListService<Inventor
 
 		masterId = request.getModel().getInteger("masterId");
 		toolkit = this.repository.findToolkitById(masterId);
-		result = (toolkit != null && (toolkit.isPublished() || request.isPrincipal(toolkit.getInventor())));
+		result = (toolkit != null && (toolkit.isPublished() || request.getPrincipal().getActiveRoleId()==toolkit.getInventor().getId()));
 
 		return result;
 	}

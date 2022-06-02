@@ -31,7 +31,7 @@ public class InventorQuantityShowService implements AbstractShowService<Inventor
 
 		quantityId = request.getModel().getInteger("id");
 		toolkit = this.repository.findToolkitByQuantityId(quantityId);
-		result = (toolkit != null && (toolkit.isPublished() || request.isPrincipal(toolkit.getInventor())));
+		result = (toolkit != null && (toolkit.isPublished() || request.getPrincipal().getActiveRoleId()==toolkit.getInventor().getId()));
 
 		return result;
 	}

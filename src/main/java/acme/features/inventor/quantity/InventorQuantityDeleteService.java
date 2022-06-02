@@ -23,7 +23,7 @@ public class InventorQuantityDeleteService implements AbstractDeleteService<Inve
 
 
 	@Override
-	public boolean authorise(Request<Quantity> request) {
+	public boolean authorise(final Request<Quantity> request) {
 		assert request != null;
 
 		boolean result;
@@ -32,13 +32,13 @@ public class InventorQuantityDeleteService implements AbstractDeleteService<Inve
 
 		quantityId = request.getModel().getInteger("id");
 		toolkit = this.repository.findToolkitByQuantityId(quantityId);
-		result = (toolkit != null && (toolkit.isPublished() || request.isPrincipal(toolkit.getInventor())));
+		result = (toolkit != null && (toolkit.isPublished() || request.getPrincipal().getActiveRoleId()==toolkit.getInventor().getId()));
 
 		return result;
 	}
 
 	@Override
-	public void bind(Request<Quantity> request, Quantity entity, Errors errors) {
+	public void bind(final Request<Quantity> request, final Quantity entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -47,7 +47,7 @@ public class InventorQuantityDeleteService implements AbstractDeleteService<Inve
 	}
 
 	@Override
-	public void unbind(Request<Quantity> request, Quantity entity, Model model) {
+	public void unbind(final Request<Quantity> request, final Quantity entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
@@ -60,7 +60,7 @@ public class InventorQuantityDeleteService implements AbstractDeleteService<Inve
 	}
 
 	@Override
-	public Quantity findOne(Request<Quantity> request) {
+	public Quantity findOne(final Request<Quantity> request) {
 		assert request != null;
 
 		int quantityId;
@@ -73,14 +73,14 @@ public class InventorQuantityDeleteService implements AbstractDeleteService<Inve
 	}
 
 	@Override
-	public void validate(Request<Quantity> request, Quantity entity, Errors errors) {
+	public void validate(final Request<Quantity> request, final Quantity entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;		
 	}
 
 	@Override
-	public void delete(Request<Quantity> request, Quantity entity) {
+	public void delete(final Request<Quantity> request, final Quantity entity) {
 		assert request != null;
 		assert entity != null;
 

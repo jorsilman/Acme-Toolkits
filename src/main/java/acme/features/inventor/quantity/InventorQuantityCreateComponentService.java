@@ -26,7 +26,7 @@ public class InventorQuantityCreateComponentService implements AbstractCreateSer
 
 
 	@Override
-	public boolean authorise(Request<Quantity> request) {
+	public boolean authorise(final Request<Quantity> request) {
 		assert request != null;
 
 		boolean result;
@@ -35,13 +35,13 @@ public class InventorQuantityCreateComponentService implements AbstractCreateSer
 
 		masterId = request.getModel().getInteger("masterId");
 		toolkit = this.repository.findToolkitById(masterId);
-		result = (toolkit != null && !toolkit.isPublished() && request.isPrincipal(toolkit.getInventor()));
+		result = (toolkit != null && !toolkit.isPublished() && request.getPrincipal().getActiveRoleId()==toolkit.getInventor().getId());
 
 		return result;
 	}
 
 	@Override
-	public void bind(Request<Quantity> request, Quantity entity, Errors errors) {
+	public void bind(final Request<Quantity> request, final Quantity entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -57,7 +57,7 @@ public class InventorQuantityCreateComponentService implements AbstractCreateSer
 	}
 
 	@Override
-	public void unbind(Request<Quantity> request, Quantity entity, Model model) {
+	public void unbind(final Request<Quantity> request, final Quantity entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
@@ -65,9 +65,9 @@ public class InventorQuantityCreateComponentService implements AbstractCreateSer
 		final int toolkitId = request.getModel().getInteger("masterId");
 
 
-		Collection<Item> publishedItems = this.repository.findPublishedComponents();
-		Collection<Item> assignedItems = this.repository.findComponentsByToolkitId(toolkitId);
-		Collection<Item> nonAssignedItems = publishedItems;
+		final Collection<Item> publishedItems = this.repository.findPublishedComponents();
+		final Collection<Item> assignedItems = this.repository.findComponentsByToolkitId(toolkitId);
+		final Collection<Item> nonAssignedItems = publishedItems;
 
 		nonAssignedItems.removeAll(assignedItems);
 
@@ -82,7 +82,7 @@ public class InventorQuantityCreateComponentService implements AbstractCreateSer
 	}
 
 	@Override
-	public Quantity instantiate(Request<Quantity> request) {
+	public Quantity instantiate(final Request<Quantity> request) {
 
 		assert request != null;
 
@@ -107,7 +107,7 @@ public class InventorQuantityCreateComponentService implements AbstractCreateSer
 	}
 
 	@Override
-	public void validate(Request<Quantity> request, Quantity entity, Errors errors) {
+	public void validate(final Request<Quantity> request, final Quantity entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -138,7 +138,7 @@ public class InventorQuantityCreateComponentService implements AbstractCreateSer
 	}
 
 	@Override
-	public void create(Request<Quantity> request, Quantity entity) {
+	public void create(final Request<Quantity> request, final Quantity entity) {
 		assert request != null;
 		assert entity != null;
 

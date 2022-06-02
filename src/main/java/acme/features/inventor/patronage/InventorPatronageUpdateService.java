@@ -3,11 +3,14 @@ package acme.features.inventor.patronage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.MoneyExchange;
 import acme.entities.patronage.Patronage;
 import acme.entities.patronage.PatronageStatus;
+import acme.features.authenticated.moneyExchange.AuthenticatedMoneyExchangePerformService;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
+import acme.framework.datatypes.Money;
 import acme.framework.services.AbstractUpdateService;
 import acme.roles.Inventor;
 
@@ -44,7 +47,21 @@ public class InventorPatronageUpdateService implements AbstractUpdateService<Inv
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+		final AuthenticatedMoneyExchangePerformService moneyExchange = new AuthenticatedMoneyExchangePerformService();
+		final int itemId  = request.getModel().getInteger("id");
+		final String targetCurrency = this.inventorPatronageRepository.findSystemCurrency();
+		final Money actualCurrency = this.inventorPatronageRepository.findOnePatronageById(itemId).getBudget();
 		
+		final MoneyExchange change = moneyExchange.computeMoneyExchange(actualCurrency, targetCurrency);
+		final Money result = change.getTarget();
+		
+		
+		model.setAttribute("priceInSC", result);
+		
+		model.setAttribute("patronCompany", entity.getPatron().getCompany());
+		model.setAttribute("patronStatement", entity.getPatron().getStatement());
+		model.setAttribute("patronLink", entity.getPatron().getLink());
+		model.setAttribute("masterId", entity.getId());
 		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "creationDate", "startPeriodOfTime", "endPeriodOfTime", "link");
 		
 		
@@ -90,22 +107,6 @@ public class InventorPatronageUpdateService implements AbstractUpdateService<Inv
 		if(!errors.hasErrors("legalStuff")) {
 			final Patronage patronage = this.inventorPatronageRepository.findOnePatronageById(entity.getId());
 			errors.state(request, patronage.getLegalStuff().equals(entity.getLegalStuff()), "legalStuff", "inventor.patronage.form.error.legalStuffChanged");
-		}
-		if(!errors.hasErrors("budget")) {
-			final Patronage patronage = this.inventorPatronageRepository.findOnePatronageById(entity.getId());
-			errors.state(request, patronage.getBudget().equals(entity.getBudget()), "budget", "inventor.patronage.form.error.budgetChanged");
-		}
-		if(!errors.hasErrors("creationDate")) {
-			final Patronage patronage = this.inventorPatronageRepository.findOnePatronageById(entity.getId());
-			errors.state(request, patronage.getCreationDate().equals(entity.getCreationDate()), "creationDate", "inventor.patronage.form.error.creationMomentChanged");
-		}
-		if(!errors.hasErrors("startPeriodOfTime")) {
-			final Patronage patronage = this.inventorPatronageRepository.findOnePatronageById(entity.getId());
-			errors.state(request, patronage.getStartPeriodOfTime().equals(entity.getStartPeriodOfTime()), "startPeriodOfTime", "inventor.patronage.form.error.startPeriodOfTimeChanged");
-		}
-		if(!errors.hasErrors("endPeriodOfTime")) {
-			final Patronage patronage = this.inventorPatronageRepository.findOnePatronageById(entity.getId());
-			errors.state(request, patronage.getEndPeriodOfTime().equals(entity.getEndPeriodOfTime()), "endPeriodOfTime", "inventor.patronage.form.error.endPeriodOfTimeChanged");
 		}
 		if(!errors.hasErrors("link")) {
 			final Patronage patronage = this.inventorPatronageRepository.findOnePatronageById(entity.getId());

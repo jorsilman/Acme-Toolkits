@@ -28,7 +28,7 @@ public class PatronPatronagePublishService implements AbstractUpdateService<Patr
 		Patronage p;
 		id = request.getModel().getInteger("id");
 		p = this.repo.findOnePatronageById(id);
-		res = (p != null && !p.isPublished() && request.isPrincipal(p.getPatron()));
+		res = (p != null && !p.isPublished() && request.getPrincipal().getActiveRoleId()==p.getPatron().getId());
 		
 		return res;
 	}

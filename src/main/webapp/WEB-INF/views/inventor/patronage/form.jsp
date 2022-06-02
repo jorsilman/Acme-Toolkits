@@ -37,9 +37,9 @@
 	</jstl:choose>
 	<br>
 	<h2>Patron:</h2>
-	<acme:input-textbox code="patron.patronage.form.label.patron-company" path="patronCompany"/>
-	<acme:input-textbox code="patron.patronage.form.label.patron-statement" path="patronStatement"/>
-	<acme:input-textbox code="patron.patronage.form.label.patron-link" path="patronLink"/>
+	<acme:input-textbox code="patron.patronage.form.label.patron-company" path="patronCompany" readonly="true"/>
+	<acme:input-textbox code="patron.patronage.form.label.patron-statement" path="patronStatement" readonly="true"/>
+	<acme:input-textbox code="patron.patronage.form.label.patron-link" path="patronLink" readonly="true"/>
 	
 	<jstl:if test="${status == 'ACCEPTED'}">
 		<acme:button code="inventor.patronage.form.button.create-report" action="/inventor/patronage-report/create?patronageId=${masterId}"/>
