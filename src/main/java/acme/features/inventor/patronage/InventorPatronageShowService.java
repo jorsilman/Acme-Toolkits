@@ -54,21 +54,21 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 		assert entity != null;
 		assert model != null;
 		
-		AuthenticatedMoneyExchangePerformService moneyExchange = new AuthenticatedMoneyExchangePerformService();
+		final AuthenticatedMoneyExchangePerformService moneyExchange = new AuthenticatedMoneyExchangePerformService();
 		final int itemId  = request.getModel().getInteger("id");
-		String targetCurrency = this.repository.findSystemCurrency();
-		Money actualCurrency = this.repository.findOnePatronageById(itemId).getBudget();
+		final String targetCurrency = this.repository.findSystemCurrency();
+		final Money actualCurrency = this.repository.findOnePatronageById(itemId).getBudget();
 		
-		MoneyExchange change = moneyExchange.computeMoneyExchange(actualCurrency, targetCurrency);
-		Money result = change.getTarget();
+		final MoneyExchange change = moneyExchange.computeMoneyExchange(actualCurrency, targetCurrency);
+		final Money result = change.getTarget();
 		
 		
 		model.setAttribute("priceInSC", result);
 		
 		
-		model.setAttribute("inventorCompany", entity.getInventor().getCompany());
-		model.setAttribute("inventorStatement", entity.getInventor().getStatement());
-		model.setAttribute("inventorLink", entity.getInventor().getLink());
+		model.setAttribute("patronCompany", entity.getPatron().getCompany());
+		model.setAttribute("patronStatement", entity.getPatron().getStatement());
+		model.setAttribute("patronLink", entity.getPatron().getLink());
 		model.setAttribute("masterId", entity.getId());
 
 		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "creationDate", "startPeriodOfTime", "endPeriodOfTime", "link");
