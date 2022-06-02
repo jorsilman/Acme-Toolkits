@@ -48,7 +48,8 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-
+		final Date creationDate = entity.getCreationDate();
+		model.setAttribute("creationDate", creationDate);
 		request.unbind(entity, model, "code", "legalStuff", "budget", "startPeriodOfTime", "endPeriodOfTime","link", "published");
 		model.setAttribute("inventorId", entity.getInventor().getId());
 	}

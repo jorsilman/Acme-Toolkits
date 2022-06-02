@@ -1,5 +1,7 @@
 package acme.features.inventor.patronage;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -38,7 +40,7 @@ public class InventorPatronageUpdateService implements AbstractUpdateService<Inv
 		assert entity != null;
 		assert errors != null;
 		
-		request.bind(entity, errors, "status", "code", "legalStuff", "budget", "creationDate", "startPeriodOfTime", "endPeriodOfTime", "link");
+		request.bind(entity, errors, "status", "code", "legalStuff", "budget", "startPeriodOfTime", "endPeriodOfTime", "link");
 		
 	}
 
@@ -54,7 +56,8 @@ public class InventorPatronageUpdateService implements AbstractUpdateService<Inv
 		
 		final MoneyExchange change = moneyExchange.computeMoneyExchange(actualCurrency, targetCurrency);
 		final Money result = change.getTarget();
-		
+		final Date creationDate = entity.getCreationDate();
+		model.setAttribute("creationDate", creationDate);
 		
 		model.setAttribute("priceInSC", result);
 		
@@ -62,7 +65,7 @@ public class InventorPatronageUpdateService implements AbstractUpdateService<Inv
 		model.setAttribute("patronStatement", entity.getPatron().getStatement());
 		model.setAttribute("patronLink", entity.getPatron().getLink());
 		model.setAttribute("masterId", entity.getId());
-		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "creationDate", "startPeriodOfTime", "endPeriodOfTime", "link");
+		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "startPeriodOfTime", "endPeriodOfTime", "link");
 		
 		
 	}
