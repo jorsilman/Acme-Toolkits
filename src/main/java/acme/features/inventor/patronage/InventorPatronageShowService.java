@@ -65,7 +65,6 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 		
 		model.setAttribute("priceInSC", result);
 		
-		
 		model.setAttribute("patronCompany", entity.getPatron().getCompany());
 		model.setAttribute("patronStatement", entity.getPatron().getStatement());
 		model.setAttribute("patronLink", entity.getPatron().getLink());
