@@ -15,6 +15,7 @@ inventor.quantity.list.label.item.retailPrice = Retail Price Unit
 
 inventor.quantity.form.label.item = Item
 inventor.quantity.form.label.number = Quantity
+inventor.quantity.form.label.item.code = Code
 
 
 
@@ -28,3 +29,4 @@ inventor.quantity.form.button.create = Add
 
 inventor.quantity.form.error.invalid = There is already an article with this code
 inventor.quantity.form.error.exceed = You can´t add more than 1 Tool
+inventor.quantity.form.error.duplicated = The code is duplicated
