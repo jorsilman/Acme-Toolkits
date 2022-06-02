@@ -15,7 +15,7 @@ import acme.framework.services.AbstractShowService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorComponentShowService implements AbstractShowService<Inventor, Item>{
+public class InventorItemShowService implements AbstractShowService<Inventor, Item>{
 	
 	// Internal state --------------------------------------------------
 	

@@ -57,7 +57,7 @@
 		<jstl:when test="${acme:anyOf(command, 'show, update, delete,create, publish') && published != true}">
 			<acme:input-select code="patron.patronage.form.label.inventor" path="inventorId">
 	   			<jstl:forEach items="${inventors}" var="inventor">
-					<acme:input-option code="${inventor.getUserAccount().getUsername()}" value="${inventor.getId()}" selected="${inventor.getId() == inventId}"/>
+					<acme:input-option code="${inventor.getUserAccount().getUsername()}" value="${inventor.getId()}" selected="${inventor.getId() == inventorId}"/>
 				</jstl:forEach>
 			</acme:input-select>
 		</jstl:when>

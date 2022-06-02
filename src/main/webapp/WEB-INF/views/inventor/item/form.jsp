@@ -8,7 +8,7 @@
 	<acme:input-textbox code="inventor.item.list.label.name" path="name"/>
 	<jstl:choose>
 
-	<jstl:when test="${acme:anyOf(command, 'show,update,delete, publish, update-component, update-tool')}">
+	<jstl:when test="${acme:anyOf(command, 'show,update-tool,delete, publish, update-component, update-tool')}">
 	<acme:input-textbox code="inventor.item.form.label.code" path="code" placeholder="XXX-000-X" readonly="TRUE"/>
 	</jstl:when>
 	<jstl:when test="${acme:anyOf(command, 'create-component, create-tool') }">
@@ -24,8 +24,8 @@
 	
 	
 	<jstl:choose>
-	<jstl:when test="${acme:anyOf(command,'show, update, delete, publish')}">
-	<acme:input-money code="inventor.item.list.label.retailpriceInSC" path="priceInSC"/>
+	<jstl:when test="${acme:anyOf(command, 'show, update-tool, update-component, delete, publish')}">
+	<acme:input-money code="inventor.item.list.label.retailpriceInSC" path="priceInSC" readonly="true"/>
 	</jstl:when>
 	</jstl:choose>
 	
@@ -33,7 +33,7 @@
 
 	<jstl:choose>
 
-		<jstl:when test="${acme:anyOf(command, 'show,update,delete')}">
+		<jstl:when test="${acme:anyOf(command, 'show, update-tool, update-component, delete')}">
 	<acme:input-textbox code="inventor.item.list.label.published" path="published" readonly="TRUE"/>
 	</jstl:when>
 	</jstl:choose>
@@ -41,13 +41,13 @@
 	<jstl:choose>
 	
 	
-	<jstl:when test="${acme:anyOf(command,'show, update, delete, publish') && itemType == 'COMPONENT'}">
+	<jstl:when test="${acme:anyOf(command,'show, update-component, delete, publish') && itemType == 'COMPONENT'}">
 	<acme:input-select code="inventor.item.form.label.type" path="itemType" readonly="TRUE">
 		<acme:input-option value="COMPONENT" code="inventor.item.form.label.component" selected ="${itemType == 'COMPONENT' }"/>
     	
 	</acme:input-select>
 	</jstl:when>
-	<jstl:when test="${acme:anyOf(command,'show, update, delete, publish') && itemType == 'TOOL'}">
+	<jstl:when test="${acme:anyOf(command,'show, update-tool, delete, publish') && itemType == 'TOOL'}">
 	<acme:input-select code="inventor.item.form.label.type" path="itemType" readonly="TRUE">
 		
     	<acme:input-option value="TOOL" code="inventor.item.form.label.tool" selected ="${itemType == 'TOOL' }"/>
@@ -61,7 +61,7 @@
 			<acme:submit code="inventor.item.form.button.create-component" action="/inventor/item/create-component"/>
 		</jstl:when>
     
-		<jstl:when test="${acme:anyOf(command,'show, update, delete, publish') && published == false && itemType == 'COMPONENT' }"> 
+		<jstl:when test="${acme:anyOf(command,'show, update-component, delete, publish') && published == false && itemType == 'COMPONENT' }"> 
             <acme:submit code="inventor.item.form.button.update-component" action="/inventor/item/update-component"/>
             <acme:submit code="inventor.item.form.button.delete-component" action="delete-component"/>
             <acme:submit code="inventor.item.form.button.publish" action="publish"/>
@@ -72,7 +72,7 @@
 			<acme:submit code="inventor.item.form.button.create" action="/inventor/item/create-tool"/>
 		</jstl:when>
     
-		<jstl:when test="${acme:anyOf(command,'show, update, delete, publish') && published == false  && itemType == 'TOOL'}"> 
+		<jstl:when test="${acme:anyOf(command,'show, update-tool, delete, publish') && published == false  && itemType == 'TOOL'}"> 
             <acme:submit code="inventor.item.form.button.update" action="/inventor/item/update-tool"/>
             <acme:submit code="inventor.item.form.button.delete" action="delete-tool"/>
             <acme:submit code="inventor.item.form.button.publish" action="publish"/>
