@@ -2,7 +2,6 @@ package acme.features.inventor.toolkit;
 
 import java.util.Collection;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +23,7 @@ public class InventorToolkitDeleteService implements AbstractDeleteService<Inven
 	
 	
 	@Override
-	public boolean authorise(Request<Toolkit> request) {
+	public boolean authorise(final Request<Toolkit> request) {
 		assert request != null;
 
 		boolean result;
@@ -33,13 +32,13 @@ public class InventorToolkitDeleteService implements AbstractDeleteService<Inven
  
 		masterId = request.getModel().getInteger("id");
 		toolkit = this.repository.findToolkitById(masterId);
-		result = (toolkit != null && !toolkit.isPublished() && request.isPrincipal(toolkit.getInventor()));
+		result = (toolkit != null && !toolkit.isPublished() && request.getPrincipal().getActiveRoleId()==toolkit.getInventor().getId());
 
 		return result;
 	}
 
 	@Override
-	public void bind(Request<Toolkit> request, Toolkit entity, Errors errors) {
+	public void bind(final Request<Toolkit> request, final Toolkit entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -49,7 +48,7 @@ public class InventorToolkitDeleteService implements AbstractDeleteService<Inven
 	}
 
 	@Override
-	public void unbind(Request<Toolkit> request, Toolkit entity, Model model) {
+	public void unbind(final Request<Toolkit> request, final Toolkit entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
@@ -59,7 +58,7 @@ public class InventorToolkitDeleteService implements AbstractDeleteService<Inven
 	}
 
 	@Override
-	public Toolkit findOne(Request<Toolkit> request) {
+	public Toolkit findOne(final Request<Toolkit> request) {
 		Toolkit toolkit;
 		toolkit = this.repository.findToolkitById(request.getModel().getInteger("id"));
 	
@@ -67,7 +66,7 @@ public class InventorToolkitDeleteService implements AbstractDeleteService<Inven
 	}
 
 	@Override
-	public void validate(Request<Toolkit> request, Toolkit entity, Errors errors) {
+	public void validate(final Request<Toolkit> request, final Toolkit entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -77,7 +76,7 @@ public class InventorToolkitDeleteService implements AbstractDeleteService<Inven
 	}
 
 	@Override
-	public void delete(Request<Toolkit> request, Toolkit entity) {
+	public void delete(final Request<Toolkit> request, final Toolkit entity) {
 		assert request != null;
 		assert entity != null;
 		
@@ -87,7 +86,7 @@ public class InventorToolkitDeleteService implements AbstractDeleteService<Inven
 		toolkitId = entity.getId();
 		quantities = this.repository.findQuantitiesOfToolkitId(toolkitId);
 		 
-		for (Quantity quantity : quantities) {
+		for (final Quantity quantity : quantities) {
 			this.repository.delete(quantity);
 		}
 		

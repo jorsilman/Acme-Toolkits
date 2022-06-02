@@ -27,22 +27,22 @@ public class InventorQuantityUpdateService implements AbstractUpdateService<Inve
 
 	
 	@Override
-	public boolean authorise(Request<Quantity> request) {
+	public boolean authorise(final Request<Quantity> request) {
 		assert request != null;
 
 		boolean result;
-		int masterId;
+		int quantityId;
 		final Toolkit toolkit;
 
-		masterId = request.getModel().getInteger("masterId");
-		toolkit = this.repository.findToolkitById(masterId);
-		result = (toolkit != null && (toolkit.isPublished() || request.isPrincipal(toolkit.getInventor())));
+		quantityId = request.getModel().getInteger("id");
+		toolkit = this.repository.findToolkitByQuantityId(quantityId);
+		result = (toolkit != null && (toolkit.isPublished() || request.getPrincipal().getActiveRoleId()==toolkit.getInventor().getId()));
 
 		return result;
 	}
 
 	@Override
-	public void bind(Request<Quantity> request, Quantity entity, Errors errors) {
+	public void bind(final Request<Quantity> request, final Quantity entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -51,7 +51,7 @@ public class InventorQuantityUpdateService implements AbstractUpdateService<Inve
 	}
 
 	@Override
-	public void unbind(Request<Quantity> request, Quantity entity, Model model) {
+	public void unbind(final Request<Quantity> request, final Quantity entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
@@ -63,7 +63,7 @@ public class InventorQuantityUpdateService implements AbstractUpdateService<Inve
 	}
 
 	@Override
-	public Quantity findOne(Request<Quantity> request) {
+	public Quantity findOne(final Request<Quantity> request) {
 		assert request != null;
 		
 		int quantityId;
@@ -76,7 +76,7 @@ public class InventorQuantityUpdateService implements AbstractUpdateService<Inve
 	}
 
 	@Override
-	public void validate(Request<Quantity> request, Quantity entity, Errors errors) {
+	public void validate(final Request<Quantity> request, final Quantity entity, final Errors errors) {
 		if (!errors.hasErrors("number")) {
 			final Item item;
 			final boolean exists;
@@ -91,7 +91,7 @@ public class InventorQuantityUpdateService implements AbstractUpdateService<Inve
 	}
 
 	@Override
-	public void update(Request<Quantity> request, Quantity entity) {
+	public void update(final Request<Quantity> request, final Quantity entity) {
 		assert request != null;
 		assert entity != null;
 

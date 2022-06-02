@@ -32,7 +32,7 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
  
 		masterId = request.getModel().getInteger("id");
 		toolkit = this.repository.findToolkitById(masterId);
-		result = (toolkit != null && request.isPrincipal(toolkit.getInventor()));
+		result = (toolkit != null && request.getPrincipal().getActiveRoleId()==toolkit.getInventor().getId());
 
 		return result;
 	}
@@ -81,29 +81,6 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		request.unbind(entity, model, "code", "title", "description", "assemblyNotes","published", "link");
 		
 	}
-	/*
-	private Money getPriceOfSystemCurrency(Money money) {
-		
-		AuthenticatedMoneyExchangePerformService moneyExchange = new AuthenticatedMoneyExchangePerformService();
-		
-		MoneyExchange moneyChange = new MoneyExchange();
-		
-		String systemCurrency = this.repository.findSystemCurrency();
-		
-		if(!money.getCurrency().equals(systemCurrency)) {
-			change = this.repository.fin
-			
-			change = moneyExchange.computeMoneyExchange(money, systemCurrency);
-			this.repository.save(change);
-			
-			
-		}else {
-			change.setSource(money);
-			change.setTarget(money);
-			change.setTargetCurrency(systemCurrency);
-			change.setDate(new Date);
-		}
-		
-	}*/
+	
 
 }

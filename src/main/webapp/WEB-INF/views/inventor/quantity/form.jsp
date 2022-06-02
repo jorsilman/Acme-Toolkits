@@ -27,7 +27,7 @@
 		</jstl:when>
 		
 		<jstl:when test="${command == 'create-component'}">
-			<acme:input-select code="inventor.quantity.form.label.item" path="item.code">
+			<acme:input-select code="inventor.quantity.form.label.item.code" path="item.code">
 				<jstl:forEach items="${items}" var="item">
 					<acme:input-option code="${item.getName().concat(item.getCode())}" value="${item.getCode()}"
 						selected="${item.getCode() == item.code}" />

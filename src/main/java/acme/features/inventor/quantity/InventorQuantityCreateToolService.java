@@ -26,63 +26,65 @@ public class InventorQuantityCreateToolService implements AbstractCreateService<
 
 
 	@Override
-	public boolean authorise(Request<Quantity> request) {
+	public boolean authorise(final Request<Quantity> request) {
 		assert request != null;
 
 		boolean result;
 		int masterId;
 		Toolkit toolkit;
- 
+
 		masterId = request.getModel().getInteger("masterId");
 		toolkit = this.repository.findToolkitById(masterId);
-		result = (toolkit != null && !toolkit.isPublished() && request.isPrincipal(toolkit.getInventor()));
+		result = (toolkit != null && !toolkit.isPublished() && request.getPrincipal().getActiveRoleId()==toolkit.getInventor().getId());
 
 		return result;
 	}
 
 	@Override
-	public void bind(Request<Quantity> request, Quantity entity, Errors errors) {
+	public void bind(final Request<Quantity> request, final Quantity entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
 
 		final String itemCode;
 		final Item item;
-		
-		itemCode = request.getModel().getString("item.code");
+		itemCode = request.getModel().getString("item.codeProxy");
+
 		item = this.repository.findItemByCode(itemCode);
+
 		item.setItemType(ItemType.TOOL);
 		entity.setItem(item);
-		request.bind(entity, errors, "number", "item.code");
+		request.bind(entity, errors, "number", "item.codeProxy");
 	}
 
 	@Override
-	public void unbind(Request<Quantity> request, Quantity entity, Model model) {
+	public void unbind(final Request<Quantity> request, final Quantity entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		
-				final int toolkitId = request.getModel().getInteger("masterId");
-		
-		
-		Collection<Item> publishedItems = this.repository.findPublishedTools();
-		Collection<Item> assignedItems = this.repository.findToolsByToolkitId(toolkitId);
-		Collection<Item> nonAssignedItems = publishedItems;
-		
+
+		final int toolkitId = request.getModel().getInteger("masterId");
+
+
+		final Collection<Item> publishedItems = this.repository.findPublishedTools();
+		final Collection<Item> assignedItems = this.repository.findToolsByToolkitId(toolkitId);
+		final Collection<Item> nonAssignedItems = publishedItems;
+
 		nonAssignedItems.removeAll(assignedItems);
+
 		
-		
-		
+
 		request.unbind(entity, model, "number", "item.code");
+		
 		model.setAttribute("masterId", request.getModel().getAttribute("masterId"));
 		model.setAttribute("published", entity.getToolkit().isPublished());
 		model.setAttribute("items", nonAssignedItems);
-		
+
 
 	}
 
 	@Override
-	public Quantity instantiate(Request<Quantity> request) {
+	public Quantity instantiate(final Request<Quantity> request) {
 
 		assert request != null;
 
@@ -98,45 +100,45 @@ public class InventorQuantityCreateToolService implements AbstractCreateService<
 		result = new Quantity();
 		result.setToolkit(toolkit);
 		result.setItem(item);
-		
+
 		return result;
 
-		
+
 	}
 
 	@Override
-	public void validate(Request<Quantity> request, Quantity entity, Errors errors) {
+	public void validate(final Request<Quantity> request, final Quantity entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
 
-		if (!errors.hasErrors("item.code")) {
+		if (!errors.hasErrors("item.codeProxy")) {
 			final Item item;
 			final boolean exists;
-			
+
 			item = entity.getItem();
 			exists = item.getId() != 0;
-			
+
 			errors.state(request, exists, "item.code", "inventor.quantity.form.error.invalid");
 			if (exists)	errors.state(request, this.repository.countByItemIdAndToolkitId(item.getId(), entity.getToolkit().getId()) == 0, "item.code", "inventor.quantity.form.error.duplicated");
 		}
-		
+
 		if (!errors.hasErrors("number")) {
 			final Item item;
 			final boolean exists;
 			final Boolean isTool;
-			
+
 			item = entity.getItem();
 			exists = item.getId() != 0;
 			isTool= exists && item.getItemType().equals(ItemType.TOOL);
-			
+
 			if (Boolean.TRUE.equals(isTool)) errors.state(request, entity.getNumber() == 1, "number", "inventor.quantity.form.error.exceed");
 		}
-		
+
 	}
 
 	@Override
-	public void create(Request<Quantity> request, Quantity entity) {
+	public void create(final Request<Quantity> request, final Quantity entity) {
 		assert request != null;
 		assert entity != null;
 
