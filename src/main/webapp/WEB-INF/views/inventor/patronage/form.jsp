@@ -22,24 +22,24 @@
 		<acme:input-option code="patron.patronage.form.label.ACCEPTED" value="ACCEPTED" selected="${status == 'ACCEPTED'}"/>
 		<acme:input-option code="patron.patronage.form.label.DENIED" value="DENIED" selected="${status == 'DENIED'}"/>
 	</acme:input-select>
-	<acme:input-textbox code="patron.patronage.form.label.code" path="code"/>
-	<acme:input-textarea code="patron.patronage.form.label.legalStuff" path="legalStuff"/>
-	<acme:input-money code="patron.patronage.form.label.budget" path="budget"/>
-	<acme:input-money code="patron.patronage.form.label.budgetInSC" path="priceInSC"/>
-	<acme:input-moment code="patron.patronage.form.label.creationDate" path="creationDate"/>
-	<acme:input-moment code="patron.patronage.form.label.startPeriodOfTime" path="startPeriodOfTime"/>
-	<acme:input-moment code="patron.patronage.form.label.endPeriodOfTime" path="endPeriodOfTime"/>
-	<acme:input-url code="patron.patronage.form.label.link" path="link"/>
+	<acme:input-textbox code="patron.patronage.form.label.code" path="code" readonly="true"/>
+	<acme:input-textarea code="patron.patronage.form.label.legalStuff" path="legalStuff" readonly="true"/>
+	<acme:input-money code="patron.patronage.form.label.budget" path="budget" readonly="true"/>
+	<acme:input-money code="patron.patronage.form.label.budgetInSC" path="priceInSC" readonly="true"/>
+	<acme:input-moment code="patron.patronage.form.label.creationDate" path="creationDate" readonly="true"/>
+	<acme:input-moment code="patron.patronage.form.label.startPeriodOfTime" path="startPeriodOfTime" readonly="true"/>
+	<acme:input-moment code="patron.patronage.form.label.endPeriodOfTime" path="endPeriodOfTime" readonly="true"/>
+	<acme:input-url code="patron.patronage.form.label.link" path="link" readonly="true"/>
 	<jstl:choose>
 		<jstl:when test="${status == 'PROPOSED'}">
 			<acme:submit  code="inventor.patronage.form.button.update.accept" action="/inventor/patronage/update"/><br>
 		</jstl:when>
 	</jstl:choose>
 	<br>
-	<h2>Inventor:</h2>
-	<acme:input-textbox code="patron.patronage.form.label.inventor-company" path="inventorCompany"/>
-	<acme:input-textbox code="patron.patronage.form.label.inventor-statement" path="inventorStatement"/>
-	<acme:input-textbox code="patron.patronage.form.label.inventor-link" path="inventorLink"/>
+	<h2>Patron:</h2>
+	<acme:input-textbox code="patron.patronage.form.label.patron-company" path="patronCompany"/>
+	<acme:input-textbox code="patron.patronage.form.label.patron-statement" path="patronStatement"/>
+	<acme:input-textbox code="patron.patronage.form.label.patron-link" path="patronLink"/>
 	
 	<jstl:if test="${status == 'ACCEPTED'}">
 		<acme:button code="inventor.patronage.form.button.create-report" action="/inventor/patronage-report/create?patronageId=${masterId}"/>

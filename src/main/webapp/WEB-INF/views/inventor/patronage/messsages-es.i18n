@@ -31,12 +31,19 @@ patron.patronage.form.label.startPeriodOfTime = Fecha de comienzo
 patron.patronage.form.label.endPeriodOfTime = Fecha de fin
 patron.patronage.form.label.link = Enlace
 patron.patronage.form.label.inventor = Inventor
-patron.patronage.form.label.inventor-company = Compañía
-patron.patronage.form.label.inventor-statement = Declaración
-patron.patronage.form.label.inventor-link = Enlace
+patron.patronage.form.label.patron-company = Compañía
+patron.patronage.form.label.patron-statement = Declaración
+patron.patronage.form.label.patron-link = Enlace
 
 
 inventor.patronage.form.button.update.accept = Actualizar
 
 inventor.patronage.form.button.create-report = Hacer reporte
 
+inventor.patronage.form.error.codeChanged = No se puede modificar el codigo
+inventor.patronage.form.error.linkChanged = No se puede modificar el enlace
+inventor.patronage.form.error.endPeriodOfTimeChanged = No se puede modificar la fecha final
+inventor.patronage.form.error.startPeriodOfTimeChanged = No se puede modificar la fecha inicial
+inventor.patronage.form.error.creationMomentChanged = No se puede modificar la fecha de creacion
+inventor.patronage.form.error.legalStuffChanged = No se pueden modificar las legalidades
+inventor.patronage.form.error.budgetChanged = No se puede modificar el presupuesto

@@ -30,12 +30,20 @@ patron.patronage.form.label.startPeriodOfTime = Start period of time
 patron.patronage.form.label.endPeriodOfTime = End period of time
 patron.patronage.form.label.link = Link
 patron.patronage.form.label.inventor = Inventor
-patron.patronage.form.label.inventor-company = Company
-patron.patronage.form.label.inventor-statement = Statement
-patron.patronage.form.label.inventor-link = Link
+patron.patronage.form.label.patron-company = Company
+patron.patronage.form.label.patron-statement = Statement
+patron.patronage.form.label.patron-link = Link
 
 
 inventor.patronage.form.button.update.accept = Update
 
 inventor.patronage.form.button.create-report = Create report
+
+inventor.patronage.form.error.codeChanged = Code can't be modified
+inventor.patronage.form.error.linkChanged = Link can't be modified
+inventor.patronage.form.error.endPeriodOfTimeChanged = Final Date can't be modified
+inventor.patronage.form.error.startPeriodOfTimeChanged = Initial Date can't be modified
+inventor.patronage.form.error.creationMomentChanged = Creation moment can't be modified
+inventor.patronage.form.error.legalStuffChanged = Legal Stuff can't be modified
+inventor.patronage.form.error.budgetChanged = Budget can't be modified
 

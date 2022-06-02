@@ -83,6 +83,36 @@ public class InventorPatronageUpdateService implements AbstractUpdateService<Inv
 		assert entity != null;
 		assert errors != null;
 		
+		if(!errors.hasErrors("code")) {
+			final Patronage patronage = this.inventorPatronageRepository.findOnePatronageById(entity.getId());
+			errors.state(request, patronage.getCode().equals(entity.getCode()), "code", "inventor.patronage.form.error.codeChanged");
+		}
+		if(!errors.hasErrors("legalStuff")) {
+			final Patronage patronage = this.inventorPatronageRepository.findOnePatronageById(entity.getId());
+			errors.state(request, patronage.getLegalStuff().equals(entity.getLegalStuff()), "legalStuff", "inventor.patronage.form.error.legalStuffChanged");
+		}
+		if(!errors.hasErrors("budget")) {
+			final Patronage patronage = this.inventorPatronageRepository.findOnePatronageById(entity.getId());
+			errors.state(request, patronage.getBudget().equals(entity.getBudget()), "budget", "inventor.patronage.form.error.budgetChanged");
+		}
+		if(!errors.hasErrors("creationDate")) {
+			final Patronage patronage = this.inventorPatronageRepository.findOnePatronageById(entity.getId());
+			errors.state(request, patronage.getCreationDate().equals(entity.getCreationDate()), "creationDate", "inventor.patronage.form.error.creationMomentChanged");
+		}
+		if(!errors.hasErrors("startPeriodOfTime")) {
+			final Patronage patronage = this.inventorPatronageRepository.findOnePatronageById(entity.getId());
+			errors.state(request, patronage.getStartPeriodOfTime().equals(entity.getStartPeriodOfTime()), "startPeriodOfTime", "inventor.patronage.form.error.startPeriodOfTimeChanged");
+		}
+		if(!errors.hasErrors("endPeriodOfTime")) {
+			final Patronage patronage = this.inventorPatronageRepository.findOnePatronageById(entity.getId());
+			errors.state(request, patronage.getEndPeriodOfTime().equals(entity.getEndPeriodOfTime()), "endPeriodOfTime", "inventor.patronage.form.error.endPeriodOfTimeChanged");
+		}
+		if(!errors.hasErrors("link")) {
+			final Patronage patronage = this.inventorPatronageRepository.findOnePatronageById(entity.getId());
+			errors.state(request, patronage.getLink().equals(entity.getLink()), "link", "inventor.patronage.form.error.linkChanged");
+		}
+		
+	
 	}
 
 }
