@@ -42,19 +42,19 @@
 	
 	
 	
-		<jstl:when test="${acme:anyOf(command, 'show,update,delete')}">
+		<jstl:when test="${acme:anyOf(command, 'show,update,delete,publish')}">
 	<acme:input-textbox code="patron.patronage.list.label.publish" path="published" readonly="TRUE"/>
 	</jstl:when>
 	</jstl:choose>
 	<br>
 	<h2>Inventor:</h2>
 	<jstl:choose>
-		<jstl:when test="${command == 'show' }">
+		<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish') }">
 			<acme:input-textbox code="patron.patronage.form.label.inventor-company" path="inventorCompany" readonly = "TRUE"/>
 			<acme:input-textbox code="patron.patronage.form.label.inventor-statement" path="inventorStatement" readonly = "TRUE"/>
 			<acme:input-textbox code="patron.patronage.form.label.inventor-link" path="inventorLink" readonly = "TRUE"/>
 		</jstl:when>
-		<jstl:when test="${acme:anyOf(command, 'show, update, delete,create, publish') && published != true}">
+		<jstl:when test="${acme:anyOf(command, 'create')}">
 			<acme:input-select code="patron.patronage.form.label.inventor" path="inventorId">
 	   			<jstl:forEach items="${inventors}" var="inventor">
 					<acme:input-option code="${inventor.getUserAccount().getUsername()}" value="${inventor.getId()}" selected="${inventor.getId() == inventorId}"/>

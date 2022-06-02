@@ -6,10 +6,13 @@ import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.MoneyExchange;
 import acme.entities.patronage.Patronage;
+import acme.features.authenticated.moneyExchange.AuthenticatedMoneyExchangePerformService;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
+import acme.framework.datatypes.Money;
 import acme.framework.services.AbstractUpdateService;
 import acme.roles.Patron;
 
@@ -51,8 +54,22 @@ public class PatronPatronagePublishService implements AbstractUpdateService<Patr
 
 		final Date creationDate = entity.getCreationDate();
 		model.setAttribute("creationDate", creationDate);
-		request.unbind(entity, model, "code", "legalStuff", "budget", "startPeriodOfTime", "finalPeriodOfTime","link","published");
+		request.unbind(entity, model, "code", "legalStuff", "budget", "startPeriodOfTime", "endPeriodOfTime","link","published");
 		model.setAttribute("inventorId", entity.getInventor().getId());
+		final AuthenticatedMoneyExchangePerformService moneyExchange = new AuthenticatedMoneyExchangePerformService();
+		final int itemId  = request.getModel().getInteger("id");
+		final String targetCurrency = this.repo.findSystemCurrency();
+		final Money actualCurrency = this.repo.findOnePatronageById(itemId).getBudget();
+		
+		final MoneyExchange change = moneyExchange.computeMoneyExchange(actualCurrency, targetCurrency);
+		final Money result = change.getTarget();
+		
+		
+		model.setAttribute("priceInSC", result);
+		
+		model.setAttribute("inventorCompany", entity.getInventor().getCompany());
+		model.setAttribute("inventorStatement", entity.getInventor().getStatement());
+		model.setAttribute("inventorLink", entity.getInventor().getLink());
 	}
 
 	@Override
