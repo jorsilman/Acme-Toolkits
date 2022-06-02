@@ -16,6 +16,7 @@ inventor.quantity.list.label.item.retailPrice = Precio por unidad
 inventor.quantity.form.label.item= Objeto
 inventor.quantity.form.label.number = Cantidad
 
+inventor.quantity.form.label.item.code = Codigo
 
 inventor.quantity.list.button.createComponent = Añadir componente
 inventor.quantity.list.button.createTool = Añadir herramienta
