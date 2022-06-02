@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 
 import acme.components.MoneyExchange;
 import acme.entities.item.Item;
+import acme.entities.item.ItemType;
 import acme.features.authenticated.moneyExchange.AuthenticatedMoneyExchangePerformService;
-import acme.features.inventor.item.InventorItemRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.datatypes.Money;
@@ -19,8 +19,7 @@ public class AnyComponentShowService implements AbstractShowService<Any, Item>{
 	@Autowired
 	protected AnyItemRepository repository;
 	
-	@Autowired 
-	protected InventorItemRepository itemRepo;
+	
 
 	@Override
 	public boolean authorise(final Request<Item> request) {
@@ -35,13 +34,18 @@ public class AnyComponentShowService implements AbstractShowService<Any, Item>{
 		assert entity != null;
 		assert model != null;
 		
-		AuthenticatedMoneyExchangePerformService moneyExchange = new AuthenticatedMoneyExchangePerformService();
+		final AuthenticatedMoneyExchangePerformService moneyExchange = new AuthenticatedMoneyExchangePerformService();
 		final int itemId  = request.getModel().getInteger("id");
-		String targetCurrency = this.itemRepo.findSystemCurrency();
-		Money actualCurrency = this.itemRepo.findComponentPriceById(itemId);
+		final String targetCurrency = this.repository.findSystemCurrency();
+		Money actualCurrency; 
+		if(entity.getItemType()==ItemType.COMPONENT) {
+			actualCurrency = this.repository.findComponentPriceById(itemId);
+		}else {
+			actualCurrency= this.repository.findToolPriceById(itemId);
+		}
 		
-		MoneyExchange change = moneyExchange.computeMoneyExchange(actualCurrency, targetCurrency);
-		Money result = change.getTarget();
+		final MoneyExchange change = moneyExchange.computeMoneyExchange(actualCurrency, targetCurrency);
+		final Money result = change.getTarget();
 		
 		
 		model.setAttribute("priceInSC", result);
