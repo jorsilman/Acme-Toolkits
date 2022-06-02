@@ -11,7 +11,7 @@ public class InventorPatronageListOwnTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/inventor/patronage/list-own.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positive(final int recordIndex, final String status, final String statusShow, final String code, final String legalStuff, final String budget, final String creationDate, final String startPeriodOfTime, final String endPeriodOfTime, final String link, final String inventorCompany, final String inventorStatement, final String inventorLink) {
+	public void positive(final int recordIndex, final String status, final String statusShow, final String code, final String legalStuff, final String budget, final String creationDate, final String startPeriodOfTime, final String endPeriodOfTime, final String link, final String patronCompany, final String patronStatement, final String patronLink) {
 		super.signIn("inventor1", "inventor1");
 		super.clickOnMenu("Inventor", "List my patronages");
 		super.checkListingExists();
@@ -27,7 +27,7 @@ public class InventorPatronageListOwnTest extends TestHarness {
 		
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
-		super.checkInputBoxHasValue("status", statusShow);
+		super.checkInputBoxHasValue("status", status);
 		super.checkInputBoxHasValue("code", code);
 		super.checkInputBoxHasValue("legalStuff", legalStuff);
 		super.checkInputBoxHasValue("budget", budget);
@@ -35,9 +35,9 @@ public class InventorPatronageListOwnTest extends TestHarness {
 		super.checkInputBoxHasValue("startPeriodOfTime", startPeriodOfTime);
 		super.checkInputBoxHasValue("endPeriodOfTime", endPeriodOfTime);
 		super.checkInputBoxHasValue("link", link);
-		super.checkInputBoxHasValue("inventorCompany", inventorCompany);
-		super.checkInputBoxHasValue("inventorStatement", inventorStatement);
-		super.checkInputBoxHasValue("inventorLink", inventorLink);
+		super.checkInputBoxHasValue("patronCompany", patronCompany);
+		super.checkInputBoxHasValue("patronStatement", patronStatement);
+		super.checkInputBoxHasValue("patronLink", patronLink);
 
 
 		super.signOut();

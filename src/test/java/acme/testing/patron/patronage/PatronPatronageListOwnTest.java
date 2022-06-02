@@ -27,7 +27,7 @@ public class PatronPatronageListOwnTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/patron/patronage/list-own.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positive(final int recordIndex, final String status, final String statusShow, final String code, final String legalStuff, final String budget, final String creationDate, final String startPeriodOfTime, final String endPeriodOfTime, final String link, final String inventorCompany, final String inventorStatement, final String inventorLink) {
+	public void positive(final int recordIndex, final String status, final String code, final String legalStuff, final String budget, final String creationDate, final String startPeriodOfTime, final String endPeriodOfTime, final String link, final String inventorCompany, final String inventorStatement, final String inventorLink) {
 		super.signIn("patron1", "patron1");
 
 		super.clickOnMenu("Patron", "List my patronages");
@@ -44,11 +44,10 @@ public class PatronPatronageListOwnTest extends TestHarness {
 
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
-		super.checkInputBoxHasValue("status", statusShow);
 		super.checkInputBoxHasValue("code", code);
 		super.checkInputBoxHasValue("legalStuff", legalStuff);
 		super.checkInputBoxHasValue("budget", budget);
-		super.checkInputBoxHasValue("creationDate", creationDate);
+		
 		super.checkInputBoxHasValue("startPeriodOfTime", startPeriodOfTime);
 		super.checkInputBoxHasValue("endPeriodOfTime", endPeriodOfTime);
 		super.checkInputBoxHasValue("link", link);

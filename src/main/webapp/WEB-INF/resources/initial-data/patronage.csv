@@ -4,4 +4,4 @@ patronage-02,patron-02,inventor-02,DENIED,AAA-000-B,legalStuff_2 ,"EUR 110.00","
 patronage-03,patron-03,inventor-03,PROPOSED,AAA-000-C,legaLStuff_3,"EUR 120.00","2020/04/05 22:22","2020/10/05 22:22","2022/04/05 22:22",https://www.youtube.com/,false
 patronage-04,patron-04,inventor-04,ACCEPTED,AAA-000-D,legalStuff_4,"EUR 130.00","2020/03/30 23:32","2021/03/30 23:32","2022/03/28 23:32",null,false
 patronage-05,patron-04,inventor-04,PROPOSED,AAA-000-E,legalStuff_5,"EUR 140.00","2020/02/28 14:41","2022/06/28 14:41","2022/02/10 14:41",null,false
-patronage-06,patron-01,inventor-01,ACCEPTED,AAA-000-F,legalStuff_6,"EUR 170.00","2021/08/14 12:51","2021/12/13 15:51","2022/04/22 15:51",null,false
+patronage-06,patron-01,inventor-01,ACCEPTED,AAA-000-F,legalStuff_6,"EUR 170.00","2021/08/14 12:51","2021/12/13 15:51","2022/04/22 15:51",null,true
