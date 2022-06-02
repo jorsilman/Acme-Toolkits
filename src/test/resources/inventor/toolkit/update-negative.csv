@@ -1,6 +1,4 @@
-recordIndex,title,description, assemblyNotes,link
-0, 		, 		, 	A			,https://www.y
-1, 	T	, 	A	, 				, aitor
-2, 	T	, 	E	, Positiva		, pepe
-3, 	G	, 	E	, E				,pepe
-4, 		, 		, Creacion positiva, https://www.youtube.com/
+recordIndex,code,title,description,assemblyNotes,published,link
+0,AAA-123-A,,Cambio,Cambio,false,
+1,AAA-123-A,Cambio,,Cambio,false,
+2,AAA-123-A,,,Cambio,false,

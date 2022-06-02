@@ -38,8 +38,6 @@ public class InventorToolkitPublishTest extends TestHarness{
 	super.sortListing(0, "asc");
 	super.clickOnListingRecord(0);
 	super.checkFormExists();
-	
-
 	super.fillInputBoxIn("title", title);
 	super.fillInputBoxIn("description", description);
 	super.fillInputBoxIn("assemblyNotes", assemblyNotes);
