@@ -12,12 +12,12 @@ public class PatronPatronagePublishService extends TestHarness{
 	@Order(10)
 	public void positiveTest(final int recordIndex, final String code) {
 		
-		super.signIn("patron1", "patron1");
+		super.signIn("patron4", "patron4");
 
 		super.clickOnMenu("Patron", "List my patronages");
 		super.checkListingExists();
 		super.checkListingExists();
-		super.clickOnListingRecord(recordIndex);
+		super.clickOnListingRecord(0);
 		super.checkFormExists();
 		super.clickOnSubmit("Publish");
 		super.clickOnMenu("Patron", "List my patronages");
