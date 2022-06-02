@@ -69,5 +69,7 @@ public class AdministratorSystemConfigurationShowService implements AbstractShow
 			}
 			
 			model.setAttribute("acceptedCurrenciesList", acceptedCurrenciesList);
+			final String moneyExchangeService = "Authenticated Money Exchange Perform Service";
+			model.setAttribute("moneyExchangeService", moneyExchangeService);
 		}
 }

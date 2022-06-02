@@ -28,6 +28,7 @@
 	<acme:input-double code="administrator.system-configuration.form.label.strongSpamThreshold" path="strongSpamThreshold"/>
 	<acme:input-textbox code="administrator.system-configuration.form.label.weakSpamWords" path="weakSpamWords"/>
 	<acme:input-double code="administrator.system-configuration.form.label.weakSpamThreshold" path="weakSpamThreshold"/>
+	<acme:input-textarea code="administrator.system-configuration.form.label.money" path="moneyExchangeService" readonly="TRUE"/>
 
 	<%--<acme:button test="${command == 'show'}" code="administrator.system-configuration.form.button.update" action="/administrator/system-configuration/update"/> --%>
 	<acme:submit code="administrator.system-configuration.form.button.update" action="/administrator/system-configuration/update"/>
