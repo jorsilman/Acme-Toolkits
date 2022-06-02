@@ -40,7 +40,7 @@ public class AnyToolListService implements AbstractListService<Any, Item> {
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link", "type");
+		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link", "itemType");
 	}
 	
 	
